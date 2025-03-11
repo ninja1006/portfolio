@@ -97,7 +97,7 @@ export const Hero = () => {
               <div className='relative w-full aspect-square'>
                 <div className='absolute inset-0 bg-gradient-to-r from-primary/30 to-primary/20 rounded-full animate-pulse' />
                 <Image
-                  src='/hero-image.png'
+                  src='/hero-image.jpg'
                   alt='Hero Image'
                   fill
                   className='object-cover rounded-full p-8'
