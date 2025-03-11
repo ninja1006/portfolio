@@ -1,6 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
-import { FaLinkedin, FaMedium, FaYoutube } from 'react-icons/fa6';
+import {
+  FaGithub,
+  FaLinkedin,
+  FaMedium,
+  FaYoutube,
+  FaXTwitter,
+} from 'react-icons/fa6';
 
 const BlogLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -29,20 +35,37 @@ const BlogLayout = ({ children }: { children: React.ReactNode }) => {
               <Link
                 href='https://medium.com/@adylshay'
                 className='text-foreground hover:text-primary transition-colors'
+                target='_blank'
               >
                 <FaMedium className='text-2xl' />
               </Link>
               <Link
                 href='https://www.youtube.com/@AdylshasDevLab'
                 className='text-foreground hover:text-primary transition-colors'
+                target='_blank'
               >
                 <FaYoutube className='text-2xl' />
               </Link>
               <Link
                 href='https://www.linkedin.com/in/adylshay'
                 className='text-foreground hover:text-primary transition-colors'
+                target='_blank'
               >
                 <FaLinkedin className='text-2xl' />
+              </Link>
+              <Link
+                href='https://github.com/adylshay'
+                className='text-foreground hover:text-primary transition-colors'
+                target='_blank'
+              >
+                <FaGithub className='text-2xl' />
+              </Link>
+              <Link
+                href='https://x.com/adylshay'
+                className='text-foreground hover:text-primary transition-colors'
+                target='_blank'
+              >
+                <FaXTwitter className='text-2xl' />
               </Link>
             </div>
           </nav>
