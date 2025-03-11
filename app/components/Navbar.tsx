@@ -4,24 +4,12 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useScrollTo } from '../hooks/useScrollTo';
-
-type NavItem = {
-  name: string;
-  href: string;
-};
+import { navItems } from '../data/navigation';
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const scrollTo = useScrollTo();
   const navbarRef = useRef<HTMLDivElement>(null);
-
-  const navItems: NavItem[] = [
-    { name: 'Ana Sayfa', href: 'home' },
-    { name: 'Hakkımda', href: 'about' },
-    { name: 'Projeler', href: 'projects' },
-    { name: 'Yetenekler', href: 'skills' },
-    { name: 'İletişim', href: 'contact' },
-  ];
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
