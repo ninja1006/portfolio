@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactNode, useEffect } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import { I18nextProvider } from 'react-i18next';
 import i18nClient from './client';
 import { fallbackLng } from './settings';
@@ -11,23 +11,28 @@ type I18nProviderProps = {
 };
 
 export function I18nProvider({ children, locale }: I18nProviderProps) {
-  // Dil değiştiğinde i18n'i güncelle
-  useEffect(() => {
-    if (locale && i18nClient.language !== locale) {
-      i18nClient.changeLanguage(locale);
-    }
-  }, [locale]);
+  const [isClient, setIsClient] = useState(false);
 
-  // Sayfa yüklendiğinde localStorage'dan dil tercihini kontrol et
   useEffect(() => {
-    const storedLang = localStorage.getItem('i18nextLng');
-    const browserLang = navigator.language.split('-')[0];
-    const detectedLang = storedLang || ((['tr', 'en'].includes(browserLang)) ? browserLang : fallbackLng);
-    
-    if (i18nClient.language !== detectedLang) {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (locale) {
+      i18nClient.changeLanguage(locale);
+    } else {
+      const storedLang = localStorage.getItem('i18nextLng');
+      const browserLang = navigator.language.split('-')[0];
+      const detectedLang = storedLang || ((['tr', 'en'].includes(browserLang)) ? browserLang : fallbackLng);
+      
       i18nClient.changeLanguage(detectedLang);
     }
-  }, []);
+  }, [locale, isClient]);
+
+  // During SSR and initial client render, use the locale prop or fallback
+  if (!isClient) {
+    i18nClient.changeLanguage(locale || fallbackLng);
+  }
 
   return <I18nextProvider i18n={i18nClient}>{children}</I18nextProvider>;
 } 
