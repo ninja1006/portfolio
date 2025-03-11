@@ -1,14 +1,15 @@
-import React from 'react';
+import { use } from 'react';
 import { getBlogPostBySlug } from '@/app/utils/getBlogPosts';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 
-export default async function BlogPostPage({
+export default function Page({
   params,
 }: {
-  params: { slug: string }
+  params: Promise<{ slug: string }>;
 }) {
-  const post = getBlogPostBySlug(params.slug);
+  const { slug } = use(params);
+  const post = getBlogPostBySlug(slug);
 
   if (!post) {
     notFound();

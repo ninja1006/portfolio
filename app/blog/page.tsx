@@ -5,8 +5,6 @@ import BlogCard from '../components/shared/BlogCard';
 const BlogPage = () => {
   const posts = getBlogPosts();
 
-  console.log(posts);
-
   return (
     <div className='container mx-auto my-20'>
       <h1 className='text-4xl font-bold mb-8'>Blog</h1>
