@@ -3,10 +3,11 @@ import { getBlogPostBySlug } from '@/app/utils/getBlogPosts';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 
-interface BlogPostPageProps {
+type BlogPostPageProps = {
   params: {
     slug: string;
   };
+  searchParams: { [key: string]: string | string[] | undefined };
 }
 
 const BlogPostPage = ({ params }: BlogPostPageProps) => {
