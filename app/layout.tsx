@@ -62,10 +62,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  params,
 }: {
   children: React.ReactNode;
-  params?: { lang?: string };
 }) {
   return (
     <html>
@@ -74,7 +72,7 @@ export default function RootLayout({
         <meta name='color-profile' content='sRGB' />
       </head>
       <body className={inter.className}>
-        <I18nProvider locale={params?.lang}>{children}</I18nProvider>
+        <I18nProvider>{children}</I18nProvider>
       </body>
     </html>
   );
