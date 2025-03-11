@@ -2,13 +2,11 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { useTranslation } from 'react-i18next';
 import { SectionContainer } from './shared/SectionContainer';
 import { HeroBackground } from './shared/HeroBackground';
 import { useScrollTo } from '../hooks/useScrollTo';
 
 export const Hero = () => {
-  const { t } = useTranslation();
   const scrollTo = useScrollTo();
 
   const handleProjectsClick = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -56,16 +54,16 @@ export const Hero = () => {
             >
               <div>
                 <h1 className='text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight'>
-                  {t('hero.greeting')}{' '}
+                  Merhaba, Ben{' '}
                   <span className='text-primary'>Adylsha Yumayev</span>
                 </h1>
                 <p className='mt-4 text-2xl font-medium text-foreground/80'>
-                  {t('hero.role')}
+                  Full Stack Developer
                 </p>
               </div>
 
               <p className='text-lg text-muted-foreground max-w-2xl mx-auto lg:mx-0'>
-                {t('hero.description')}
+                Problem çözmeyi seven, sürekli öğrenmeye açık ve yeni teknolojileri keşfetmekten keyif alan bir yazılım geliştiricisi
               </p>
 
               <div className='flex flex-wrap gap-4 justify-center lg:justify-start'>
@@ -73,19 +71,19 @@ export const Hero = () => {
                   className='px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition backdrop-blur-sm'
                   onClick={handleProjectsClick}
                   onKeyDown={handleKeyProjectsNavigation}
-                  aria-label={t('hero.cta.projects')}
+                  aria-label='Projelerimi Gör'
                   tabIndex={0}
                 >
-                  {t('hero.cta.projects')}
+                  Projelerimi Gör
                 </button>
                 <button
                   className='px-6 py-3 rounded-full border border-input bg-background/50 backdrop-blur-sm hover:bg-accent hover:text-accent-foreground transition'
                   onClick={handleContactClick}
                   onKeyDown={handleKeyContactNavigation}
-                  aria-label={t('hero.cta.contact')}
+                  aria-label='İletişime Geç'
                   tabIndex={0}
                 >
-                  {t('hero.cta.contact')}
+                  İletişime Geç
                 </button>
               </div>
             </motion.div>

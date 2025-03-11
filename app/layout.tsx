@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import './i18n/client';
-import { I18nProvider } from './i18n/I18nProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,10 +16,6 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://adylshayumayev.vercel.app/'),
   alternates: {
     canonical: '/',
-    languages: {
-      'en-US': '/en',
-      'tr-TR': '/tr',
-    },
   },
   robots: {
     index: true,
@@ -35,8 +29,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    locale: 'en_US',
-    alternateLocale: 'tr_TR',
+    locale: 'tr_TR',
     url: 'https://adylshayumayev.vercel.app',
     siteName: 'Adylsha Yumayev Portfolio',
     title: 'Adylsha Yumayev | Full Stack Developer',
@@ -72,7 +65,7 @@ export default function RootLayout({
         <meta name='color-profile' content='sRGB' />
       </head>
       <body className={inter.className}>
-        <I18nProvider>{children}</I18nProvider>
+        {children}
       </body>
     </html>
   );

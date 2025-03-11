@@ -3,8 +3,6 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
-import { LanguageSwitcher } from './LanguageSwitcher';
 import { useScrollTo } from '../hooks/useScrollTo';
 
 type NavItem = {
@@ -14,16 +12,15 @@ type NavItem = {
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { t } = useTranslation();
   const scrollTo = useScrollTo();
   const navbarRef = useRef<HTMLDivElement>(null);
 
   const navItems: NavItem[] = [
-    { name: t('nav.home'), href: 'home' },
-    { name: t('nav.about'), href: 'about' },
-    { name: t('nav.projects'), href: 'projects' },
-    { name: t('nav.skills'), href: 'skills' },
-    { name: t('nav.contact'), href: 'contact' },
+    { name: 'Ana Sayfa', href: 'home' },
+    { name: 'Hakkımda', href: 'about' },
+    { name: 'Projeler', href: 'projects' },
+    { name: 'Yetenekler', href: 'skills' },
+    { name: 'İletişim', href: 'contact' },
   ];
 
   useEffect(() => {
@@ -129,7 +126,6 @@ export const Navbar = () => {
                   <span className='absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full' />
                 </Link>
               ))}
-              <LanguageSwitcher />
             </div>
 
             {/* Mobile Menu Button */}
@@ -182,12 +178,6 @@ export const Navbar = () => {
                   {item.name}
                 </Link>
               ))}
-              <div className='pt-2 px-4'>
-                <LanguageSwitcher
-                  isMobile={true}
-                  closeNavbar={() => setIsOpen(false)}
-                />
-              </div>
             </div>
           </motion.div>
         </div>

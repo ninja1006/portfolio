@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useTranslation } from 'react-i18next';
 import { motionItem } from './MotionContainer';
 import { Project } from '../../data/types';
 
@@ -12,8 +11,6 @@ interface ProjectCardProps {
 }
 
 export const ProjectCard = ({ project }: ProjectCardProps) => {
-  const { t } = useTranslation();
-
   const handleKeyboardNavigation = (
     e: React.KeyboardEvent<HTMLAnchorElement>
   ) => {
@@ -49,7 +46,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
             </div>
             {/* Placeholder text */}
             <span className='text-muted-foreground/50 text-sm font-medium relative'>
-              {t('projects.noImage')}
+              Henüz görsel eklenmedi
             </span>
             <div className='absolute inset-0 bg-gradient-to-t from-background/80 to-transparent' />
           </div>
@@ -85,7 +82,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           target='_blank'
           rel='noopener noreferrer'
           className='inline-flex items-center space-x-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors'
-          aria-label={`${t('projects.viewOnGithub')}: ${project.title}`}
+          aria-label={`GitHub'da Görüntüle: ${project.title}`}
           tabIndex={0}
           onKeyDown={handleKeyboardNavigation}
         >
@@ -101,7 +98,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
               clipRule='evenodd'
             />
           </svg>
-          <span>{t('projects.viewOnGithub')}</span>
+          <span>GitHub&apos;da Görüntüle</span>
         </Link>
       </div>
     </motion.div>

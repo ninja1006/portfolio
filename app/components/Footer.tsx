@@ -1,12 +1,10 @@
 'use client';
 
-import { useTranslation } from 'react-i18next';
 import { FaGithub, FaLinkedin, FaEnvelope, FaYoutube } from 'react-icons/fa';
 import { FaMedium, FaXTwitter } from 'react-icons/fa6';
 import { useScrollTo } from '../hooks/useScrollTo';
 
 export const Footer = () => {
-  const { t } = useTranslation();
   const scrollTo = useScrollTo();
 
   const currentYear = new Date().getFullYear();
@@ -45,11 +43,11 @@ export const Footer = () => {
   ];
 
   const navLinks = [
-    { name: t('nav.home'), href: 'home' },
-    { name: t('nav.about'), href: 'about' },
-    { name: t('nav.projects'), href: 'projects' },
-    { name: t('nav.skills'), href: 'skills' },
-    { name: t('nav.contact'), href: 'contact' },
+    { name: 'Ana Sayfa', href: 'home' },
+    { name: 'Hakkımda', href: 'about' },
+    { name: 'Projeler', href: 'projects' },
+    { name: 'Yetenekler', href: 'skills' },
+    { name: 'İletişim', href: 'contact' },
   ];
 
   const handleKeyDown = (e: React.KeyboardEvent, href: string) => {
@@ -70,13 +68,13 @@ export const Footer = () => {
         <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
           {/* About section */}
           <div>
-            <h3 className='text-xl font-bold mb-4'>{t('footer.about')}</h3>
-            <p className='text-gray-300 mb-4'>{t('footer.description')}</p>
+            <h3 className='text-xl font-bold mb-4'>Hakkımda</h3>
+            <p className='text-gray-300 mb-4'>Karmaşık problemlere zarif çözümler üretmeye odaklanan tutkulu bir Full Stack Developer.</p>
           </div>
 
           {/* Quick links */}
           <div>
-            <h3 className='text-xl font-bold mb-4'>{t('footer.quickLinks')}</h3>
+            <h3 className='text-xl font-bold mb-4'>Hızlı Bağlantılar</h3>
             <ul className='space-y-2'>
               {navLinks.map((link) => (
                 <li key={link.href}>
@@ -97,7 +95,7 @@ export const Footer = () => {
 
           {/* Connect section */}
           <div>
-            <h3 className='text-xl font-bold mb-4'>{t('footer.connect')}</h3>
+            <h3 className='text-xl font-bold mb-4'>Benimle İletişime Geç</h3>
             <div className='flex space-x-4 mb-4'>
               {socialLinks.map((link) => (
                 <a
@@ -115,7 +113,7 @@ export const Footer = () => {
               ))}
             </div>
             <p className='text-gray-300'>
-              {t('footer.contactEmail')}: adylshay@gmail.com
+              E-posta: adylshay@gmail.com
             </p>
           </div>
         </div>
@@ -126,7 +124,7 @@ export const Footer = () => {
         {/* Copyright */}
         <div className='text-center text-gray-400'>
           <p>
-            © {currentYear} Adylshay Yumayev. {t('footer.copyright')}
+            © {currentYear} Adylshay Yumayev. Tüm Hakları Saklıdır
           </p>
         </div>
       </div>

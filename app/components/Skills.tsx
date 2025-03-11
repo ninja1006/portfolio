@@ -1,21 +1,26 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
 import { SectionContainer } from './shared/SectionContainer';
 import { SectionHeader } from './shared/SectionHeader';
 import { MotionContainer, motionItem } from './shared/MotionContainer';
 import { skillsByCategory } from '../data/skills';
 
 export function Skills() {
-  const { t } = useTranslation();
+  // Define category translations
+  const categoryTranslations = {
+    frontend: 'Frontend Geliştirme',
+    backend: 'Backend Geliştirme',
+    tools: 'Araçlar ve Metodolojiler',
+    other: 'Diğer Yetenekler'
+  };
 
   return (
     <SectionContainer id='skills'>
       <MotionContainer className='max-w-4xl mx-auto'>
         <SectionHeader
-          title={t('skills.title')}
-          subtitle={t('skills.subtitle')}
+          title='Yeteneklerim'
+          subtitle='Çalıştığım teknolojiler ve araçlar'
         />
 
         {/* Skills Grid */}
@@ -27,7 +32,7 @@ export function Skills() {
               className='p-6 rounded-lg bg-secondary/50 backdrop-blur-sm'
             >
               <h3 className='text-xl font-semibold text-primary mb-6'>
-                {t(`skills.categories.${category}`)}
+                {categoryTranslations[category as keyof typeof categoryTranslations]}
               </h3>
               <div className='grid grid-cols-3 gap-6'>
                 {skills.map((skill, skillIndex) => {
