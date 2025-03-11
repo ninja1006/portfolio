@@ -1,5 +1,15 @@
 import { ReactNode } from 'react';
 
+export interface BlogPost {
+  slug: string;
+  title: string;
+  description: string;
+  content: string;
+  directory: string;
+  publishedDate: string;
+  tags: string[];
+}
+
 export interface Project {
   title: string;
   description: string;

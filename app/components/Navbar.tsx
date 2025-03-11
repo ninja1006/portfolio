@@ -32,10 +32,18 @@ export const Navbar = () => {
 
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
-    href: string
+    href: string,
+    name: string
   ) => {
     e.preventDefault();
     setIsOpen(false);
+    
+    // Special handling for Blog navigation item
+    if (name === 'Blog') {
+      window.location.href = '/blog';
+      return;
+    }
+    
     setTimeout(() => {
       scrollTo(href);
     }, 100);
@@ -43,11 +51,19 @@ export const Navbar = () => {
 
   const handleKeyNavigation = (
     e: React.KeyboardEvent<HTMLAnchorElement>,
-    href: string
+    href: string,
+    name: string
   ) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
       setIsOpen(false);
+      
+      // Special handling for Blog navigation item
+      if (name === 'Blog') {
+        window.location.href = '/blog';
+        return;
+      }
+      
       setTimeout(() => {
         scrollTo(href);
       }, 100);
@@ -103,9 +119,9 @@ export const Navbar = () => {
               {navItems.map((item) => (
                 <Link
                   key={item.name}
-                  href={`#${item.href}`}
-                  onClick={(e) => handleNavClick(e, item.href)}
-                  onKeyDown={(e) => handleKeyNavigation(e, item.href)}
+                  href={item.name === 'Blog' ? '/blog' : `#${item.href}`}
+                  onClick={(e) => handleNavClick(e, item.href, item.name)}
+                  onKeyDown={(e) => handleKeyNavigation(e, item.href, item.name)}
                   className='text-foreground hover:text-primary transition-colors duration-200 relative group'
                   tabIndex={0}
                   aria-label={item.name}
@@ -156,9 +172,9 @@ export const Navbar = () => {
               {navItems.map((item) => (
                 <Link
                   key={item.name}
-                  href={`#${item.href}`}
-                  onClick={(e) => handleNavClick(e, item.href)}
-                  onKeyDown={(e) => handleKeyNavigation(e, item.href)}
+                  href={item.name === 'Blog' ? '/blog' : `#${item.href}`}
+                  onClick={(e) => handleNavClick(e, item.href, item.name)}
+                  onKeyDown={(e) => handleKeyNavigation(e, item.href, item.name)}
                   className='block py-2 px-4 text-foreground hover:text-primary hover:bg-primary/5 transition-colors duration-200'
                   tabIndex={isOpen ? 0 : -1}
                   aria-label={item.name}
