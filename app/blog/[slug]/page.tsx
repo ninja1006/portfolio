@@ -3,14 +3,11 @@ import { getBlogPostBySlug } from '@/app/utils/getBlogPosts';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 
-type BlogPostPageProps = {
-  params: {
-    slug: string;
-  };
-  searchParams: { [key: string]: string | string[] | undefined };
-}
-
-const BlogPostPage = ({ params }: BlogPostPageProps) => {
+export default async function BlogPostPage({
+  params,
+}: {
+  params: { slug: string }
+}) {
   const post = getBlogPostBySlug(params.slug);
 
   if (!post) {
@@ -25,6 +22,4 @@ const BlogPostPage = ({ params }: BlogPostPageProps) => {
       </article>
     </div>
   );
-};
-
-export default BlogPostPage;
+}
