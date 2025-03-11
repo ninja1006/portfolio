@@ -55,7 +55,7 @@ services:
       - ./secrets:/var/opt/mssql/secrets
 ```
 
-Burada kullanacağımız image’ı belirtiyoruz, yukarıda `docker pul`l komutu ile indirdiğimiz image’in aynısı. Siz farklı bir sürümünü indirdiyseniz buraya indirdiğiniz image adını vermeniz gerekiyor.
+Burada kullanacağımız image’ı belirtiyoruz, yukarıda `docker pull` komutu ile indirdiğimiz image’in aynısı. Siz farklı bir sürümünü indirdiyseniz buraya indirdiğiniz image adını vermeniz gerekiyor.
 
 `container_name` alanı ise istediğiniz ismi verdiğiniz alan, bu image ile oluşturulacak container’ın ismini belirtiyoruz.
 
@@ -83,7 +83,7 @@ Docker üzerinden ayağa kaldırdığımız veri tabanımız artık kullanıma h
 
 Bağlantıyı aşağıdaki görseldeki gibi kurduğumuzda başarılı şekilde veri tabanına bağlandığınızı göreceksiniz.
 
-![image.png](image.png)
+![image1.png](image1.png)
 
 ---
 
