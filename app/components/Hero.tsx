@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { SectionContainer } from './shared/SectionContainer';
-// import { HeroBackground } from './shared/HeroBackground';
+import { HeroBackground } from './shared/HeroBackground';
 import { useScrollTo } from '../hooks/useScrollTo';
 
 export const Hero = () => {
@@ -42,7 +42,7 @@ export const Hero = () => {
         id='home'
         className='h-full flex items-center justify-center'
       >
-        {/* <HeroBackground /> */}
+        <HeroBackground />
 
         <div className='container px-4 mx-auto'>
           <div className='grid lg:grid-cols-2 gap-8 items-center'>
