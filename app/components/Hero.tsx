@@ -83,7 +83,7 @@ export const Hero = () => {
                   Projelerimi Gör
                 </button>
                 <button
-                  className='px-6 py-3 rounded-full border border-input bg-background/50 backdrop-blur-sm hover:bg-accent hover:text-accent-foreground transition'
+                  className='px-6 py-3 rounded-lg border-primary border-solid border-2'
                   onClick={handleContactClick}
                   onKeyDown={handleKeyContactNavigation}
                   aria-label='İletişime Geç'
