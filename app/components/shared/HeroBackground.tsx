@@ -4,23 +4,24 @@ import { motion } from 'framer-motion';
 
 export const HeroBackground = () => {
   return (
-    <div className='absolute inset-0 bg-background'>
+    <div className='absolute inset-0 bg-background z-0'>
       {/* Main gradient overlay */}
-      {/* <div className='absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background/90' /> */}
+      <div className='absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background/90 z-10' />
 
       {/* Colored gradient layers */}
-      {/* <div className='absolute inset-0 bg-gradient-to-r from-purple-900/30 via-background to-indigo-900/30' /> */}
+      <div className='absolute inset-0 bg-gradient-to-r from-purple-900/30 via-background to-indigo-900/30 z-20' />
 
       {/* Animated blobs */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        className='absolute inset-0'
+        transition={{ duration: 0.5, ease: 'easeInOut' }}
+        className='absolute inset-0 z-30'
       >
-        <div className='absolute -top-[300px] -left-[300px] w-[600px] h-[600px] bg-primary/30 rounded-full filter blur-[128px] opacity-50 animate-blob' />
-        <div className='absolute -top-[300px] -right-[300px] w-[600px] h-[600px] bg-indigo-600/30 rounded-full filter blur-[128px] opacity-50 animate-blob animation-delay-2000' />
-        <div className='absolute -bottom-[400px] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-purple-600/30 rounded-full filter blur-[128px] opacity-50 animate-blob animation-delay-4000' />
+        {/* Reduced blur and more contained positioning for better performance */}
+        <div className='absolute top-[-150px] left-[-150px] w-[400px] h-[400px] bg-primary/30 rounded-full filter blur-[60px] opacity-40 animate-blob' />
+        <div className='absolute top-[-100px] right-[-100px] w-[350px] h-[350px] bg-indigo-600/30 rounded-full filter blur-[70px] opacity-40 animate-blob animation-delay-2000' />
+        <div className='absolute bottom-[-200px] left-1/2 -translate-x-1/2 w-[450px] h-[450px] bg-purple-600/30 rounded-full filter blur-[60px] opacity-40 animate-blob animation-delay-4000' />
       </motion.div>
     </div>
   );

@@ -37,19 +37,19 @@ export const Hero = () => {
   };
 
   return (
-    <div className='relative h-screen'>
+    <div className='relative h-screen overflow-hidden'>
       <SectionContainer
         id='home'
         className='h-full flex items-center justify-center'
       >
         <HeroBackground />
 
-        <div className='container px-4 mx-auto'>
+        <div className='container px-4 mx-auto relative z-40'>
           <div className='grid lg:grid-cols-2 gap-8 items-center'>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.5, ease: 'easeOut' }}
               className='text-center lg:text-left space-y-6'
             >
               <div>
