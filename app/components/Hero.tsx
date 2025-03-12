@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { SectionContainer } from './shared/SectionContainer';
 import { HeroBackground } from './shared/HeroBackground';
 import { useScrollTo } from '../hooks/useScrollTo';
+import { FaArrowDown } from 'react-icons/fa';
 
 export const Hero = () => {
   const scrollTo = useScrollTo();
@@ -36,6 +37,10 @@ export const Hero = () => {
     }
   };
 
+  const handleScrollToProjects = () => {
+    scrollTo('about');
+  };
+
   return (
     <div className='relative h-screen overflow-hidden'>
       <SectionContainer
@@ -63,12 +68,13 @@ export const Hero = () => {
               </div>
 
               <p className='text-lg text-muted-foreground max-w-2xl mx-auto lg:mx-0'>
-                Problem çözmeyi seven, sürekli öğrenmeye açık ve yeni teknolojileri keşfetmekten keyif alan bir yazılım geliştiricisi
+                Problem çözmeyi seven, sürekli öğrenmeye açık ve yeni
+                teknolojileri keşfetmekten keyif alan bir yazılım geliştiricisi
               </p>
 
               <div className='flex flex-wrap gap-4 justify-center lg:justify-start'>
                 <button
-                  className='px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition backdrop-blur-sm'
+                  className='px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition backdrop-blur-sm'
                   onClick={handleProjectsClick}
                   onKeyDown={handleKeyProjectsNavigation}
                   aria-label='Projelerimi Gör'
@@ -109,20 +115,14 @@ export const Hero = () => {
         </div>
       </SectionContainer>
 
-      <div className='absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce'>
-        <svg
-          className='w-6 h-6 text-muted-foreground'
-          fill='none'
-          strokeLinecap='round'
-          strokeLinejoin='round'
-          strokeWidth='2'
-          viewBox='0 0 24 24'
-          stroke='currentColor'
-          aria-hidden='true'
-        >
-          <path d='M19 14l-7 7m0 0l-7-7m7 7V3'></path>
-        </svg>
-      </div>
+      <button
+        className='absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce'
+        onClick={handleScrollToProjects}
+        aria-label='Hakkımda'
+        tabIndex={0}
+      >
+        <FaArrowDown className='w-6 h-6 text-muted-foreground hover:scale-150 transition-all duration-300' />
+      </button>
     </div>
   );
 };

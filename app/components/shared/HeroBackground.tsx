@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export const HeroBackground = () => {
   return (
-    <div className='absolute inset-0 bg-background z-0'>
+    <div className='absolute inset-0 z-0'>
       {/* Main gradient overlay */}
       <div className='absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background/90 z-10' />
 
