@@ -16,7 +16,7 @@ const BlogCard = ({ post }: { post: BlogPost }) => {
   const readingTime = calculateReadingTime(post.content);
 
   return (
-    <div className='bg-gray-900 p-8 rounded-lg'>
+    <div className='bg-gray-900 p-8 rounded-lg mb-6'>
       <h2 className='text-2xl font-bold mb-2'>{post.title}</h2>
       <div className='flex items-center gap-3 mb-6'>
         <p className='text-sm text-muted-foreground mr-6'>
