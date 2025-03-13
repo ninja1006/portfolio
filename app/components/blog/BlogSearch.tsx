@@ -1,19 +1,18 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
-import { BlogPost } from '@/app/data/types';
+import React, { useState, useMemo, useEffect } from 'react';
+import { BlogSearchProps } from '@/app/data/types';
 import BlogCard from './BlogCard';
 import { FiSearch } from 'react-icons/fi';
-
-interface BlogSearchProps {
-  initialPosts: BlogPost[];
-}
+import { CgSpinner } from 'react-icons/cg';
 
 const BlogSearch: React.FC<BlogSearchProps> = ({ initialPosts }) => {
   const [searchQuery, setSearchQuery] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
+    setIsLoading(true);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -21,6 +20,14 @@ const BlogSearch: React.FC<BlogSearchProps> = ({ initialPosts }) => {
       e.preventDefault();
     }
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, [searchQuery]);
 
   const filteredPosts = useMemo(() => {
     if (!searchQuery.trim()) return initialPosts;
@@ -54,9 +61,21 @@ const BlogSearch: React.FC<BlogSearchProps> = ({ initialPosts }) => {
           aria-label='Blog yazılarında ara'
           tabIndex={0}
         />
+        {isLoading && (
+          <div className='absolute inset-y-0 right-3 flex items-center'>
+            <CgSpinner className='h-5 w-5 text-primary animate-spin' />
+          </div>
+        )}
       </div>
 
-      {filteredPosts.length === 0 ? (
+      {isLoading ? (
+        <div className='flex justify-center items-center py-20'>
+          <CgSpinner className='h-10 w-10 text-primary animate-spin' />
+          <span className='ml-3 text-lg text-muted-foreground'>
+            Aranıyor...
+          </span>
+        </div>
+      ) : filteredPosts.length === 0 ? (
         <div className='text-center py-10'>
           <p className='text-xl text-muted-foreground'>
             Aramanızla eşleşen yazı bulunamadı.

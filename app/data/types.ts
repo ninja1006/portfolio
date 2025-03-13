@@ -1,5 +1,9 @@
 import { ReactNode } from 'react';
 
+export interface BlogSearchProps {
+  initialPosts: BlogPost[];
+}
+
 export interface BlogPost {
   slug: string;
   title: string;
