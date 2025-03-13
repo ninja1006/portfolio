@@ -37,7 +37,7 @@ export default function Page({
           >
             <path d='m15 18-6-6 6-6' />
           </svg>
-          <span>Bloga Geri Dön</span>
+          <span>Geri Dön</span>
         </Link>
       </div>
       <h1 className='text-6xl font-bold mb-8'>{post.title}</h1>

@@ -9,7 +9,7 @@ tags:
 
 # Docker Kurulumu
 
-Öncelikle bu bilgisayarımıza [bu adresten](https://www.docker.com/products/docker-desktop/) Docker Desktop’ı kurmamız gerekiyor. Kurulumu yaptıktan sonra terminale aşağıdaki komut ile kontrol edelim. Eğer çıktı alıyorsak kurulum başarılıdır diyebiliriz.
+Öncelikle bilgisayarımıza [bu adresten](https://www.docker.com/products/docker-desktop/) Docker Desktop’ı kurmamız gerekiyor. Kurulumu yaptıktan sonra terminale aşağıdaki komut ile kontrol edelim. Eğer çıktı alıyorsak kurulum başarılıdır diyebiliriz.
 
 ```bash
 docker --version
