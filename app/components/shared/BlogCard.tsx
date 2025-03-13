@@ -2,18 +2,37 @@ import React from 'react';
 import { BlogPost } from '@/app/data/types';
 import Link from 'next/link';
 import { FaArrowRight } from 'react-icons/fa';
+import { FiClock } from 'react-icons/fi';
+
+// Function to calculate reading time
+const calculateReadingTime = (content: string): number => {
+  const wordsPerMinute = 200; // Average reading speed
+  const wordCount = content.trim().split(/\s+/).length;
+  const readingTime = Math.ceil(wordCount / wordsPerMinute);
+  return readingTime === 0 ? 1 : readingTime; // Minimum 1 minute reading time
+};
+
 const BlogCard = ({ post }: { post: BlogPost }) => {
+  const readingTime = calculateReadingTime(post.content);
+
   return (
     <div className='bg-gray-900 p-8 rounded-lg'>
-      <h2 className='text-2xl font-bold mb-6'>{post.title}</h2>
-      <p className='text-md text-muted-foreground mb-2'>{post.description}</p>
-      <p className='text-sm text-muted-foreground mb-2'>
-        {new Date(post.publishedDate).toLocaleDateString('tr-TR', {
-          day: '2-digit',
-          month: '2-digit',
-          year: 'numeric',
-        })}
-      </p>
+      <h2 className='text-2xl font-bold mb-2'>{post.title}</h2>
+      <div className='flex items-center gap-3 mb-6'>
+        <p className='text-sm text-muted-foreground mr-6'>
+          Yayınlanma Tarihi:{' '}
+          {new Date(post.publishedDate).toLocaleDateString('tr-TR', {
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric',
+          })}
+        </p>
+        <div className='flex items-center text-sm text-muted-foreground'>
+          <FiClock className='mr-1' />
+          <span> Ortalama {readingTime} dk okuma süresi</span>
+        </div>
+      </div>
+      <p className='text-md text-muted-foreground mb-6'>{post.description}</p>
       <div className='flex justify-between items-center'>
         <div className='flex flex-wrap gap-2'>
           {post.tags.map((tag) => (
