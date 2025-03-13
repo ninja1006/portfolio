@@ -1,6 +1,6 @@
 import React from 'react';
 import { getBlogPosts } from '../utils/getBlogPosts';
-import BlogCard from '../components/shared/BlogCard';
+import BlogSearch from '../components/blog/BlogSearch';
 
 const BlogPage = () => {
   const posts = getBlogPosts();
@@ -13,9 +13,8 @@ const BlogPage = () => {
         yeni bilgiler, yazılım geliştirme ile ilgili düşüncelerim ve yazılım
         geliştirme ile ilgili fikirlerimi paylaşacağım.
       </h2>
-      {posts.map((post) => (
-        <BlogCard key={post.slug} post={post} />
-      ))}
+
+      <BlogSearch initialPosts={posts} />
     </div>
   );
 };

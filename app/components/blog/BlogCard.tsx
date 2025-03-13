@@ -4,12 +4,11 @@ import Link from 'next/link';
 import { FaArrowRight } from 'react-icons/fa';
 import { FiClock } from 'react-icons/fi';
 
-// Function to calculate reading time
 const calculateReadingTime = (content: string): number => {
-  const wordsPerMinute = 200; // Average reading speed
+  const wordsPerMinute = 200;
   const wordCount = content.trim().split(/\s+/).length;
   const readingTime = Math.ceil(wordCount / wordsPerMinute);
-  return readingTime === 0 ? 1 : readingTime; // Minimum 1 minute reading time
+  return readingTime === 0 ? 1 : readingTime;
 };
 
 const BlogCard = ({ post }: { post: BlogPost }) => {
