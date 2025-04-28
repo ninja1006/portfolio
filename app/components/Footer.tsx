@@ -28,7 +28,10 @@ export const Footer = () => {
           {/* About section */}
           <div>
             <h3 className='text-xl font-bold mb-4'>Hakkımda</h3>
-            <p className='text-gray-300 mb-4'>Karmaşık problemlere zarif çözümler üretmeye odaklanan tutkulu bir Full Stack Developer.</p>
+            <p className='text-gray-300 mb-4'>
+              Modern teknolojilerle yenilikçi ve sürdürülebilir çözümler
+              geliştiren, detaylara önem veren bir Full Stack Developer’ım.
+            </p>
           </div>
 
           {/* Quick links */}
@@ -74,9 +77,7 @@ export const Footer = () => {
                 );
               })}
             </div>
-            <p className='text-gray-300'>
-              E-posta: adylshay@gmail.com
-            </p>
+            <p className='text-gray-300'>E-posta: adylshay@gmail.com</p>
           </div>
         </div>
 
@@ -85,9 +86,7 @@ export const Footer = () => {
 
         {/* Copyright */}
         <div className='text-center text-gray-400'>
-          <p>
-            © {currentYear} Adylshay Yumayev. Tüm Hakları Saklıdır
-          </p>
+          <p>© {currentYear} Adylshay Yumayev. Tüm Hakları Saklıdır</p>
         </div>
       </div>
     </footer>
