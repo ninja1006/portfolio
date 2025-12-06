@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import Image from 'next/image';
 import { SectionContainer } from './shared/SectionContainer';
 import { HeroBackground } from './shared/HeroBackground';
@@ -51,7 +51,7 @@ export const Hero = () => {
 
         <div className='container px-4 mx-auto relative z-40'>
           <div className='grid lg:grid-cols-2 gap-8 items-center'>
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: 'easeOut' }}
@@ -92,9 +92,9 @@ export const Hero = () => {
                   İletişime Geç
                 </button>
               </div>
-            </motion.div>
+            </m.div>
 
-            <motion.div
+            <m.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -110,7 +110,7 @@ export const Hero = () => {
                   priority
                 />
               </div>
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </SectionContainer>

@@ -86,7 +86,7 @@ export const Footer = () => {
 
         {/* Copyright */}
         <div className='text-center text-gray-400'>
-          <p>© {currentYear} Adylshay Yumayev. Tüm Hakları Saklıdır</p>
+          <p>© {currentYear} Adylsha Yumayev. Tüm Hakları Saklıdır</p>
         </div>
       </div>
     </footer>

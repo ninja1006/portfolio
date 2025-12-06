@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { MotionContainerProps } from '@/app/data/types';
 
 export const MotionContainer = ({
@@ -20,7 +20,7 @@ export const MotionContainer = ({
   };
 
   return (
-    <motion.div
+    <m.div
       variants={container}
       initial='hidden'
       whileInView='show'
@@ -29,7 +29,7 @@ export const MotionContainer = ({
       role='region'
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 };
 

@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { useScrollTo } from '../hooks/useScrollTo';
 import { navItems } from '../data/navigation';
 
@@ -37,13 +37,13 @@ export const Navbar = () => {
   ) => {
     e.preventDefault();
     setIsOpen(false);
-    
+
     // Special handling for Blog navigation item
     if (name === 'Blog') {
       window.location.href = '/blog';
       return;
     }
-    
+
     setTimeout(() => {
       scrollTo(href);
     }, 100);
@@ -57,13 +57,13 @@ export const Navbar = () => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
       setIsOpen(false);
-      
+
       // Special handling for Blog navigation item
       if (name === 'Blog') {
         window.location.href = '/blog';
         return;
       }
-      
+
       setTimeout(() => {
         scrollTo(href);
       }, 100);
@@ -102,13 +102,13 @@ export const Navbar = () => {
               aria-label='Homepage'
               tabIndex={0}
             >
-              <motion.div
+              <m.div
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 className='text-2xl font-bold bg-primary text-primary-foreground px-3 py-1 rounded-lg shadow-lg shadow-primary/25'
               >
                 AY
-              </motion.div>
+              </m.div>
             </Link>
 
             {/* Desktop Navigation */}
@@ -143,26 +143,23 @@ export const Navbar = () => {
             >
               <div className='w-6 h-5 relative flex flex-col justify-between'>
                 <span
-                  className={`w-full h-0.5 bg-current transition-all duration-300 ${
-                    isOpen ? 'rotate-45 translate-y-2' : ''
-                  }`}
+                  className={`w-full h-0.5 bg-current transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-2' : ''
+                    }`}
                 />
                 <span
-                  className={`w-full h-0.5 bg-current transition-all duration-300 ${
-                    isOpen ? 'opacity-0' : ''
-                  }`}
+                  className={`w-full h-0.5 bg-current transition-all duration-300 ${isOpen ? 'opacity-0' : ''
+                    }`}
                 />
                 <span
-                  className={`w-full h-0.5 bg-current transition-all duration-300 ${
-                    isOpen ? '-rotate-45 -translate-y-2' : ''
-                  }`}
+                  className={`w-full h-0.5 bg-current transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-2' : ''
+                    }`}
                 />
               </div>
             </button>
           </div>
 
           {/* Mobile Menu */}
-          <motion.div
+          <m.nav
             initial={false}
             animate={{ height: isOpen ? 'auto' : 0 }}
             className='md:hidden overflow-hidden bg-background/50 backdrop-blur-lg rounded-b-lg'
@@ -183,7 +180,7 @@ export const Navbar = () => {
                 </Link>
               ))}
             </div>
-          </motion.div>
+          </m.nav>
         </div>
       </nav>
     </div>

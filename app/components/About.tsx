@@ -1,11 +1,12 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { SectionContainer } from './shared/SectionContainer';
 import { SectionHeader } from './shared/SectionHeader';
 import { MotionContainer, motionItem } from './shared/MotionContainer';
 import { BentoGrid } from './shared/BentoGrid';
 import { WorkExperienceTimeline } from './shared/WorkExperienceTimeline';
+import { Certificates } from './Certificates';
 import { keyPoints, workExperiences } from '../data/about';
 
 export const About = () => {
@@ -18,14 +19,14 @@ export const About = () => {
         />
 
         {/* Description */}
-        <motion.div
+        <m.div
           variants={motionItem}
           className='space-y-6 text-muted-foreground text-justify'
         >
           <p>Yazılım geliştirme sürecinin her aşamasında aktif rol almaktan keyif alıyorum. Frontend&apos;den backend&apos;e, veritabanı yönetiminden sistem mimarisine kadar geniş bir yelpazede çalışmalar yapıyorum.</p>
           <p>Karmaşık problemleri basit ve etkili çözümlere dönüştürmeyi seviyorum. Analitik düşünme ve mantık yürütme becerilerimi kullanarak her projede en optimum çözümü bulmaya çalışıyorum.</p>
           <p>Teknoloji dünyasındaki hızlı değişime ayak uydurmak için sürekli kendimi geliştiriyor, yeni araçlar ve metodolojiler öğreniyorum.</p>
-        </motion.div>
+        </m.div>
 
         {/* Key Points using BentoGrid component */}
         <BentoGrid
@@ -39,6 +40,11 @@ export const About = () => {
           subtitle='Profesyonel kariyerimde edindiğim deneyimler'
           experiences={workExperiences}
         />
+
+        {/* Certificates Section */}
+        <div className='mt-16'>
+          <Certificates />
+        </div>
       </MotionContainer>
     </SectionContainer>
   );

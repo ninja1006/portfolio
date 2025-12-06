@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { WorkExperience } from '@/app/data/types';
 import { motionItem } from './MotionContainer';
 
@@ -18,7 +18,7 @@ export const WorkExperienceTimeline = ({
   className = '',
 }: WorkExperienceTimelineProps) => {
   return (
-    <motion.div variants={motionItem} className={`mt-16 ${className}`}>
+    <m.div variants={motionItem} className={`mt-16 ${className}`}>
       <div className='text-center mb-12'>
         <h3
           className='text-3xl font-bold tracking-tight sm:text-4xl mb-4'
@@ -40,21 +40,19 @@ export const WorkExperienceTimeline = ({
         <div className='absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-primary/20' />
 
         {experiences.map((experience, index) => (
-          <motion.div
+          <m.div
             key={index}
             variants={motionItem}
-            className={`relative mb-12 ${
-              index % 2 === 0
+            className={`relative mb-12 ${index % 2 === 0
                 ? 'md:pr-10 md:text-left md:ml-auto md:mr-1/2'
                 : 'md:pl-10 md:text-left md:mr-auto md:ml-1/2'
-            } md:w-[calc(50%-2.5rem)] z-10`}
+              } md:w-[calc(50%-2.5rem)] z-10`}
             role='listitem'
           >
             {/* Timeline dot */}
             <div
-              className={`hidden md:block absolute transform z-20 ${
-                index % 2 === 0 ? '-left-2' : '-right-2'
-              }`}
+              className={`hidden md:block absolute transform z-20 ${index % 2 === 0 ? '-left-2' : '-right-2'
+                }`}
             >
               <div className='w-4 h-4 rounded-full bg-primary' />
             </div>
@@ -90,9 +88,9 @@ export const WorkExperienceTimeline = ({
                 )}
               </div>
             </div>
-          </motion.div>
+          </m.div>
         ))}
       </div>
-    </motion.div>
+    </m.div>
   );
 };

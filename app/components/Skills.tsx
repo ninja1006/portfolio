@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { SectionContainer } from './shared/SectionContainer';
 import { SectionHeader } from './shared/SectionHeader';
 import { MotionContainer, motionItem } from './shared/MotionContainer';
@@ -26,7 +26,7 @@ export function Skills() {
         {/* Skills Grid */}
         <div className='grid md:grid-cols-2 gap-6'>
           {Object.entries(skillsByCategory).map(([category, skills]) => (
-            <motion.div
+            <m.div
               key={category}
               variants={motionItem}
               className='p-6 rounded-lg bg-secondary/50 backdrop-blur-sm'
@@ -38,7 +38,7 @@ export function Skills() {
                 {skills.map((skill, skillIndex) => {
                   const Icon = skill.icon;
                   return (
-                    <motion.div
+                    <m.div
                       key={skillIndex}
                       whileHover={{ scale: 1.05 }}
                       className='flex flex-col items-center gap-2 text-center'
@@ -47,11 +47,11 @@ export function Skills() {
                         <Icon className='w-8 h-8' />
                       </div>
                       <span className='text-sm font-medium'>{skill.name}</span>
-                    </motion.div>
+                    </m.div>
                   );
                 })}
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </MotionContainer>

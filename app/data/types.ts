@@ -4,6 +4,14 @@ export interface BlogSearchProps {
   initialPosts: BlogPost[];
 }
 
+export interface Certificate {
+  title: string;
+  issuer: string;
+  date: string;
+  url?: string;
+  image?: string;
+}
+
 export interface BlogPost {
   slug: string;
   title: string;

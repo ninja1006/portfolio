@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motionItem } from './MotionContainer';
@@ -21,7 +21,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
   };
 
   return (
-    <motion.div
+    <m.div
       variants={motionItem}
       className='group relative bg-secondary/50 backdrop-blur-sm rounded-lg overflow-hidden flex flex-col h-full'
     >
@@ -33,6 +33,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
               src={project.image}
               alt={project.title}
               fill
+              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
               className='object-cover transition-transform duration-300 group-hover:scale-110'
             />
             <div className='absolute inset-0 bg-gradient-to-t from-background/80 to-transparent' />
@@ -90,6 +91,6 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           <span>GitHub&apos;da Görüntüle</span>
         </Link>
       </div>
-    </motion.div>
+    </m.div>
   );
 };

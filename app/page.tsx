@@ -1,9 +1,11 @@
 import { Hero } from './components/Hero';
-import { About } from './components/About';
-import { Projects } from './components/Projects';
-import { Skills } from './components/Skills';
 import { Navbar } from './components/Navbar';
-import { Footer } from './components/Footer';
+import dynamic from 'next/dynamic';
+
+const About = dynamic(() => import('./components/About').then((mod) => mod.About));
+const Projects = dynamic(() => import('./components/Projects').then((mod) => mod.Projects));
+const Skills = dynamic(() => import('./components/Skills').then((mod) => mod.Skills));
+const Footer = dynamic(() => import('./components/Footer').then((mod) => mod.Footer));
 
 export default function Home() {
   return (

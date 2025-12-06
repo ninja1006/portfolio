@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import { FramerMotionProvider } from './components/shared/FramerMotionProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -64,7 +65,9 @@ export default function RootLayout({
         <meta name='color-scheme' content='dark' />
         <meta name='color-profile' content='sRGB' />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <FramerMotionProvider>{children}</FramerMotionProvider>
+      </body>
     </html>
   );
 }

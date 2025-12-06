@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { BentoGridProps } from '@/app/data/types';
 import { motionItem } from './MotionContainer';
 
@@ -24,7 +24,7 @@ export const BentoGrid = ({ title, items, className = '' }: BentoGridProps) => {
   ];
 
   return (
-    <motion.div variants={motionItem} className={`mt-16 ${className}`}>
+    <m.div variants={motionItem} className={`mt-16 ${className}`}>
       <h3
         className='text-xl font-semibold mb-8 text-center'
         id='bento-grid-heading'
@@ -42,7 +42,7 @@ export const BentoGrid = ({ title, items, className = '' }: BentoGridProps) => {
           const variantClass = variants[index % variants.length];
 
           return (
-            <motion.div
+            <m.div
               key={index}
               variants={motionItem}
               className={`${sizeClass} p-6 rounded-xl backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all duration-300 ${variantClass} flex flex-col`}
@@ -60,10 +60,10 @@ export const BentoGrid = ({ title, items, className = '' }: BentoGridProps) => {
                 {item.title}
               </h4>
               <p className='text-muted-foreground'>{item.description}</p>
-            </motion.div>
+            </m.div>
           );
         })}
       </div>
-    </motion.div>
+    </m.div>
   );
 };

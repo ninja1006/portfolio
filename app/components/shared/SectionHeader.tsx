@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { SectionHeaderProps } from '@/app/data/types';
 
 export const SectionHeader = ({
@@ -9,7 +9,7 @@ export const SectionHeader = ({
   className = '',
 }: SectionHeaderProps) => {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -21,6 +21,6 @@ export const SectionHeader = ({
       {subtitle && (
         <p className='text-xl text-primary font-medium'>{subtitle}</p>
       )}
-    </motion.div>
+    </m.div>
   );
 };
