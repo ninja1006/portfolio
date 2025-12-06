@@ -41,7 +41,7 @@ export default function Page({
         </Link>
       </div>
       <h1 className='text-6xl font-bold mb-8'>{post.title}</h1>
-      <article className='prose prose-lg max-w-none prose-headings:text-white/80 prose-headings:text-4xl prose-headings:font-bold prose-headings:mb-4 prose-headings:mt-8 prose-p:text-white/70 prose-a:text-primary prose-code:text-white prose-code:bg-gray-800 prose-code:p-2 prose-code:rounded-md'>
+      <article className='prose prose-lg max-w-none prose-headings:text-foreground prose-headings:text-4xl prose-headings:font-bold prose-headings:mb-4 prose-headings:mt-8 prose-p:text-muted-foreground prose-a:text-primary prose-code:text-foreground prose-code:bg-secondary prose-code:p-2 prose-code:rounded-md'>
         <ReactMarkdown
           components={{
             img: ({ src, alt }) => {

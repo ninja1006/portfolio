@@ -16,11 +16,11 @@ export const BentoGrid = ({ title, items, className = '' }: BentoGridProps) => {
 
   const variants = [
     'bg-secondary/50',
-    'bg-primary/10',
-    'bg-indigo-500/10',
-    'bg-purple-500/10',
-    'bg-fuchsia-500/10',
-    'bg-primary/10',
+    'bg-zinc-800/30',
+    'bg-muted/30',
+    'bg-zinc-900/50',
+    'bg-secondary/30',
+    'bg-primary/5',
   ];
 
   return (

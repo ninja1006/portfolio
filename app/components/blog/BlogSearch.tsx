@@ -57,7 +57,7 @@ const BlogSearch: React.FC<BlogSearchProps> = ({ initialPosts }) => {
           value={searchQuery}
           onChange={handleSearchChange}
           onKeyDown={handleKeyDown}
-          className='w-full pl-10 pr-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary'
+          className='w-full pl-10 pr-4 py-3 bg-secondary/30 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground placeholder:text-muted-foreground'
           aria-label='Blog yazılarında ara'
           tabIndex={0}
         />

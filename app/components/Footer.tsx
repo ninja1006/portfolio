@@ -22,13 +22,13 @@ export const Footer = () => {
   };
 
   return (
-    <footer className='bg-gray-900 text-white py-12' id='contact'>
+    <footer className='bg-background border-t border-border py-12' id='contact'>
       <div className='container mx-auto px-4'>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
           {/* About section */}
           <div>
-            <h3 className='text-xl font-bold mb-4'>Hakkımda</h3>
-            <p className='text-gray-300 mb-4'>
+            <h3 className='text-xl font-bold mb-4 text-foreground'>Hakkımda</h3>
+            <p className='text-muted-foreground mb-4'>
               Modern teknolojilerle yenilikçi ve sürdürülebilir çözümler
               geliştiren, detaylara önem veren bir Full Stack Developer’ım.
             </p>
@@ -36,13 +36,13 @@ export const Footer = () => {
 
           {/* Quick links */}
           <div>
-            <h3 className='text-xl font-bold mb-4'>Hızlı Bağlantılar</h3>
+            <h3 className='text-xl font-bold mb-4 text-foreground'>Hızlı Bağlantılar</h3>
             <ul className='space-y-2'>
               {navItems.map((link) => (
                 <li key={link.href}>
                   <a
                     href={`#${link.href}`}
-                    className='text-gray-300 hover:text-white transition-colors duration-300'
+                    className='text-muted-foreground hover:text-primary transition-colors duration-300'
                     tabIndex={0}
                     aria-label={link.name}
                     onClick={(e) => handleNavClick(e, link.href)}
@@ -57,7 +57,7 @@ export const Footer = () => {
 
           {/* Connect section */}
           <div>
-            <h3 className='text-xl font-bold mb-4'>Benimle İletişime Geç</h3>
+            <h3 className='text-xl font-bold mb-4 text-foreground'>Benimle İletişime Geç</h3>
             <div className='flex space-x-4 mb-4'>
               {socialLinks.map((link) => {
                 const Icon = link.icon;
@@ -67,7 +67,7 @@ export const Footer = () => {
                     href={link.href}
                     target='_blank'
                     rel='noopener noreferrer'
-                    className='text-gray-300 hover:text-white transition-colors duration-300'
+                    className='text-muted-foreground hover:text-primary transition-colors duration-300'
                     tabIndex={0}
                     aria-label={link.label}
                     onKeyDown={(e) => handleKeyDown(e, link.href)}
@@ -77,15 +77,15 @@ export const Footer = () => {
                 );
               })}
             </div>
-            <p className='text-gray-300'>E-posta: adylshay@gmail.com</p>
+            <p className='text-muted-foreground'>E-posta: adylshay@gmail.com</p>
           </div>
         </div>
 
         {/* Divider */}
-        <div className='border-t border-gray-800 my-8'></div>
+        <div className='border-t border-border my-8'></div>
 
         {/* Copyright */}
-        <div className='text-center text-gray-400'>
+        <div className='text-center text-muted-foreground'>
           <p>© {currentYear} Adylsha Yumayev. Tüm Hakları Saklıdır</p>
         </div>
       </div>
