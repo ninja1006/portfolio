@@ -21,7 +21,11 @@ export function Certificates({ dict }: { dict: any }) {
 
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
                     {certificates.map((cert, index) => (
-                        <CertificateCard key={index} certificate={cert} />
+                        <CertificateCard
+                            key={index}
+                            certificate={cert}
+                            viewCertificateBtnText={dict.certificates.viewCertificate}
+                        />
                     ))}
                 </div>
             </MotionContainer>

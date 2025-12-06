@@ -17,7 +17,6 @@ interface AboutProps {
 export const About = ({ dict }: AboutProps) => {
   const keyPoints = Object.values(dict.about.keyPoints) as KeyPoint[];
 
-  // Fix tech stack mapping
   const getTechs = (jobKey: string) => {
     if (jobKey === 'gelecek2025') return ['ASP.NET MVC', 'SQL Server', 'WEB API', 'Flutter', 'Dart'];
     if (jobKey === 'gelecek2022') return ['React', 'ASP.NET Core', 'SQL Server', 'T-SQL', 'WEB API', 'MongoDB'];

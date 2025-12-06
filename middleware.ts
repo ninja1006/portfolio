@@ -18,6 +18,7 @@ export function middleware(request: NextRequest) {
             '/prompt-app.png',
         ].includes(pathname) ||
         pathname.startsWith('/blogs/') ||
+        pathname.startsWith('/certificates/') ||
         pathname.startsWith('/_next/')
     ) {
         return;
