@@ -37,9 +37,7 @@
 }
 
 @layer base {
-  * {
-    @apply border-none;
-  }
+
   body {
     @apply bg-background text-foreground font-sans;
     color-adjust: exact;
@@ -79,18 +77,23 @@
   .animation-delay-2000 {
     animation-delay: 2s;
   }
+
   .animation-delay-4000 {
     animation-delay: 4s;
   }
 }
 
 @keyframes blob {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translate(0px, 0px) scale(1);
   }
+
   33% {
     transform: translate(20px, -30px) scale(1.1);
   }
+
   66% {
     transform: translate(-15px, 15px) scale(0.9);
   }
@@ -102,12 +105,16 @@
 }
 
 @keyframes blob2 {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translate(0px, 0px) scale(0.9);
   }
+
   33% {
     transform: translate(-20px, -20px) scale(1.1);
   }
+
   66% {
     transform: translate(15px, 25px) scale(0.95);
   }

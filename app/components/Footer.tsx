@@ -36,7 +36,7 @@ export const Footer = ({ dict }: FooterProps) => {
   ];
 
   return (
-    <footer className='bg-background border-t border-border py-12' id='contact'>
+    <footer className='bg-zinc-900/50 border-t border-zinc-800 py-12' id='contact'>
       <div className='container mx-auto px-4'>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
           {/* About section */}
