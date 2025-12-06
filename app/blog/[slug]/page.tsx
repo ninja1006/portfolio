@@ -111,7 +111,6 @@ export default function Page({
 
               // If it's an external URL, render normal image
               if (src.startsWith('http')) {
-                // eslint-disable-next-line @next/next/no-img-element
                 return (
                   <span className="block my-10">
                     <img src={src} alt={alt || ''} className='rounded-lg shadow-xl mx-auto max-h-[500px] object-cover' />
