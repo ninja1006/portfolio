@@ -4,6 +4,41 @@ import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Metadata } from 'next';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
+
+  if (!post) {
+    return {
+      title: 'Blog Bulunamadı | Adylsha Yumayev',
+    };
+  }
+
+  return {
+    title: `${post.title} | Adylsha Yumayev`,
+    description: post.description || `${post.title} hakkında blog yazısı.`,
+    authors: [{ name: 'Adylsha Yumayev' }],
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      type: 'article',
+      url: `https://adylshayumayev.vercel.app/blog/${slug}`,
+      publishedTime: post.publishedDate,
+      authors: ['Adylsha Yumayev'],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.description,
+    },
+  };
+}
 
 export default function Page({
   params,
