@@ -1,4 +1,5 @@
 'use client';
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { m } from 'framer-motion';
 import { SectionContainer } from './shared/SectionContainer';
@@ -6,50 +7,41 @@ import { SectionHeader } from './shared/SectionHeader';
 import { MotionContainer, motionItem } from './shared/MotionContainer';
 import { skillsByCategory } from '../data/skills';
 
-export function Skills() {
-  // Define category translations
-  const categoryTranslations = {
-    frontend: 'Frontend Geliştirme',
-    backend: 'Backend Geliştirme',
-    tools: 'Araçlar ve Metodolojiler',
-    other: 'Diğer Yetenekler'
-  };
+interface SkillsProps {
+  dict: any;
+}
 
+export const Skills = ({ dict }: SkillsProps) => {
   return (
     <SectionContainer id='skills'>
-      <MotionContainer className='max-w-4xl mx-auto'>
+      <MotionContainer className='max-w-6xl mx-auto'>
         <SectionHeader
-          title='Yeteneklerim'
-          subtitle='Çalıştığım teknolojiler ve araçlar'
+          title={dict.skills.title}
+          subtitle={dict.skills.subtitle}
         />
 
-        {/* Skills Grid */}
-        <div className='grid md:grid-cols-2 gap-6'>
+        <div className='grid md:grid-cols-2 gap-8'>
           {Object.entries(skillsByCategory).map(([category, skills]) => (
             <m.div
               key={category}
               variants={motionItem}
-              className='p-6 rounded-lg bg-secondary/50 backdrop-blur-sm'
+              className='space-y-4 bg-card/50 backdrop-blur-sm p-6 rounded-2xl border border-primary/10 hover:border-primary/30 transition-colors'
             >
-              <h3 className='text-xl font-semibold text-primary mb-6'>
-                {categoryTranslations[category as keyof typeof categoryTranslations]}
+              <h3 className='text-xl font-semibold capitalize text-primary'>
+                {dict.skills.categories[category as keyof typeof dict.skills.categories]}
               </h3>
-              <div className='grid grid-cols-3 gap-6'>
-                {skills.map((skill, skillIndex) => {
-                  const Icon = skill.icon;
-                  return (
-                    <m.div
-                      key={skillIndex}
-                      whileHover={{ scale: 1.05 }}
-                      className='flex flex-col items-center gap-2 text-center'
-                    >
-                      <div className='text-primary transition-colors duration-200 hover:text-primary/80'>
-                        <Icon className='w-8 h-8' />
-                      </div>
-                      <span className='text-sm font-medium'>{skill.name}</span>
-                    </m.div>
-                  );
-                })}
+              <div className='grid grid-cols-2 gap-4'>
+                {skills.map((skill) => (
+                  <div
+                    key={skill.name}
+                    className='flex items-center gap-3 p-2 rounded-lg hover:bg-white/5 transition-colors group'
+                  >
+                    <skill.icon className='w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors' />
+                    <span className='font-medium text-foreground/80 group-hover:text-foreground transition-colors'>
+                      {skill.name}
+                    </span>
+                  </div>
+                ))}
               </div>
             </m.div>
           ))}
@@ -57,4 +49,4 @@ export function Skills() {
       </MotionContainer>
     </SectionContainer>
   );
-}
+};

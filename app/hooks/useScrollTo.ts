@@ -5,9 +5,16 @@ export const useScrollTo = () => {
   const router = useRouter();
 
   const scrollTo = (elementId: string) => {
-    // If not on home page, push to home with hash
-    if (pathname !== '/') {
-      router.push(`/#${elementId}`);
+    const isHome = pathname === '/' || pathname === '/tr' || pathname === '/en';
+
+    if (!isHome) {
+      // If on a subpage, we need to go to home first
+      // Check if we are in EN locale
+      if (pathname.startsWith('/en')) {
+        router.push(`/en#${elementId}`);
+      } else {
+        router.push(`/#${elementId}`);
+      }
       return;
     }
 

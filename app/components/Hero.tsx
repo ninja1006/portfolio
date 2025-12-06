@@ -1,4 +1,5 @@
 'use client';
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { m } from 'framer-motion';
 import Image from 'next/image';
@@ -6,8 +7,11 @@ import { SectionContainer } from './shared/SectionContainer';
 import { HeroBackground } from './shared/HeroBackground';
 import { useScrollTo } from '../hooks/useScrollTo';
 import { FaArrowDown } from 'react-icons/fa';
+interface HeroProps {
+  dict: any;
+}
 
-export const Hero = () => {
+export const Hero = ({ dict }: HeroProps) => {
   const scrollTo = useScrollTo();
 
   const handleProjectsClick = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -59,17 +63,16 @@ export const Hero = () => {
             >
               <div>
                 <h1 className='text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight'>
-                  Merhaba, Ben{' '}
+                  {dict.hero.greeting}{' '}
                   <span className='text-primary'>Adylsha Yumayev</span>
                 </h1>
                 <p className='mt-4 text-2xl font-medium text-foreground/80'>
-                  Full Stack Developer
+                  {dict.hero.role}
                 </p>
               </div>
 
               <p className='text-lg text-muted-foreground max-w-2xl mx-auto lg:mx-0'>
-                Problem çözmeyi seven, sürekli öğrenmeye açık ve yeni
-                teknolojileri keşfetmekten keyif alan bir yazılım geliştiricisi
+                {dict.hero.description}
               </p>
 
               <div className='flex flex-wrap gap-4 justify-center lg:justify-start'>
@@ -77,19 +80,19 @@ export const Hero = () => {
                   className='px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition backdrop-blur-sm'
                   onClick={handleProjectsClick}
                   onKeyDown={handleKeyProjectsNavigation}
-                  aria-label='Projelerimi Gör'
+                  aria-label={dict.hero.viewProjects}
                   tabIndex={0}
                 >
-                  Projelerimi Gör
+                  {dict.hero.viewProjects}
                 </button>
                 <button
                   className='px-6 py-3 rounded-lg border-primary border-solid border-2'
                   onClick={handleContactClick}
                   onKeyDown={handleKeyContactNavigation}
-                  aria-label='İletişime Geç'
+                  aria-label={dict.hero.contactMe}
                   tabIndex={0}
                 >
-                  İletişime Geç
+                  {dict.hero.contactMe}
                 </button>
               </div>
             </m.div>
@@ -118,7 +121,7 @@ export const Hero = () => {
       <button
         className='absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce'
         onClick={handleScrollToProjects}
-        aria-label='Hakkımda'
+        aria-label='Scroll Down'
         tabIndex={0}
       >
         <FaArrowDown className='w-6 h-6 text-muted-foreground hover:scale-150 transition-all duration-300' />

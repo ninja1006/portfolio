@@ -1,11 +1,15 @@
 'use client';
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { useScrollTo } from '../hooks/useScrollTo';
 import { socialLinks } from '../data/social';
-import { navItems } from '../data/navigation';
 import Link from 'next/link';
 
-export const Footer = () => {
+interface FooterProps {
+  dict: any;
+}
+
+export const Footer = ({ dict }: FooterProps) => {
   const scrollTo = useScrollTo();
 
   const currentYear = new Date().getFullYear();
@@ -22,26 +26,34 @@ export const Footer = () => {
     scrollTo(href);
   };
 
+  // Reconstruct nav items from dict
+  const navItems = [
+    { name: dict.nav.home, href: 'home', isRoute: false },
+    { name: dict.nav.about, href: 'about', isRoute: false },
+    { name: dict.nav.projects, href: 'projects', isRoute: false },
+    { name: dict.nav.blog, href: '/blog', isRoute: true },
+    { name: dict.nav.contact, href: 'contact', isRoute: false },
+  ];
+
   return (
     <footer className='bg-background border-t border-border py-12' id='contact'>
       <div className='container mx-auto px-4'>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
           {/* About section */}
           <div>
-            <h3 className='text-xl font-bold mb-4 text-foreground'>Hakkımda</h3>
+            <h3 className='text-xl font-bold mb-4 text-foreground'>{dict.footer.aboutTitle}</h3>
             <p className='text-muted-foreground mb-4'>
-              Modern teknolojilerle yenilikçi ve sürdürülebilir çözümler
-              geliştiren, detaylara önem veren bir Full Stack Developer’ım.
+              {dict.footer.aboutDesc}
             </p>
           </div>
 
           {/* Quick links */}
           <div>
-            <h3 className='text-xl font-bold mb-4 text-foreground'>Hızlı Bağlantılar</h3>
+            <h3 className='text-xl font-bold mb-4 text-foreground'>{dict.footer.linksTitle}</h3>
             <ul className='space-y-2'>
               {navItems.map((link) => (
                 <li key={link.href}>
-                  {link.href.startsWith('/') ? (
+                  {link.isRoute ? (
                     <Link
                       href={link.href}
                       className='text-muted-foreground hover:text-primary transition-colors duration-300'
@@ -67,7 +79,7 @@ export const Footer = () => {
 
           {/* Connect section */}
           <div>
-            <h3 className='text-xl font-bold mb-4 text-foreground'>Benimle İletişime Geç</h3>
+            <h3 className='text-xl font-bold mb-4 text-foreground'>{dict.footer.contactTitle}</h3>
             <div className='flex space-x-4 mb-4'>
               {socialLinks.map((link) => {
                 const Icon = link.icon;
@@ -87,7 +99,7 @@ export const Footer = () => {
                 );
               })}
             </div>
-            <p className='text-muted-foreground'>E-posta: adylshay@gmail.com</p>
+            <p className='text-muted-foreground'>{dict.footer.email}: adylshay@gmail.com</p>
           </div>
         </div>
 
@@ -96,7 +108,7 @@ export const Footer = () => {
 
         {/* Copyright */}
         <div className='text-center text-muted-foreground'>
-          <p>© {currentYear} Adylsha Yumayev. Tüm Hakları Saklıdır</p>
+          <p>© {currentYear} Adylsha Yumayev. {dict.footer.rights}</p>
         </div>
       </div>
     </footer>

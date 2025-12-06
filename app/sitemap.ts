@@ -4,27 +4,33 @@ import { getBlogPosts } from './utils/getBlogPosts';
 export default function sitemap(): MetadataRoute.Sitemap {
     const posts = getBlogPosts();
     const baseUrl = 'https://adylshayumayev.vercel.app';
+    const locales = ['', '/en']; // '' represents default 'tr' at root
 
-    const blogUrls = posts.map((post) => ({
-        url: `${baseUrl}/blog/${post.slug}`,
-        lastModified: new Date(post.publishedDate),
-        changeFrequency: 'weekly' as const,
-        priority: 0.7,
-    }));
+    const routes = [
+        '',
+        '/blog',
+    ];
+
+    const allRoutes = routes.flatMap(route =>
+        locales.map(locale => ({
+            url: `${baseUrl}${locale}${route}`,
+            lastModified: new Date(),
+            changeFrequency: route === '' ? 'monthly' as const : 'weekly' as const,
+            priority: route === '' ? 1 : 0.8,
+        }))
+    );
+
+    const blogRoutes = posts.flatMap(post =>
+        locales.map(locale => ({
+            url: `${baseUrl}${locale}/blog/${post.slug}`,
+            lastModified: new Date(post.publishedDate),
+            changeFrequency: 'weekly' as const,
+            priority: 0.7,
+        }))
+    );
 
     return [
-        {
-            url: baseUrl,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 1,
-        },
-        {
-            url: `${baseUrl}/blog`,
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.8,
-        },
-        ...blogUrls,
+        ...allRoutes,
+        ...blogRoutes,
     ];
 }

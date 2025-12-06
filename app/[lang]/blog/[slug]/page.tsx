@@ -1,15 +1,16 @@
-import { use } from 'react';
 import { getBlogPostBySlug } from '@/app/utils/getBlogPosts';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Metadata } from 'next';
+import { Locale } from '../../../../i18n-config';
+import { getDictionary } from '@/app/utils/get-dictionary';
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; lang: Locale }>;
 }): Promise<Metadata> {
   const { slug } = await params;
   const post = getBlogPostBySlug(slug);
@@ -40,12 +41,13 @@ export async function generateMetadata({
   };
 }
 
-export default function Page({
+export default async function Page({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; lang: Locale }>;
 }) {
-  const { slug } = use(params);
+  const { slug, lang } = await params;
+  const dict = await getDictionary(lang);
   const post = getBlogPostBySlug(slug);
 
   if (!post) {
@@ -72,7 +74,7 @@ export default function Page({
           >
             <path d='m15 18-6-6 6-6' />
           </svg>
-          <span>Geri Dön</span>
+          <span>{dict.blog.back}</span>
         </Link>
       </div>
       <h1 className='text-6xl font-bold mb-8'>{post.title}</h1>

@@ -1,7 +1,8 @@
 import { Project } from './types';
 
-export const projects: Project[] = [
+export const projects: (Project & { key: string })[] = [
   {
+    key: 'agency',
     title: 'Ajans Web Sitesi',
     description:
       'Next.js ile geliştirilmiş modern bir ajans web sitesi. Responsive tasarım, akıcı animasyonlar ve hizmetleri sergilemek için temiz bir kullanıcı arayüzü içerir.',
@@ -9,6 +10,7 @@ export const projects: Project[] = [
     technologies: ['Next.js', 'React'],
   },
   {
+    key: 'dalle',
     title: 'Dall-E Klonu',
     description:
       'OpenAI&apos;ın DALL-E&apos;sinden esinlenen bir yapay zeka görsel oluşturma uygulaması. Kullanıcılar MERN stack kullanarak metin komutlarına dayalı yapay zeka tarafından oluşturulan görselleri oluşturabilir ve paylaşabilir.',
@@ -24,6 +26,7 @@ export const projects: Project[] = [
     ],
   },
   {
+    key: 'airbnb',
     title: 'Airbnb Klonu',
     description:
       'Airbnb web sitesinin bir klonu. Kullanıcılar mülkleri arayabilir, detayları görüntüleyebilir ve konaklama rezervasyonu yapabilir.',
@@ -32,6 +35,7 @@ export const projects: Project[] = [
     technologies: ['Next.js', 'Tailwind CSS', 'Zustand', 'Prisma', 'MongoDB'],
   },
   {
+    key: 'twitter',
     title: 'Twitter Klonu',
     description:
       'Twitter&apos;ın modern bir klonu. Kullanıcılar tweet atabilir, diğer kullanıcıları takip edebilir ve etkileşimde bulunabilir. Next.js ve TypeScript kullanılarak geliştirilmiş tam özellikli bir sosyal medya uygulaması.',
@@ -46,6 +50,7 @@ export const projects: Project[] = [
     ],
   },
   {
+    key: 'aiPrompt',
     title: 'AI Prompt Uygulaması',
     description:
       'Kullanıcıların yapay zeka promptlarını oluşturup paylaşabilecekleri bir platform. Kullanıcılar kendi promptlarını kaydedebilir, başkalarının promptlarını keşfedebilir ve etkileşimde bulunabilir. Next.js ve modern kimlik doğrulama yöntemleri kullanılarak geliştirilmiştir.',
@@ -54,6 +59,7 @@ export const projects: Project[] = [
     technologies: ['Next.js', 'Tailwind CSS', 'Bcrypt', 'NextAuth'],
   },
   {
+    key: 'pokemon',
     title: 'Mobile Pokemon App',
     description:
       "PokeAPI kullanarak clean architecture ilkelerine göre geliştirilen bir Flutter projesi. Özellikler arasında Pokémon'u getirme ve görüntüleme, ayrıntılı bilgileri görüntüleme, ada göre arama ve mobil ve web için duyarlı tasarım yer alır. Modülerlik ve sürdürülebilirlik için feature-first bir mimari ile düzenlenmiştir.",
@@ -61,6 +67,7 @@ export const projects: Project[] = [
     technologies: ['Flutter', 'Dart', 'Dio', 'Shared Preferences', 'Provider'],
   },
   {
+    key: 'habit',
     title: 'Habit Tracker App',
     description:
       'Temiz, modern bir kullanıcı arayüzü ve güçlü özelliklerle kullanıcıların alışkanlıklarını takip etmelerine ve sürdürmelerine yardımcı olan bir Flutter uygulaması.',

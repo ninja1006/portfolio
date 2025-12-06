@@ -1,4 +1,5 @@
 'use client';
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { m } from 'framer-motion';
 import { SectionContainer } from './shared/SectionContainer';
@@ -7,15 +8,38 @@ import { MotionContainer, motionItem } from './shared/MotionContainer';
 import { BentoGrid } from './shared/BentoGrid';
 import { WorkExperienceTimeline } from './shared/WorkExperienceTimeline';
 import { Certificates } from './Certificates';
-import { keyPoints, workExperiences } from '../data/about';
+import { KeyPoint } from '../data/types';
 
-export const About = () => {
+interface AboutProps {
+  dict: any;
+}
+
+export const About = ({ dict }: AboutProps) => {
+  const keyPoints = Object.values(dict.about.keyPoints) as KeyPoint[];
+
+  // Fix tech stack mapping
+  const getTechs = (jobKey: string) => {
+    if (jobKey === 'gelecek2025') return ['ASP.NET MVC', 'SQL Server', 'WEB API', 'Flutter', 'Dart'];
+    if (jobKey === 'gelecek2022') return ['React', 'ASP.NET Core', 'SQL Server', 'T-SQL', 'WEB API', 'MongoDB'];
+    if (jobKey === 'patika') return ['ASP.NET Core', 'SQL Server', 'React', 'Node.js', 'MongoDB'];
+    return [];
+  }
+
+  const jobs = Object.entries(dict.about.jobs).map(([key, job]: [string, any]) => ({
+    company: job.title,
+    position: job.role,
+    period: job.period,
+    description: job.desc,
+    technologies: getTechs(key)
+  }));
+
+
   return (
     <SectionContainer id='about'>
       <MotionContainer className='max-w-4xl mx-auto'>
         <SectionHeader
-          title='Hakkımda'
-          subtitle='Tutkulu bir Full Stack Developer'
+          title={dict.about.title}
+          subtitle={dict.about.subtitle}
         />
 
         {/* Description */}
@@ -23,27 +47,27 @@ export const About = () => {
           variants={motionItem}
           className='space-y-6 text-muted-foreground text-justify'
         >
-          <p>Yazılım geliştirme sürecinin her aşamasında aktif rol almaktan keyif alıyorum. Frontend&apos;den backend&apos;e, veritabanı yönetiminden sistem mimarisine kadar geniş bir yelpazede çalışmalar yapıyorum.</p>
-          <p>Karmaşık problemleri basit ve etkili çözümlere dönüştürmeyi seviyorum. Analitik düşünme ve mantık yürütme becerilerimi kullanarak her projede en optimum çözümü bulmaya çalışıyorum.</p>
-          <p>Teknoloji dünyasındaki hızlı değişime ayak uydurmak için sürekli kendimi geliştiriyor, yeni araçlar ve metodolojiler öğreniyorum.</p>
+          <p>{dict.about.p1}</p>
+          <p>{dict.about.p2}</p>
+          <p>{dict.about.p3}</p>
         </m.div>
 
         {/* Key Points using BentoGrid component */}
         <BentoGrid
-          title='Öne Çıkan Özelliklerim'
+          title={dict.about.keyPointsTitle}
           items={keyPoints}
         />
 
         {/* Work Experience Timeline */}
         <WorkExperienceTimeline
-          title='İş Tecrübem'
-          subtitle='Profesyonel kariyerimde edindiğim deneyimler'
-          experiences={workExperiences}
+          title={dict.about.experienceTitle}
+          subtitle={dict.about.experienceSubtitle}
+          experiences={jobs}
         />
 
         {/* Certificates Section */}
         <div className='mt-16'>
-          <Certificates />
+          <Certificates dict={dict} />
         </div>
       </MotionContainer>
     </SectionContainer>

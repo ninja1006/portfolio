@@ -1,4 +1,5 @@
 'use client';
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
@@ -10,7 +11,11 @@ import { Carousel } from 'react-responsive-carousel';
 import { useEffect, useState } from 'react';
 import { projects } from '../data/projects';
 
-export function Projects() {
+interface ProjectsProps {
+  dict: any;
+}
+
+export function Projects({ dict }: ProjectsProps) {
   const [windowWidth, setWindowWidth] = useState(0);
 
   // Update window width on client side
@@ -30,12 +35,19 @@ export function Projects() {
 
   const itemsToShow = getItemsToShow();
 
+  // Merge static data with dictionary translations
+  const translatedProjects = projects.map((project) => ({
+    ...project,
+    title: dict.projects.items[project.key]?.title || project.title,
+    description: dict.projects.items[project.key]?.desc || project.description,
+  }));
+
   return (
     <SectionContainer id='projects'>
       <MotionContainer className='max-w-6xl mx-auto'>
         <SectionHeader
-          title='Projelerim'
-          subtitle='Öne çıkan projelerimden bazıları'
+          title={dict.projects.title}
+          subtitle={dict.projects.subtitle}
         />
 
         {/* Projects Carousel */}
@@ -102,7 +114,7 @@ export function Projects() {
               )
             }
           >
-            {projects.map((project, index) => (
+            {translatedProjects.map((project, index) => (
               <div key={index} className='px-4 h-full'>
                 <ProjectCard project={project} />
               </div>
