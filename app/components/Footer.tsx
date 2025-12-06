@@ -3,6 +3,7 @@
 import { useScrollTo } from '../hooks/useScrollTo';
 import { socialLinks } from '../data/social';
 import { navItems } from '../data/navigation';
+import Link from 'next/link';
 
 export const Footer = () => {
   const scrollTo = useScrollTo();
@@ -40,16 +41,25 @@ export const Footer = () => {
             <ul className='space-y-2'>
               {navItems.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={`#${link.href}`}
-                    className='text-muted-foreground hover:text-primary transition-colors duration-300'
-                    tabIndex={0}
-                    aria-label={link.name}
-                    onClick={(e) => handleNavClick(e, link.href)}
-                    onKeyDown={(e) => handleKeyDown(e, link.href)}
-                  >
-                    {link.name}
-                  </a>
+                  {link.href.startsWith('/') ? (
+                    <Link
+                      href={link.href}
+                      className='text-muted-foreground hover:text-primary transition-colors duration-300'
+                    >
+                      {link.name}
+                    </Link>
+                  ) : (
+                    <a
+                      href={`#${link.href}`}
+                      className='text-muted-foreground hover:text-primary transition-colors duration-300'
+                      tabIndex={0}
+                      aria-label={link.name}
+                      onClick={(e) => handleNavClick(e, link.href)}
+                      onKeyDown={(e) => handleKeyDown(e, link.href)}
+                    >
+                      {link.name}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

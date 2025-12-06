@@ -9,5 +9,5 @@ export const navItems: NavItem[] = [
   { name: 'Projeler', href: 'projects' },
   { name: 'Yetenekler', href: 'skills' },
   { name: 'İletişim', href: 'contact' },
-  { name: 'Blog', href: 'blog' },
+  { name: 'Blog', href: '/blog' },
 ];
