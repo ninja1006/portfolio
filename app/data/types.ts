@@ -28,6 +28,7 @@ export interface Project {
   image?: string;
   githubUrl: string;
   technologies: string[];
+  complete: boolean;
 }
 
 export interface KeyPoint {

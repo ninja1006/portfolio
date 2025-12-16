@@ -1,14 +1,10 @@
 'use client';
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-
 import { SectionContainer } from './shared/SectionContainer';
 import { SectionHeader } from './shared/SectionHeader';
 import { MotionContainer } from './shared/MotionContainer';
 import { ProjectCard } from './shared/ProjectCard';
-import { Carousel } from 'react-responsive-carousel';
-import { useEffect, useState } from 'react';
 import { projects } from '../data/projects';
 
 interface ProjectsProps {
@@ -16,25 +12,6 @@ interface ProjectsProps {
 }
 
 export function Projects({ dict }: ProjectsProps) {
-  const [windowWidth, setWindowWidth] = useState(0);
-
-  // Update window width on client side
-  useEffect(() => {
-    setWindowWidth(window.innerWidth);
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  // Determine how many cards to show based on screen width
-  const getItemsToShow = () => {
-    if (windowWidth < 768) return 1;
-    if (windowWidth < 1024) return 2;
-    return 3;
-  };
-
-  const itemsToShow = getItemsToShow();
-
   // Merge static data with dictionary translations
   const translatedProjects = projects.map((project) => ({
     ...project,
@@ -50,76 +27,21 @@ export function Projects({ dict }: ProjectsProps) {
           subtitle={dict.projects.subtitle}
         />
 
-        {/* Projects Carousel */}
-        <div className='relative pb-12'>
-          <Carousel
-            showThumbs={false}
-            showStatus={false}
-            autoPlay
-            interval={5000}
-            infiniteLoop
-            showArrows
-            showIndicators={false}
-            centerMode
-            swipeable
-            centerSlidePercentage={100 / itemsToShow}
-            renderArrowPrev={(onClickHandler, hasPrev) =>
-              hasPrev && (
-                <button
-                  type='button'
-                  onClick={onClickHandler}
-                  className='absolute left-0  top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-background/80 backdrop-blur-sm text-primary hover:bg-background/90 transition-all -ml-4'
-                  aria-label='Previous slide'
-                >
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    fill='none'
-                    viewBox='0 0 24 24'
-                    strokeWidth={2}
-                    stroke='currentColor'
-                    className='w-6 h-6'
-                  >
-                    <path
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      d='M15.75 19.5L8.25 12l7.5-7.5'
-                    />
-                  </svg>
-                </button>
-              )
-            }
-            renderArrowNext={(onClickHandler, hasNext) =>
-              hasNext && (
-                <button
-                  type='button'
-                  onClick={onClickHandler}
-                  className='absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-background/80 backdrop-blur-sm text-primary hover:bg-background/90 transition-all -mr-4'
-                  aria-label='Next slide'
-                >
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    fill='none'
-                    viewBox='0 0 24 24'
-                    strokeWidth={2}
-                    stroke='currentColor'
-                    className='w-6 h-6'
-                  >
-                    <path
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      d='M8.25 4.5l7.5 7.5-7.5 7.5'
-                    />
-                  </svg>
-                </button>
-              )
-            }
-          >
-            {translatedProjects.map((project, index) => (
-              <div key={index} className='px-4 h-full'>
-                <ProjectCard project={project} />
-              </div>
-            ))}
-          </Carousel>
+        {/* Projects Grid/Scroll */}
+        <div className='flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 pb-6 -mx-4 px-4 md:mx-0 md:px-0 scrollbar-hide'>
+          {translatedProjects.map((project, index) => (
+            <div
+              key={index}
+              className='min-w-[85vw] sm:min-w-[calc(50%-12px)] md:min-w-0 snap-center h-full'
+            >
+              <ProjectCard
+                project={project}
+                inDevelopmentText={dict.projects.inDevelopment}
+                noImageText={dict.projects.noImage}
+                viewOnGithubText={dict.projects.viewOnGithub}
+              />
+            </div>
+          ))}
         </div>
       </MotionContainer>
     </SectionContainer>

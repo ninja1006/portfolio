@@ -8,6 +8,7 @@ export const projects: (Project & { key: string })[] = [
       'Next.js ile geliştirilmiş modern bir ajans web sitesi. Responsive tasarım, akıcı animasyonlar ve hizmetleri sergilemek için temiz bir kullanıcı arayüzü içerir.',
     githubUrl: 'https://github.com/AdylshaY/NextJS-Agency-App',
     technologies: ['Next.js', 'React'],
+    complete: false,
   },
   {
     key: 'dalle',
@@ -24,6 +25,7 @@ export const projects: (Project & { key: string })[] = [
       'MongoDB',
       'OpenAI API',
     ],
+    complete: true,
   },
   {
     key: 'airbnb',
@@ -33,6 +35,7 @@ export const projects: (Project & { key: string })[] = [
     githubUrl: 'https://github.com/AdylshaY/nextjs-airbnb-clone',
     image: '/airbnb-clone.png',
     technologies: ['Next.js', 'Tailwind CSS', 'Zustand', 'Prisma', 'MongoDB'],
+    complete: true,
   },
   {
     key: 'twitter',
@@ -48,6 +51,7 @@ export const projects: (Project & { key: string })[] = [
       'NextAuth',
       'TypeScript',
     ],
+    complete: true,
   },
   {
     key: 'aiPrompt',
@@ -57,14 +61,7 @@ export const projects: (Project & { key: string })[] = [
     githubUrl: 'https://github.com/AdylshaY/ai-prompt-app',
     image: '/prompt-app.png',
     technologies: ['Next.js', 'Tailwind CSS', 'Bcrypt', 'NextAuth'],
-  },
-  {
-    key: 'pokemon',
-    title: 'Mobile Pokemon App',
-    description:
-      "PokeAPI kullanarak clean architecture ilkelerine göre geliştirilen bir Flutter projesi. Özellikler arasında Pokémon'u getirme ve görüntüleme, ayrıntılı bilgileri görüntüleme, ada göre arama ve mobil ve web için duyarlı tasarım yer alır. Modülerlik ve sürdürülebilirlik için feature-first bir mimari ile düzenlenmiştir.",
-    githubUrl: 'https://github.com/AdylshaY/flutter-clean-architecture',
-    technologies: ['Flutter', 'Dart', 'Dio', 'Shared Preferences', 'Provider'],
+    complete: true,
   },
   {
     key: 'habit',
@@ -81,5 +78,6 @@ export const projects: (Project & { key: string })[] = [
       'Go Router',
       'Hive',
     ],
+    complete: true,
   },
 ];

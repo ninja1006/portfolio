@@ -73,6 +73,9 @@
     "projects": {
         "title": "Projelerim",
         "subtitle": "Öne çıkan projelerimden bazıları",
+        "inDevelopment": "Geliştiriliyor",
+        "noImage": "Henüz görsel eklenmedi",
+        "viewOnGithub": "GitHub'da Görüntüle",
         "items": {
             "agency": {
                 "title": "Ajans Web Sitesi",

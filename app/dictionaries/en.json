@@ -73,6 +73,11 @@
     "projects": {
         "title": "Projects",
         "subtitle": "Some of my featured projects",
+        "viewProject": "View Project",
+        "viewCode": "View Code",
+        "inDevelopment": "In Development",
+        "noImage": "No image added yet",
+        "viewOnGithub": "View on GitHub",
         "items": {
             "agency": {
                 "title": "Agency Website",
