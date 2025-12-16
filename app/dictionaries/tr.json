@@ -73,10 +73,14 @@
     "projects": {
         "title": "Projelerim",
         "subtitle": "Öne çıkan projelerimden bazıları",
+        "inDevelopment": "Geliştiriliyor",
+        "noImage": "Henüz görsel eklenmedi",
+        "viewOnGithub": "GitHub'da Görüntüle",
+        "viewAllProjects": "Tüm Projeleri Gör",
         "items": {
-            "agency": {
-                "title": "Ajans Web Sitesi",
-                "desc": "Next.js ile geliştirilmiş modern bir ajans web sitesi. Responsive tasarım, akıcı animasyonlar ve hizmetleri sergilemek için temiz bir kullanıcı arayüzü içerir."
+            "YumaIdentity": {
+                "title": "YumaIdentity - IAM Servisi",
+                "desc": "Tam özellikli bir Identity and Access Management (IAM) servisi. Kullanıcı kimlik doğrulama, yetkilendirme, rol yönetimi ve güvenli token tabanlı oturum yönetimi sağlar. Modern full-stack mimarisiyle geliştirilmiş, ölçeklenebilir bir kimlik yönetim platformu."
             },
             "dalle": {
                 "title": "Dall-E Klonu",
@@ -117,7 +121,8 @@
     "certificates": {
         "title": "Sertifikalar",
         "subtitle": "Aldığım eğitimler ve başarılar",
-        "viewCertificate": "Sertifikayı Görüntüle"
+        "viewCertificate": "Sertifikayı Görüntüle",
+        "viewAllCertificates": "Tüm Sertifikaları Gör"
     },
     "footer": {
         "aboutTitle": "Hakkımda",

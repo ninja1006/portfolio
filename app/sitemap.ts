@@ -3,7 +3,7 @@ import { getBlogPosts } from './utils/getBlogPosts';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const posts = getBlogPosts();
-    const baseUrl = 'https://adylshayumayev.vercel.app';
+    const baseUrl = 'https://yumayev.dev';
     const locales = ['', '/en']; // '' represents default 'tr' at root
 
     const routes = [

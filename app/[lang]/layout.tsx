@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: 'Adylsha Yumayev | Full Stack Developer',
   description:
     'Adylsha Yumayev - Full Stack Developer specializing in React.js, Next.js, TypeScript, Node.js, and modern web technologies.',
-  metadataBase: new URL('https://adylshayumayev.vercel.app/'),
+  metadataBase: new URL('https://yumayev.dev/'),
 };
 
 export async function generateStaticParams() {

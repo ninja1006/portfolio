@@ -73,10 +73,16 @@
     "projects": {
         "title": "Projects",
         "subtitle": "Some of my featured projects",
+        "viewProject": "View Project",
+        "viewCode": "View Code",
+        "inDevelopment": "In Development",
+        "noImage": "No image added yet",
+        "viewOnGithub": "View on GitHub",
+        "viewAllProjects": "View All Projects",
         "items": {
-            "agency": {
-                "title": "Agency Website",
-                "desc": "A modern agency website developed with Next.js. Features responsive design, smooth animations, and a clean UI to showcase services."
+            "YumaIdentity": {
+                "title": "YumaIdentity - IAM Service",
+                "desc": "A full-featured Identity and Access Management (IAM) service. Provides user authentication, authorization, role management, and secure token-based session management. A scalable identity management platform developed with modern full-stack architecture."
             },
             "dalle": {
                 "title": "Dall-E Clone",
@@ -117,7 +123,8 @@
     "certificates": {
         "title": "Certificates",
         "subtitle": "Trainings and achievements",
-        "viewCertificate": "View Certificate"
+        "viewCertificate": "View Certificate",
+        "viewAllCertificates": "View All Certificates"
     },
     "footer": {
         "aboutTitle": "About Me",

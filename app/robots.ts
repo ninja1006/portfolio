@@ -7,7 +7,7 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
     const protocol = headersList.get('x-forwarded-proto') || 'https';
 
     // Only allow indexing on the main production domain
-    const isMainProduction = host === 'adylshayumayev.vercel.app';
+    const isMainProduction = host === 'yumayev.dev';
 
     return {
         rules: {
@@ -15,6 +15,6 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
             allow: isMainProduction ? '/' : [],
             disallow: isMainProduction ? '/private/' : '/',
         },
-        sitemap: `${protocol}://${host}/sitemap.xml`,
+        sitemap: isMainProduction ? `${protocol}://${host}/sitemap.xml` : undefined,
     };
 }
