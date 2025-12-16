@@ -29,7 +29,7 @@ export async function generateMetadata({
       title: post.title,
       description: post.description,
       type: 'article',
-      url: `https://adylshayumayev.vercel.app/blog/${slug}`,
+      url: `https://yumayev.dev/blog/${slug}`,
       publishedTime: post.publishedDate,
       authors: ['Adylsha Yumayev'],
     },
