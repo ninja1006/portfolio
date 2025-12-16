@@ -5,7 +5,14 @@ import { SectionContainer } from './SectionContainer';
 import { SectionHeader } from './SectionHeader';
 import { MotionContainer } from './MotionContainer';
 import { ReactNode, useRef, useState, useEffect } from 'react';
-import { FiChevronRight } from 'react-icons/fi';
+import { FiChevronRight, FiExternalLink } from 'react-icons/fi';
+import Link from 'next/link';
+
+interface ActionButton {
+  text: string;
+  href: string;
+  icon?: ReactNode;
+}
 
 interface CardGridProps<T> {
   id: string;
@@ -21,6 +28,7 @@ interface CardGridProps<T> {
   };
   enableMobileScroll?: boolean;
   sortItems?: (items: T[]) => T[];
+  actionButton?: ActionButton;
 }
 
 export function CardGrid<T>({
@@ -37,6 +45,7 @@ export function CardGrid<T>({
   },
   enableMobileScroll = false,
   sortItems,
+  actionButton,
 }: CardGridProps<T>) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [showScrollHint, setShowScrollHint] = useState(true);
@@ -137,6 +146,23 @@ export function CardGrid<T>({
             {sortedItems.map((item, index) => (
               <div key={index}>{renderCard(item, index)}</div>
             ))}
+          </div>
+        )}
+
+        {/* Action Button - Centered below cards */}
+        {actionButton && (
+          <div className='flex justify-center mt-12'>
+            <Link
+              href={actionButton.href}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-all hover:scale-105 duration-300 shadow-lg hover:shadow-xl font-medium group'
+            >
+              {actionButton.text}
+              <span className='transition-transform group-hover:translate-x-1'>
+                {actionButton.icon || <FiExternalLink className='w-5 h-5' />}
+              </span>
+            </Link>
           </div>
         )}
       </MotionContainer>

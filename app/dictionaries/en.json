@@ -78,6 +78,7 @@
         "inDevelopment": "In Development",
         "noImage": "No image added yet",
         "viewOnGithub": "View on GitHub",
+        "viewAllProjects": "View All Projects",
         "items": {
             "YumaIdentity": {
                 "title": "YumaIdentity - IAM Service",
@@ -122,7 +123,8 @@
     "certificates": {
         "title": "Certificates",
         "subtitle": "Trainings and achievements",
-        "viewCertificate": "View Certificate"
+        "viewCertificate": "View Certificate",
+        "viewAllCertificates": "View All Certificates"
     },
     "footer": {
         "aboutTitle": "About Me",

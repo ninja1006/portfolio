@@ -5,6 +5,7 @@ import { CardGrid } from './shared/CardGrid';
 import { ProjectCard } from './shared/ProjectCard';
 import { projects } from '../data/projects';
 import { Project } from '../data/types';
+import { FaGithub } from 'react-icons/fa';
 
 interface ProjectsProps {
   dict: any;
@@ -26,6 +27,11 @@ export function Projects({ dict }: ProjectsProps) {
       items={translatedProjects}
       maxWidth='max-w-6xl'
       enableMobileScroll={true}
+      actionButton={{
+        text: dict.projects.viewAllProjects,
+        href: 'https://github.com/AdylshaY?tab=repositories',
+        icon: <FaGithub className='w-5 h-5' />,
+      }}
       renderCard={(project) => (
         <ProjectCard
           project={project}

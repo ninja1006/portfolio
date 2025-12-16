@@ -76,6 +76,7 @@
         "inDevelopment": "Geliştiriliyor",
         "noImage": "Henüz görsel eklenmedi",
         "viewOnGithub": "GitHub'da Görüntüle",
+        "viewAllProjects": "Tüm Projeleri Gör",
         "items": {
             "YumaIdentity": {
                 "title": "YumaIdentity - IAM Servisi",
@@ -120,7 +121,8 @@
     "certificates": {
         "title": "Sertifikalar",
         "subtitle": "Aldığım eğitimler ve başarılar",
-        "viewCertificate": "Sertifikayı Görüntüle"
+        "viewCertificate": "Sertifikayı Görüntüle",
+        "viewAllCertificates": "Tüm Sertifikaları Gör"
     },
     "footer": {
         "aboutTitle": "Hakkımda",
