@@ -2,12 +2,20 @@ import { Project } from './types';
 
 export const projects: (Project & { key: string })[] = [
   {
-    key: 'agency',
-    title: 'Ajans Web Sitesi',
+    key: 'YumaIdentity',
+    title: 'YumaIdentity - IAM Servisi',
     description:
-      'Next.js ile geliştirilmiş modern bir ajans web sitesi. Responsive tasarım, akıcı animasyonlar ve hizmetleri sergilemek için temiz bir kullanıcı arayüzü içerir.',
-    githubUrl: 'https://github.com/AdylshaY/NextJS-Agency-App',
-    technologies: ['Next.js', 'React'],
+      'Tam özellikli bir Identity and Access Management (IAM) servisi. Kullanıcı kimlik doğrulama, yetkilendirme, rol yönetimi ve güvenli token tabanlı oturum yönetimi sağlar. Modern full-stack mimarisiyle geliştirilmiş, ölçeklenebilir bir kimlik yönetim platformu.',
+    githubUrl: 'https://github.com/AdylshaY/YumaIdentity',
+    technologies: [
+      'ASP.NET Core',
+      'React',
+      'TypeScript',
+      'JWT',
+      'OAuth2',
+      'SQL Server',
+      'Entity Framework',
+    ],
     complete: false,
   },
   {
