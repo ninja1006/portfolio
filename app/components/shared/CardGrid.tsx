@@ -86,7 +86,7 @@ export function CardGrid<T>({
                 {sortedItems.map((item, index) => (
                   <div
                     key={index}
-                    className='min-w-[85vw] sm:min-w-[calc(50%-12px)] md:min-w-0 snap-center h-full'
+                    className='min-w-[calc(100vw-2rem)] sm:min-w-[calc(50%-12px)] md:min-w-0 snap-center h-full'
                   >
                     {renderCard(item, index)}
                   </div>

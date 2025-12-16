@@ -31,7 +31,7 @@ export const ProjectCard = ({
   return (
     <m.div
       variants={motionItem}
-      className='group relative bg-secondary/50 backdrop-blur-sm rounded-lg overflow-hidden flex flex-col h-full'
+      className='group relative bg-secondary/50 backdrop-blur-sm rounded-lg overflow-hidden flex flex-col h-full min-h-[480px]'
     >
       {/* Project Image or Placeholder */}
       <div className='relative h-48 overflow-hidden'>
