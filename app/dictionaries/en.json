@@ -53,42 +53,17 @@
       "gelecek2025": {
         "title": "Gelecek Varlık Yönetimi",
         "role": "Software Development Specialist",
-        "period": "2025 - Present",
-        "desc": "Responsible for the development and optimization of critical internal software systems. Managing the design, development, and secure deployment processes of external-facing web platforms. Designing database structures and providing backend solutions that support corporate workflows. Also playing an active role in the architecture and development of the company's first mobile application.",
-        "technologies": [
-          "ASP.NET MVC",
-          "SQL Server",
-          "WEB API",
-          "Flutter",
-          "Dart"
-        ]
+        "desc": "Responsible for the development and optimization of critical internal software systems. Managing the design, development, and secure deployment processes of external-facing web platforms. Designing database structures and providing backend solutions that support corporate workflows. Also playing an active role in the architecture and development of the company's first mobile application."
       },
       "gelecek2022": {
         "title": "Gelecek Varlık Yönetimi",
         "role": "Junior Full Stack Developer",
-        "period": "2022 - 2025",
-        "desc": "Responsible for the development and maintenance of applications used within the company. Developing projects using various technologies. Writing database queries when necessary during development.",
-        "technologies": [
-          "React",
-          "ASP.NET Core",
-          "SQL Server",
-          "T-SQL",
-          "WEB API",
-          "MongoDB"
-        ]
+        "desc": "Responsible for the development and maintenance of applications used within the company. Developing projects using various technologies. Writing database queries when necessary during development."
       },
       "patika": {
         "title": "Gelecek Varlık Yönetimi - Patika",
         "role": "Bootcamp Student",
-        "period": "2022 - 2022",
-        "desc": "Completed training provided on the Patika.dev platform, learning the fundamentals of software development. Subsequently passed interviews and started working as a Junior Full Stack Developer at Gelecek Varlık Yönetimi.",
-        "technologies": [
-          "ASP.NET Core",
-          "SQL Server",
-          "React",
-          "Node.js",
-          "MongoDB"
-        ]
+        "desc": "Completed training provided on the Patika.dev platform, learning the fundamentals of software development. Subsequently passed interviews and started working as a Junior Full Stack Developer at Gelecek Varlık Yönetimi."
       }
     }
   },

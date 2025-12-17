@@ -10,20 +10,19 @@ import { WorkExperienceTimeline } from './shared/WorkExperienceTimeline';
 import { Certificates } from './Certificates';
 import { KeyPoint } from '../data/types';
 import { useDictionary } from '../context/DictionaryContext';
+import { jobs as jobsData } from '../data/jobs';
 
 export const About = () => {
   const dict = useDictionary();
   const keyPoints = Object.values(dict.about.keyPoints) as KeyPoint[];
 
-  const jobs = Object.entries(dict.about.jobs).map(
-    ([, job]: [string, any]) => ({
-      company: job.title,
-      position: job.role,
-      period: job.period,
-      description: job.desc,
-      technologies: job.technologies || [],
-    })
-  );
+  const jobs = jobsData.map((job) => ({
+    company: dict.about.jobs[job.key]?.title || '',
+    position: dict.about.jobs[job.key]?.role || '',
+    period: job.period,
+    description: dict.about.jobs[job.key]?.desc || '',
+    technologies: job.technologies,
+  }));
 
   return (
     <SectionContainer id='about'>
