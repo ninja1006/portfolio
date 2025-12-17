@@ -52,13 +52,13 @@
         "jobs": {
             "gelecek2025": {
                 "title": "Gelecek Varlık Yönetimi",
-                "role": "Software Development Specialist",
+                "role": "Yazılım Geliştirme Uzmanı",
                 "period": "2025 - Günümüz",
                 "desc": "Şirket içi kritik yazılım sistemlerinin geliştirilmesi ve optimizasyonundan sorumluyum. Dış kullanıcılara yönelik web platformlarının tasarım, geliştirme ve güvenli deployment süreçlerini yönetiyorum. Veri tabanı yapılarını tasarlayıp kurumsal iş akışlarını destekleyen backend çözümleri sunuyorum. Ayrıca şirketin ilk mobil uygulamasının mimarisini oluşturup geliştirme sürecinde aktif rol oynuyorum."
             },
             "gelecek2022": {
                 "title": "Gelecek Varlık Yönetimi",
-                "role": "Junior Full Stack Developer",
+                "role": "Yazılım Geliştirme Uzman Yardımcısı",
                 "period": "2022 - 2025",
                 "desc": "Şirket içerisinde kullanılan uygulamaların geliştirilmesi ve bakımından sorumluyum. Farklı teknolojiler kullanarak projeler geliştiriyorum. Geliştirmeler sırasında gerekli durumlarda veritabanı sorgularını yazıyorum."
             },

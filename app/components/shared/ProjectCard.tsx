@@ -1,6 +1,6 @@
 'use client';
 
-import { m, AnimatePresence } from 'framer-motion';
+import { m } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motionItem } from './MotionContainer';
@@ -8,27 +8,23 @@ import { Project } from '../../data/types';
 import { FaGithub } from 'react-icons/fa';
 import { useState, useRef, useEffect } from 'react';
 import { FiChevronDown } from 'react-icons/fi';
+import { useDictionary } from '../../context/DictionaryContext';
 
 interface ProjectCardProps {
   project: Project;
-  inDevelopmentText?: string;
-  noImageText?: string;
-  viewOnGithubText?: string;
-  showMoreText?: string;
-  showLessText?: string;
 }
 
-export const ProjectCard = ({
-  project,
-  inDevelopmentText = 'In Development',
-  noImageText = 'No image added yet',
-  viewOnGithubText = 'View on GitHub',
-  showMoreText = 'Show More',
-  showLessText = 'Show Less',
-}: ProjectCardProps) => {
+export const ProjectCard = ({ project }: ProjectCardProps) => {
+  const dict = useDictionary();
   const [isExpanded, setIsExpanded] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
   const [contentHeight, setContentHeight] = useState<number>(0);
+
+  const inDevelopmentText = dict.projects.inDevelopment;
+  const noImageText = dict.projects.noImage;
+  const viewOnGithubText = dict.projects.viewOnGithub;
+  const showMoreText = dict.projects.showMore;
+  const showLessText = dict.projects.showLess;
 
   useEffect(() => {
     if (contentRef.current) {

@@ -4,12 +4,10 @@
 import { useScrollTo } from '../hooks/useScrollTo';
 import { socialLinks } from '../data/social';
 import Link from 'next/link';
+import { useDictionary } from '../context/DictionaryContext';
 
-interface FooterProps {
-  dict: any;
-}
-
-export const Footer = ({ dict }: FooterProps) => {
+export const Footer = () => {
+  const dict = useDictionary();
   const scrollTo = useScrollTo();
 
   const currentYear = new Date().getFullYear();
@@ -36,12 +34,17 @@ export const Footer = ({ dict }: FooterProps) => {
   ];
 
   return (
-    <footer className='bg-zinc-900/50 border-t border-zinc-800 py-12' id='contact'>
+    <footer
+      className='bg-zinc-900/50 border-t border-zinc-800 py-12'
+      id='contact'
+    >
       <div className='container mx-auto px-4'>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
           {/* About section */}
           <div>
-            <h3 className='text-xl font-bold mb-4 text-foreground'>{dict.footer.aboutTitle}</h3>
+            <h3 className='text-xl font-bold mb-4 text-foreground'>
+              {dict.footer.aboutTitle}
+            </h3>
             <p className='text-muted-foreground mb-4'>
               {dict.footer.aboutDesc}
             </p>
@@ -49,7 +52,9 @@ export const Footer = ({ dict }: FooterProps) => {
 
           {/* Quick links */}
           <div>
-            <h3 className='text-xl font-bold mb-4 text-foreground'>{dict.footer.linksTitle}</h3>
+            <h3 className='text-xl font-bold mb-4 text-foreground'>
+              {dict.footer.linksTitle}
+            </h3>
             <ul className='space-y-2'>
               {navItems.map((link) => (
                 <li key={link.href}>
@@ -79,7 +84,9 @@ export const Footer = ({ dict }: FooterProps) => {
 
           {/* Connect section */}
           <div>
-            <h3 className='text-xl font-bold mb-4 text-foreground'>{dict.footer.contactTitle}</h3>
+            <h3 className='text-xl font-bold mb-4 text-foreground'>
+              {dict.footer.contactTitle}
+            </h3>
             <div className='flex space-x-4 mb-4'>
               {socialLinks.map((link) => {
                 const Icon = link.icon;
@@ -99,7 +106,9 @@ export const Footer = ({ dict }: FooterProps) => {
                 );
               })}
             </div>
-            <p className='text-muted-foreground'>{dict.footer.email}: adylshay@gmail.com</p>
+            <p className='text-muted-foreground'>
+              {dict.footer.email}: adylshay@gmail.com
+            </p>
           </div>
         </div>
 
@@ -108,7 +117,9 @@ export const Footer = ({ dict }: FooterProps) => {
 
         {/* Copyright */}
         <div className='text-center text-muted-foreground'>
-          <p>© {currentYear} Adylsha Yumayev. {dict.footer.rights}</p>
+          <p>
+            © {currentYear} Adylsha Yumayev. {dict.footer.rights}
+          </p>
         </div>
       </div>
     </footer>

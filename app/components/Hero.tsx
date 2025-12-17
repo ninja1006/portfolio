@@ -1,5 +1,4 @@
 'use client';
-/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { m } from 'framer-motion';
 import Image from 'next/image';
@@ -7,11 +6,10 @@ import { SectionContainer } from './shared/SectionContainer';
 import { HeroBackground } from './shared/HeroBackground';
 import { useScrollTo } from '../hooks/useScrollTo';
 import { FaArrowDown } from 'react-icons/fa';
-interface HeroProps {
-  dict: any;
-}
+import { useDictionary } from '../context/DictionaryContext';
 
-export const Hero = ({ dict }: HeroProps) => {
+export const Hero = () => {
+  const dict = useDictionary();
   const scrollTo = useScrollTo();
 
   const handleProjectsClick = (e: React.MouseEvent<HTMLButtonElement>) => {

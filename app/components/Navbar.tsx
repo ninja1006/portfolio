@@ -6,12 +6,10 @@ import Link from 'next/link';
 import { m } from 'framer-motion';
 import { useScrollTo } from '../hooks/useScrollTo';
 import LanguageSwitcher from './LanguageSwitcher';
+import { useDictionary } from '../context/DictionaryContext';
 
-interface NavbarProps {
-  dict: any;
-}
-
-export const Navbar = ({ dict }: NavbarProps) => {
+export const Navbar = () => {
+  const dict = useDictionary();
   const [isOpen, setIsOpen] = useState(false);
   const scrollTo = useScrollTo();
   const navbarRef = useRef<HTMLDivElement>(null);
