@@ -1,144 +1,166 @@
 {
-    "nav": {
-        "home": "Ana Sayfa",
-        "about": "Hakkımda",
-        "projects": "Projeler",
-        "education": "Eğitim",
-        "blog": "Blog",
-        "contact": "İletişim"
+  "nav": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımda",
+    "projects": "Projeler",
+    "education": "Eğitim",
+    "blog": "Blog",
+    "contact": "İletişim"
+  },
+  "hero": {
+    "greeting": "Merhaba, Ben",
+    "role": "Full Stack Developer",
+    "description": "Problem çözmeyi seven, sürekli öğrenmeye açık ve yeni teknolojileri keşfetmekten keyif alan bir yazılım geliştiricisi",
+    "viewProjects": "Projelerimi Gör",
+    "contactMe": "İletişime Geç"
+  },
+  "about": {
+    "title": "Hakkımda",
+    "subtitle": "Tutkulu bir Full Stack Developer",
+    "p1": "Yazılım geliştirme sürecinin her aşamasında aktif rol almaktan keyif alıyorum. Frontend'den backend'e, veritabanı yönetiminden sistem mimarisine kadar geniş bir yelpazede çalışmalar yapıyorum.",
+    "p2": "Karmaşık problemleri basit ve etkili çözümlere dönüştürmeyi seviyorum. Analitik düşünme ve mantık yürütme becerilerimi kullanarak her projede en optimum çözümü bulmaya çalışıyorum.",
+    "p3": "Teknoloji dünyasındaki hızlı değişime ayak uydurmak için sürekli kendimi geliştiriyor, yeni araçlar ve metodolojiler öğreniyorum.",
+    "keyPointsTitle": "Öne Çıkan Özelliklerim",
+    "experienceTitle": "İş Tecrübem",
+    "experienceSubtitle": "Profesyonel kariyerimde edindiğim deneyimler",
+    "keyPoints": {
+      "problemSolver": {
+        "title": "Problem Çözücü",
+        "description": "Karmaşık problemlere çözüm bulmaktan keyif alıyorum. Her zorluk, yeni bir öğrenme fırsatı sunuyor."
+      },
+      "learner": {
+        "title": "Sürekli Öğrenen",
+        "description": "Teknoloji sürekli gelişiyor ve ben de onunla birlikte gelişmeyi seviyorum. Yeni şeyler öğrenmek benim için bir tutku."
+      },
+      "fullstack": {
+        "title": "Full-Stack Geliştirici",
+        "description": "Hem frontend hem de backend alanlarında tecrübeye sahibim. Bu, projelerime bütünsel bir yaklaşım getirmemi sağlıyor."
+      },
+      "techStack": {
+        "title": "Çeşitli Teknoloji Yelpazesi",
+        "description": "React.js, Next.js, C#, ASP.NET Core, .NET Framework, Web API, NodeJS, T-SQL, Docker, ASP.NET MVC ve Flutter gibi çeşitli teknolojilerde deneyime sahibim."
+      },
+      "perspective": {
+        "title": "Çok Yönlü Bakış Açısı",
+        "description": "Sorunlara farklı açılardan yaklaşarak, alışılmışın dışında ve yaratıcı çözümler geliştirmeyi önemsiyorum."
+      },
+      "adaptable": {
+        "title": "Uyum Sağlayan",
+        "description": "Dinamik ortamlarda başarılı bir şekilde çalışıyor ve değişen gereksinimlere hızla uyum sağlıyorum. Bu esneklik, beklenmedik zorluklarla etkili bir şekilde başa çıkmamı sağlıyor."
+      }
     },
-    "hero": {
-        "greeting": "Merhaba, Ben",
-        "role": "Full Stack Developer",
-        "description": "Problem çözmeyi seven, sürekli öğrenmeye açık ve yeni teknolojileri keşfetmekten keyif alan bir yazılım geliştiricisi",
-        "viewProjects": "Projelerimi Gör",
-        "contactMe": "İletişime Geç"
-    },
-    "about": {
-        "title": "Hakkımda",
-        "subtitle": "Tutkulu bir Full Stack Developer",
-        "p1": "Yazılım geliştirme sürecinin her aşamasında aktif rol almaktan keyif alıyorum. Frontend'den backend'e, veritabanı yönetiminden sistem mimarisine kadar geniş bir yelpazede çalışmalar yapıyorum.",
-        "p2": "Karmaşık problemleri basit ve etkili çözümlere dönüştürmeyi seviyorum. Analitik düşünme ve mantık yürütme becerilerimi kullanarak her projede en optimum çözümü bulmaya çalışıyorum.",
-        "p3": "Teknoloji dünyasındaki hızlı değişime ayak uydurmak için sürekli kendimi geliştiriyor, yeni araçlar ve metodolojiler öğreniyorum.",
-        "keyPointsTitle": "Öne Çıkan Özelliklerim",
-        "experienceTitle": "İş Tecrübem",
-        "experienceSubtitle": "Profesyonel kariyerimde edindiğim deneyimler",
-        "keyPoints": {
-            "problemSolver": {
-                "title": "Problem Çözücü",
-                "description": "Karmaşık problemlere çözüm bulmaktan keyif alıyorum. Her zorluk, yeni bir öğrenme fırsatı sunuyor."
-            },
-            "learner": {
-                "title": "Sürekli Öğrenen",
-                "description": "Teknoloji sürekli gelişiyor ve ben de onunla birlikte gelişmeyi seviyorum. Yeni şeyler öğrenmek benim için bir tutku."
-            },
-            "fullstack": {
-                "title": "Full-Stack Geliştirici",
-                "description": "Hem frontend hem de backend alanlarında tecrübeye sahibim. Bu, projelerime bütünsel bir yaklaşım getirmemi sağlıyor."
-            },
-            "techStack": {
-                "title": "Çeşitli Teknoloji Yelpazesi",
-                "description": "React.js, Next.js, C#, ASP.NET Core, .NET Framework, Web API, NodeJS, T-SQL, Docker, ASP.NET MVC ve Flutter gibi çeşitli teknolojilerde deneyime sahibim."
-            },
-            "perspective": {
-                "title": "Çok Yönlü Bakış Açısı",
-                "description": "Sorunlara farklı açılardan yaklaşarak, alışılmışın dışında ve yaratıcı çözümler geliştirmeyi önemsiyorum."
-            },
-            "adaptable": {
-                "title": "Uyum Sağlayan",
-                "description": "Dinamik ortamlarda başarılı bir şekilde çalışıyor ve değişen gereksinimlere hızla uyum sağlıyorum. Bu esneklik, beklenmedik zorluklarla etkili bir şekilde başa çıkmamı sağlıyor."
-            }
-        },
-        "jobs": {
-            "gelecek2025": {
-                "title": "Gelecek Varlık Yönetimi",
-                "role": "Yazılım Geliştirme Uzmanı",
-                "period": "2025 - Günümüz",
-                "desc": "Şirket içi kritik yazılım sistemlerinin geliştirilmesi ve optimizasyonundan sorumluyum. Dış kullanıcılara yönelik web platformlarının tasarım, geliştirme ve güvenli deployment süreçlerini yönetiyorum. Veri tabanı yapılarını tasarlayıp kurumsal iş akışlarını destekleyen backend çözümleri sunuyorum. Ayrıca şirketin ilk mobil uygulamasının mimarisini oluşturup geliştirme sürecinde aktif rol oynuyorum."
-            },
-            "gelecek2022": {
-                "title": "Gelecek Varlık Yönetimi",
-                "role": "Yazılım Geliştirme Uzman Yardımcısı",
-                "period": "2022 - 2025",
-                "desc": "Şirket içerisinde kullanılan uygulamaların geliştirilmesi ve bakımından sorumluyum. Farklı teknolojiler kullanarak projeler geliştiriyorum. Geliştirmeler sırasında gerekli durumlarda veritabanı sorgularını yazıyorum."
-            },
-            "patika": {
-                "title": "Gelecek Varlık Yönetimi - Patika",
-                "role": "Bootcamp Öğrencisi",
-                "period": "2022 - 2022",
-                "desc": "Patika.dev platformunda verilen eğitimleri tamamladım ve bu süreçte yazılım geliştirme alanında temelleri öğrendim. Sonrasında mülakatları geçerek Gelecek Varlık Yönetimi'nde Junior Full Stack Developer olarak işe başladım."
-            }
-        }
-    },
-    "projects": {
-        "title": "Projelerim",
-        "subtitle": "Öne çıkan projelerimden bazıları",
-        "inDevelopment": "Geliştiriliyor",
-        "noImage": "Henüz görsel eklenmedi",
-        "viewOnGithub": "GitHub'da Görüntüle",
-        "viewAllProjects": "Tüm Projeleri Gör",
-        "showMore": "Daha Fazla",
-        "showLess": "Daha Az",
-        "items": {
-            "YumaIdentity": {
-                "title": "YumaIdentity - IAM Servisi",
-                "desc": "Tam özellikli bir Identity and Access Management (IAM) servisi. Kullanıcı kimlik doğrulama, yetkilendirme, rol yönetimi ve güvenli token tabanlı oturum yönetimi sağlar. Modern full-stack mimarisiyle geliştirilmiş, ölçeklenebilir bir kimlik yönetim platformu."
-            },
-            "dalle": {
-                "title": "Dall-E Klonu",
-                "desc": "OpenAI'ın DALL-E'sinden esinlenen bir yapay zeka görsel oluşturma uygulaması. Kullanıcılar MERN stack kullanarak metin komutlarına dayalı yapay zeka tarafından oluşturulan görselleri oluşturabilir ve paylaşabilir."
-            },
-            "airbnb": {
-                "title": "Airbnb Klonu",
-                "desc": "Airbnb web sitesinin bir klonu. Kullanıcılar mülkleri arayabilir, detayları görüntüleyebilir ve konaklama rezervasyonu yapabilir."
-            },
-            "twitter": {
-                "title": "Twitter Klonu",
-                "desc": "Twitter'ın modern bir klonu. Kullanıcılar tweet atabilir, diğer kullanıcıları takip edebilir ve etkileşimde bulunabilir. Next.js ve TypeScript kullanılarak geliştirilmiş tam özellikli bir sosyal medya uygulaması."
-            },
-            "aiPrompt": {
-                "title": "AI Prompt Uygulaması",
-                "desc": "Kullanıcıların yapay zeka promptlarını oluşturup paylaşabilecekleri bir platform. Kullanıcılar kendi promptlarını kaydedebilir, başkalarının promptlarını keşfedebilir ve etkileşimde bulunabilir. Next.js ve modern kimlik doğrulama yöntemleri kullanılarak geliştirilmiştir."
-            },
-            "pokemon": {
-                "title": "Mobile Pokemon App",
-                "desc": "PokeAPI kullanarak clean architecture ilkelerine göre geliştirilen bir Flutter projesi. Özellikler arasında Pokémon'u getirme ve görüntüleme, ayrıntılı bilgileri görüntüleme, ada göre arama ve mobil ve web için duyarlı tasarım yer alır. Modülerlik ve sürdürülebilirlik için feature-first bir mimari ile düzenlenmiştir."
-            },
-            "habit": {
-                "title": "Habit Tracker App",
-                "desc": "Temiz, modern bir kullanıcı arayüzü ve güçlü özelliklerle kullanıcıların alışkanlıklarını takip etmelerine ve sürdürmelerine yardımcı olan bir Flutter uygulaması."
-            }
-        }
-    },
-    "skills": {
-        "title": "Yeteneklerim",
-        "subtitle": "Çalıştığım teknolojiler ve araçlar",
-        "categories": {
-            "frontend": "Frontend Geliştirme",
-            "backend": "Backend Geliştirme",
-            "tools": "Araçlar ve Metodolojiler",
-            "other": "Diğer Yetenekler"
-        }
-    },
-    "certificates": {
-        "title": "Sertifikalar",
-        "subtitle": "Aldığım eğitimler ve başarılar",
-        "viewCertificate": "Sertifikayı Görüntüle",
-        "viewAllCertificates": "Tüm Sertifikaları Gör"
-    },
-    "footer": {
-        "aboutTitle": "Hakkımda",
-        "aboutDesc": "Modern teknolojilerle yenilikçi ve sürdürülebilir çözümler geliştiren, detaylara önem veren bir Full Stack Developer’ım.",
-        "linksTitle": "Hızlı Bağlantılar",
-        "contactTitle": "Benimle İletişime Geç",
-        "email": "E-posta",
-        "rights": "Tüm Hakları Saklıdır"
-    },
-    "blog": {
-        "title": "Blog",
-        "subtitle": "Bloguma hoşgeldiniz! Bu alanda yazılım geliştirme alanında edindiğim yeni bilgiler, yazılım geliştirme ile ilgili düşüncelerim ve yazılım geliştirme ile ilgili fikirlerimi paylaşacağım.",
-        "back": "Geri Dön",
-        "readTime": "Okuma süresi",
-        "notFound": "Blog Bulunamadı"
+    "jobs": {
+      "gelecek2025": {
+        "title": "Gelecek Varlık Yönetimi",
+        "role": "Yazılım Geliştirme Uzmanı",
+        "period": "2025 - Günümüz",
+        "desc": "Şirket içi kritik yazılım sistemlerinin geliştirilmesi ve optimizasyonundan sorumluyum. Dış kullanıcılara yönelik web platformlarının tasarım, geliştirme ve güvenli deployment süreçlerini yönetiyorum. Veri tabanı yapılarını tasarlayıp kurumsal iş akışlarını destekleyen backend çözümleri sunuyorum. Ayrıca şirketin ilk mobil uygulamasının mimarisini oluşturup geliştirme sürecinde aktif rol oynuyorum.",
+        "technologies": [
+          "ASP.NET MVC",
+          "SQL Server",
+          "WEB API",
+          "Flutter",
+          "Dart"
+        ]
+      },
+      "gelecek2022": {
+        "title": "Gelecek Varlık Yönetimi",
+        "role": "Yazılım Geliştirme Uzman Yardımcısı",
+        "period": "2022 - 2025",
+        "desc": "Şirket içerisinde kullanılan uygulamaların geliştirilmesi ve bakımından sorumluyum. Farklı teknolojiler kullanarak projeler geliştiriyorum. Geliştirmeler sırasında gerekli durumlarda veritabanı sorgularını yazıyorum.",
+        "technologies": [
+          "React",
+          "ASP.NET Core",
+          "SQL Server",
+          "T-SQL",
+          "WEB API",
+          "MongoDB"
+        ]
+      },
+      "patika": {
+        "title": "Gelecek Varlık Yönetimi - Patika",
+        "role": "Bootcamp Öğrencisi",
+        "period": "2022 - 2022",
+        "desc": "Patika.dev platformunda verilen eğitimleri tamamladım ve bu süreçte yazılım geliştirme alanında temelleri öğrendim. Sonrasında mülakatları geçerek Gelecek Varlık Yönetimi'nde Junior Full Stack Developer olarak işe başladım.",
+        "technologies": [
+          "ASP.NET Core",
+          "SQL Server",
+          "React",
+          "Node.js",
+          "MongoDB"
+        ]
+      }
     }
+  },
+  "projects": {
+    "title": "Projelerim",
+    "subtitle": "Öne çıkan projelerimden bazıları",
+    "inDevelopment": "Geliştiriliyor",
+    "noImage": "Henüz görsel eklenmedi",
+    "viewOnGithub": "GitHub'da Görüntüle",
+    "viewAllProjects": "Tüm Projeleri Gör",
+    "showMore": "Daha Fazla",
+    "showLess": "Daha Az",
+    "items": {
+      "YumaIdentity": {
+        "title": "YumaIdentity - IAM Servisi",
+        "desc": "Tam özellikli bir Identity and Access Management (IAM) servisi. Kullanıcı kimlik doğrulama, yetkilendirme, rol yönetimi ve güvenli token tabanlı oturum yönetimi sağlar. Modern full-stack mimarisiyle geliştirilmiş, ölçeklenebilir bir kimlik yönetim platformu."
+      },
+      "dalle": {
+        "title": "Dall-E Klonu",
+        "desc": "OpenAI'ın DALL-E'sinden esinlenen bir yapay zeka görsel oluşturma uygulaması. Kullanıcılar MERN stack kullanarak metin komutlarına dayalı yapay zeka tarafından oluşturulan görselleri oluşturabilir ve paylaşabilir."
+      },
+      "airbnb": {
+        "title": "Airbnb Klonu",
+        "desc": "Airbnb web sitesinin bir klonu. Kullanıcılar mülkleri arayabilir, detayları görüntüleyebilir ve konaklama rezervasyonu yapabilir."
+      },
+      "twitter": {
+        "title": "Twitter Klonu",
+        "desc": "Twitter'ın modern bir klonu. Kullanıcılar tweet atabilir, diğer kullanıcıları takip edebilir ve etkileşimde bulunabilir. Next.js ve TypeScript kullanılarak geliştirilmiş tam özellikli bir sosyal medya uygulaması."
+      },
+      "aiPrompt": {
+        "title": "AI Prompt Uygulaması",
+        "desc": "Kullanıcıların yapay zeka promptlarını oluşturup paylaşabilecekleri bir platform. Kullanıcılar kendi promptlarını kaydedebilir, başkalarının promptlarını keşfedebilir ve etkileşimde bulunabilir. Next.js ve modern kimlik doğrulama yöntemleri kullanılarak geliştirilmiştir."
+      },
+      "pokemon": {
+        "title": "Mobile Pokemon App",
+        "desc": "PokeAPI kullanarak clean architecture ilkelerine göre geliştirilen bir Flutter projesi. Özellikler arasında Pokémon'u getirme ve görüntüleme, ayrıntılı bilgileri görüntüleme, ada göre arama ve mobil ve web için duyarlı tasarım yer alır. Modülerlik ve sürdürülebilirlik için feature-first bir mimari ile düzenlenmiştir."
+      },
+      "habit": {
+        "title": "Habit Tracker App",
+        "desc": "Temiz, modern bir kullanıcı arayüzü ve güçlü özelliklerle kullanıcıların alışkanlıklarını takip etmelerine ve sürdürmelerine yardımcı olan bir Flutter uygulaması."
+      }
+    }
+  },
+  "skills": {
+    "title": "Yeteneklerim",
+    "subtitle": "Çalıştığım teknolojiler ve araçlar",
+    "categories": {
+      "frontend": "Frontend Geliştirme",
+      "backend": "Backend Geliştirme",
+      "tools": "Araçlar ve Metodolojiler",
+      "other": "Diğer Yetenekler"
+    }
+  },
+  "certificates": {
+    "title": "Sertifikalar",
+    "subtitle": "Aldığım eğitimler ve başarılar",
+    "viewCertificate": "Sertifikayı Görüntüle",
+    "viewAllCertificates": "Tüm Sertifikaları Gör"
+  },
+  "footer": {
+    "aboutTitle": "Hakkımda",
+    "aboutDesc": "Modern teknolojilerle yenilikçi ve sürdürülebilir çözümler geliştiren, detaylara önem veren bir Full Stack Developer’ım.",
+    "linksTitle": "Hızlı Bağlantılar",
+    "contactTitle": "Benimle İletişime Geç",
+    "email": "E-posta",
+    "rights": "Tüm Hakları Saklıdır"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Bloguma hoşgeldiniz! Bu alanda yazılım geliştirme alanında edindiğim yeni bilgiler, yazılım geliştirme ile ilgili düşüncelerim ve yazılım geliştirme ile ilgili fikirlerimi paylaşacağım.",
+    "back": "Geri Dön",
+    "readTime": "Okuma süresi",
+    "notFound": "Blog Bulunamadı"
+  }
 }

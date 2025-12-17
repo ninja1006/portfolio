@@ -15,30 +15,13 @@ export const About = () => {
   const dict = useDictionary();
   const keyPoints = Object.values(dict.about.keyPoints) as KeyPoint[];
 
-  const getTechs = (jobKey: string) => {
-    if (jobKey === 'gelecek2025')
-      return ['ASP.NET MVC', 'SQL Server', 'WEB API', 'Flutter', 'Dart'];
-    if (jobKey === 'gelecek2022')
-      return [
-        'React',
-        'ASP.NET Core',
-        'SQL Server',
-        'T-SQL',
-        'WEB API',
-        'MongoDB',
-      ];
-    if (jobKey === 'patika')
-      return ['ASP.NET Core', 'SQL Server', 'React', 'Node.js', 'MongoDB'];
-    return [];
-  };
-
   const jobs = Object.entries(dict.about.jobs).map(
-    ([key, job]: [string, any]) => ({
+    ([, job]: [string, any]) => ({
       company: job.title,
       position: job.role,
       period: job.period,
       description: job.desc,
-      technologies: getTechs(key),
+      technologies: job.technologies || [],
     })
   );
 
