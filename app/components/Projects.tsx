@@ -38,6 +38,8 @@ export function Projects({ dict }: ProjectsProps) {
           inDevelopmentText={dict.projects.inDevelopment}
           noImageText={dict.projects.noImage}
           viewOnGithubText={dict.projects.viewOnGithub}
+          showMoreText={dict.projects.showMore}
+          showLessText={dict.projects.showLess}
         />
       )}
     />

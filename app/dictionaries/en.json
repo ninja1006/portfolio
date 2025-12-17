@@ -79,6 +79,8 @@
         "noImage": "No image added yet",
         "viewOnGithub": "View on GitHub",
         "viewAllProjects": "View All Projects",
+        "showMore": "Show More",
+        "showLess": "Show Less",
         "items": {
             "YumaIdentity": {
                 "title": "YumaIdentity - IAM Service",

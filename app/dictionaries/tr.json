@@ -77,6 +77,8 @@
         "noImage": "Henüz görsel eklenmedi",
         "viewOnGithub": "GitHub'da Görüntüle",
         "viewAllProjects": "Tüm Projeleri Gör",
+        "showMore": "Daha Fazla",
+        "showLess": "Daha Az",
         "items": {
             "YumaIdentity": {
                 "title": "YumaIdentity - IAM Servisi",

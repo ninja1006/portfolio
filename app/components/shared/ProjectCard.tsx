@@ -1,16 +1,21 @@
 'use client';
 
-import { m } from 'framer-motion';
+import { m, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motionItem } from './MotionContainer';
 import { Project } from '../../data/types';
 import { FaGithub } from 'react-icons/fa';
+import { useState, useRef, useEffect } from 'react';
+import { FiChevronDown } from 'react-icons/fi';
+
 interface ProjectCardProps {
   project: Project;
   inDevelopmentText?: string;
   noImageText?: string;
   viewOnGithubText?: string;
+  showMoreText?: string;
+  showLessText?: string;
 }
 
 export const ProjectCard = ({
@@ -18,7 +23,19 @@ export const ProjectCard = ({
   inDevelopmentText = 'In Development',
   noImageText = 'No image added yet',
   viewOnGithubText = 'View on GitHub',
+  showMoreText = 'Show More',
+  showLessText = 'Show Less',
 }: ProjectCardProps) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [contentHeight, setContentHeight] = useState<number>(0);
+
+  useEffect(() => {
+    if (contentRef.current) {
+      setContentHeight(contentRef.current.scrollHeight);
+    }
+  }, [project.description]);
+
   const handleKeyboardNavigation = (
     e: React.KeyboardEvent<HTMLAnchorElement>
   ) => {
@@ -77,9 +94,48 @@ export const ProjectCard = ({
           <h3 className='text-xl font-semibold mb-2 text-justify'>
             {project.title}
           </h3>
-          <p className='text-muted-foreground mb-4 text-justify line-clamp-3'>
-            {project.description}
-          </p>
+          <div className='mb-4'>
+            <m.div
+              initial={false}
+              animate={{
+                height: isExpanded ? contentHeight : 72,
+              }}
+              transition={{
+                duration: 0.3,
+                ease: [0.4, 0, 0.2, 1],
+              }}
+              className='overflow-hidden relative'
+            >
+              <p
+                ref={contentRef}
+                className='text-muted-foreground text-justify'
+              >
+                {project.description}
+              </p>
+              {/* Gradient fade overlay when collapsed */}
+              {!isExpanded && project.description.length > 150 && (
+                <div className='absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-secondary/50 to-transparent pointer-events-none' />
+              )}
+            </m.div>
+            {/* Reserve space for button to keep consistent card height */}
+            <div className='h-8 mt-2'>
+              {project.description.length > 150 && (
+                <button
+                  onClick={() => setIsExpanded(!isExpanded)}
+                  className='inline-flex items-center gap-1 text-sm text-primary hover:text-primary/80 transition-colors'
+                  aria-label={isExpanded ? showLessText : showMoreText}
+                >
+                  <span>{isExpanded ? showLessText : showMoreText}</span>
+                  <m.span
+                    animate={{ rotate: isExpanded ? 180 : 0 }}
+                    transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                  >
+                    <FiChevronDown className='w-4 h-4' />
+                  </m.span>
+                </button>
+              )}
+            </div>
+          </div>
 
           {/* Technologies */}
           <div className='flex flex-wrap gap-2 mb-4'>
