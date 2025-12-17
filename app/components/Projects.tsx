@@ -6,13 +6,10 @@ import { ProjectCard } from './shared/ProjectCard';
 import { projects } from '../data/projects';
 import { Project } from '../data/types';
 import { FaGithub } from 'react-icons/fa';
+import { useDictionary } from '../context/DictionaryContext';
 
-interface ProjectsProps {
-  dict: any;
-}
-
-export function Projects({ dict }: ProjectsProps) {
-  // Merge static data with dictionary translations
+export function Projects() {
+  const dict = useDictionary();
   const translatedProjects = projects.map((project) => ({
     ...project,
     title: dict.projects.items[project.key]?.title || project.title,
@@ -32,14 +29,7 @@ export function Projects({ dict }: ProjectsProps) {
         href: 'https://github.com/AdylshaY?tab=repositories',
         icon: <FaGithub className='w-5 h-5' />,
       }}
-      renderCard={(project) => (
-        <ProjectCard
-          project={project}
-          inDevelopmentText={dict.projects.inDevelopment}
-          noImageText={dict.projects.noImage}
-          viewOnGithubText={dict.projects.viewOnGithub}
-        />
-      )}
+      renderCard={(project) => <ProjectCard project={project} />}
     />
   );
 }

@@ -6,27 +6,13 @@ import Link from 'next/link';
 import { m } from 'framer-motion';
 import { useScrollTo } from '../hooks/useScrollTo';
 import LanguageSwitcher from './LanguageSwitcher';
+import { useDictionary } from '../context/DictionaryContext';
 
-interface NavbarProps {
-  dict: any;
-}
-
-export const Navbar = ({ dict }: NavbarProps) => {
+export const Navbar = () => {
+  const dict = useDictionary();
   const [isOpen, setIsOpen] = useState(false);
   const scrollTo = useScrollTo();
   const navbarRef = useRef<HTMLDivElement>(null);
-
-
-  // Let's stick to dict keys. Original: Home, About, Projects, Skills, Blog, Contact.
-  // My dict has: home, about, projects, education, blog, contact. I missed "skills".
-  // I will add skills to dict in a follow up or just use hardcoded key mapping for now.
-  // Let's assume skills maps to `dict.skills.title` or I add `skills` to `dict.nav`.
-
-  // Re-creating the nav items based on what `dict.nav` has + mapping to hrefs.
-  // Dict nav keys: home, about, projects, (education - wait, do I have education section?), blog, contact.
-  // Existing sections: home (#home), about (#about), projects (#projects), skills (#skills), blog (/blog), contact (#contact).
-  // I should update dict.nav to include skills and remove education if not used. 
-  // Or just map what I have.
 
   const items = [
     { name: dict.nav.home, href: 'home', isRoute: false },
@@ -56,12 +42,8 @@ export const Navbar = ({ dict }: NavbarProps) => {
     };
   }, [isOpen]);
 
-
-
-  // Helper for navigation
   const handleLinkClick = (e: any, item: any) => {
     if (item.isRoute) {
-      // standard navigation, don't prevent default unless we want to close menu first?
       setIsOpen(false);
       return;
     }
@@ -70,8 +52,7 @@ export const Navbar = ({ dict }: NavbarProps) => {
     setTimeout(() => {
       scrollTo(item.href);
     }, 100);
-  }
-
+  };
 
   return (
     <div className='fixed top-0 w-full z-50' ref={navbarRef}>
@@ -123,7 +104,7 @@ export const Navbar = ({ dict }: NavbarProps) => {
             </div>
 
             {/* Mobile Menu Button - Left LanguageSwitcher outside mobile menu or inside? Inside looks cleaner for mobile */}
-            <div className="flex md:hidden items-center gap-4">
+            <div className='flex md:hidden items-center gap-4'>
               <LanguageSwitcher />
               <button
                 className='p-2 text-foreground hover:text-primary transition-colors'
@@ -133,16 +114,19 @@ export const Navbar = ({ dict }: NavbarProps) => {
               >
                 <div className='w-6 h-5 relative flex flex-col justify-between'>
                   <span
-                    className={`w-full h-0.5 bg-current transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-2' : ''
-                      }`}
+                    className={`w-full h-0.5 bg-current transition-all duration-300 origin-center ${
+                      isOpen ? 'rotate-45 translate-y-[9px]' : ''
+                    }`}
                   />
                   <span
-                    className={`w-full h-0.5 bg-current transition-all duration-300 ${isOpen ? 'opacity-0' : ''
-                      }`}
+                    className={`w-full h-0.5 bg-current transition-all duration-300 ${
+                      isOpen ? 'opacity-0' : ''
+                    }`}
                   />
                   <span
-                    className={`w-full h-0.5 bg-current transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-2' : ''
-                      }`}
+                    className={`w-full h-0.5 bg-current transition-all duration-300 origin-center ${
+                      isOpen ? '-rotate-45 -translate-y-[9px]' : ''
+                    }`}
                   />
                 </div>
               </button>

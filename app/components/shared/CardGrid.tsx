@@ -51,6 +51,19 @@ export function CardGrid<T>({
   const [showScrollHint, setShowScrollHint] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const scrollToNextCard = () => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      const sortedItems = sortItems ? sortItems(items) : items;
+      const cardWidth = container.scrollWidth / sortedItems.length;
+      const nextIndex = Math.min(currentIndex + 1, sortedItems.length - 1);
+      container.scrollTo({
+        left: cardWidth * nextIndex,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   useEffect(() => {
     const container = scrollContainerRef.current;
     if (!container || !enableMobileScroll) return;
@@ -107,11 +120,15 @@ export function CardGrid<T>({
 
               {/* Scroll hint indicator - only on mobile */}
               {showScrollHint && (
-                <div className='absolute top-1/2 right-4 -translate-y-1/2 md:hidden animate-bounce pointer-events-none'>
-                  <div className='bg-primary/90 text-primary-foreground rounded-full p-2 shadow-lg backdrop-blur-sm'>
+                <button
+                  onClick={scrollToNextCard}
+                  className='absolute top-1/2 right-4 -translate-y-1/2 md:hidden animate-bounce cursor-pointer'
+                  aria-label='Scroll to next card'
+                >
+                  <div className='bg-primary/90 text-primary-foreground rounded-full p-2 shadow-lg backdrop-blur-sm hover:bg-primary transition-colors'>
                     <FiChevronRight className='w-5 h-5' />
                   </div>
-                </div>
+                </button>
               )}
             </div>
 

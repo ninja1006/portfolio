@@ -6,12 +6,10 @@ import { SectionContainer } from './shared/SectionContainer';
 import { SectionHeader } from './shared/SectionHeader';
 import { MotionContainer, motionItem } from './shared/MotionContainer';
 import { skillsByCategory } from '../data/skills';
+import { useDictionary } from '../context/DictionaryContext';
 
-interface SkillsProps {
-  dict: any;
-}
-
-export const Skills = ({ dict }: SkillsProps) => {
+export const Skills = () => {
+  const dict = useDictionary();
   return (
     <SectionContainer id='skills'>
       <MotionContainer className='max-w-6xl mx-auto'>
@@ -28,7 +26,11 @@ export const Skills = ({ dict }: SkillsProps) => {
               className='space-y-4 bg-card/50 backdrop-blur-sm p-6 rounded-2xl border border-primary/10 hover:border-primary/30 transition-colors'
             >
               <h3 className='text-xl font-semibold capitalize text-primary'>
-                {dict.skills.categories[category as keyof typeof dict.skills.categories]}
+                {
+                  dict.skills.categories[
+                    category as keyof typeof dict.skills.categories
+                  ]
+                }
               </h3>
               <div className='grid grid-cols-2 gap-4'>
                 {skills.map((skill) => (

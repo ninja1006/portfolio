@@ -6,6 +6,7 @@ import { FramerMotionProvider } from '../components/shared/FramerMotionProvider'
 import { Footer } from '../components/Footer';
 import { i18n } from '../../i18n-config';
 import { getDictionary } from '../utils/get-dictionary';
+import { DictionaryProvider } from '../context/DictionaryContext';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -37,8 +38,10 @@ export default async function RootLayout({
         <meta name='color-profile' content='sRGB' />
       </head>
       <body className={inter.className}>
-        <FramerMotionProvider>{children}</FramerMotionProvider>
-        <Footer dict={dict} />
+        <DictionaryProvider dict={dict}>
+          <FramerMotionProvider>{children}</FramerMotionProvider>
+          <Footer />
+        </DictionaryProvider>
       </body>
     </html>
   );

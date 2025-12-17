@@ -1,144 +1,143 @@
 {
-    "nav": {
-        "home": "Home",
-        "about": "About",
-        "projects": "Projects",
-        "education": "Education",
-        "blog": "Blog",
-        "contact": "Contact"
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "education": "Education",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "role": "Full Stack Developer",
+    "description": "A software developer who loves problem-solving, is always open to learning, and enjoys discovering new technologies.",
+    "viewProjects": "View Projects",
+    "contactMe": "Contact Me"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "A Passionate Full Stack Developer",
+    "p1": "I enjoy taking an active role in every stage of the software development process. I work across a wide range of areas, from Frontend to Backend, database management to system architecture.",
+    "p2": "I love transforming complex problems into simple and effective solutions. Using my analytical thinking and logical reasoning skills, I strive to find the optimum solution in every project.",
+    "p3": "To keep up with the rapid changes in the technology world, I constantly improve myself and learn new tools and methodologies.",
+    "keyPointsTitle": "Key Highlights",
+    "experienceTitle": "Work Experience",
+    "experienceSubtitle": "Experience gained throughout my professional career",
+    "keyPoints": {
+      "problemSolver": {
+        "title": "Problem Solver",
+        "description": "I enjoy finding solutions to complex problems. Every challenge presents a new learning opportunity."
+      },
+      "learner": {
+        "title": "Continuous Learner",
+        "description": "Technology is constantly evolving, and I love evolving with it. Learning new things is a passion for me."
+      },
+      "fullstack": {
+        "title": "Full-Stack Developer",
+        "description": "I have experience in both frontend and backend areas. This allows me to bring a holistic approach to my projects."
+      },
+      "techStack": {
+        "title": "Diverse Tech Stack",
+        "description": "I have experience with various technologies such as React.js, Next.js, C#, ASP.NET Core, .NET Framework, Web API, NodeJS, T-SQL, Docker, ASP.NET MVC, and Flutter."
+      },
+      "perspective": {
+        "title": "Versatile Perspective",
+        "description": "I value approaching problems from different angles and developing creative, out-of-the-box solutions."
+      },
+      "adaptable": {
+        "title": "Adaptable",
+        "description": "I work successfully in dynamic environments and adapt quickly to changing requirements. This flexibility allows me to effectively handle unexpected challenges."
+      }
     },
-    "hero": {
-        "greeting": "Hello, I'm",
-        "role": "Full Stack Developer",
-        "description": "A software developer who loves problem-solving, is always open to learning, and enjoys discovering new technologies.",
-        "viewProjects": "View Projects",
-        "contactMe": "Contact Me"
-    },
-    "about": {
-        "title": "About Me",
-        "subtitle": "A Passionate Full Stack Developer",
-        "p1": "I enjoy taking an active role in every stage of the software development process. I work across a wide range of areas, from Frontend to Backend, database management to system architecture.",
-        "p2": "I love transforming complex problems into simple and effective solutions. Using my analytical thinking and logical reasoning skills, I strive to find the optimum solution in every project.",
-        "p3": "To keep up with the rapid changes in the technology world, I constantly improve myself and learn new tools and methodologies.",
-        "keyPointsTitle": "Key Highlights",
-        "experienceTitle": "Work Experience",
-        "experienceSubtitle": "Experience gained throughout my professional career",
-        "keyPoints": {
-            "problemSolver": {
-                "title": "Problem Solver",
-                "description": "I enjoy finding solutions to complex problems. Every challenge presents a new learning opportunity."
-            },
-            "learner": {
-                "title": "Continuous Learner",
-                "description": "Technology is constantly evolving, and I love evolving with it. Learning new things is a passion for me."
-            },
-            "fullstack": {
-                "title": "Full-Stack Developer",
-                "description": "I have experience in both frontend and backend areas. This allows me to bring a holistic approach to my projects."
-            },
-            "techStack": {
-                "title": "Diverse Tech Stack",
-                "description": "I have experience with various technologies such as React.js, Next.js, C#, ASP.NET Core, .NET Framework, Web API, NodeJS, T-SQL, Docker, ASP.NET MVC, and Flutter."
-            },
-            "perspective": {
-                "title": "Versatile Perspective",
-                "description": "I value approaching problems from different angles and developing creative, out-of-the-box solutions."
-            },
-            "adaptable": {
-                "title": "Adaptable",
-                "description": "I work successfully in dynamic environments and adapt quickly to changing requirements. This flexibility allows me to effectively handle unexpected challenges."
-            }
-        },
-        "jobs": {
-            "gelecek2025": {
-                "title": "Gelecek Varlık Yönetimi",
-                "role": "Software Development Specialist",
-                "period": "2025 - Present",
-                "desc": "Responsible for the development and optimization of critical internal software systems. Managing the design, development, and secure deployment processes of external-facing web platforms. Designing database structures and providing backend solutions that support corporate workflows. Also playing an active role in the architecture and development of the company's first mobile application."
-            },
-            "gelecek2022": {
-                "title": "Gelecek Varlık Yönetimi",
-                "role": "Junior Full Stack Developer",
-                "period": "2022 - 2025",
-                "desc": "Responsible for the development and maintenance of applications used within the company. Developing projects using various technologies. Writing database queries when necessary during development."
-            },
-            "patika": {
-                "title": "Gelecek Varlık Yönetimi - Patika",
-                "role": "Bootcamp Student",
-                "period": "2022 - 2022",
-                "desc": "Completed training provided on the Patika.dev platform, learning the fundamentals of software development. Subsequently passed interviews and started working as a Junior Full Stack Developer at Gelecek Varlık Yönetimi."
-            }
-        }
-    },
-    "projects": {
-        "title": "Projects",
-        "subtitle": "Some of my featured projects",
-        "viewProject": "View Project",
-        "viewCode": "View Code",
-        "inDevelopment": "In Development",
-        "noImage": "No image added yet",
-        "viewOnGithub": "View on GitHub",
-        "viewAllProjects": "View All Projects",
-        "items": {
-            "YumaIdentity": {
-                "title": "YumaIdentity - IAM Service",
-                "desc": "A full-featured Identity and Access Management (IAM) service. Provides user authentication, authorization, role management, and secure token-based session management. A scalable identity management platform developed with modern full-stack architecture."
-            },
-            "dalle": {
-                "title": "Dall-E Clone",
-                "desc": "An AI image generation app inspired by OpenAI's DALL-E. Users can generate and share AI-created images based on text prompts using the MERN stack."
-            },
-            "airbnb": {
-                "title": "Airbnb Clone",
-                "desc": "A clone of the Airbnb website. Users can search for properties, view details, and book stays."
-            },
-            "twitter": {
-                "title": "Twitter Clone",
-                "desc": "A modern clone of Twitter. Users can tweet, follow others, and interact. A full-featured social media app developed using Next.js and TypeScript."
-            },
-            "aiPrompt": {
-                "title": "AI Prompt App",
-                "desc": "A platform where users can create and share AI prompts. Users can save their own prompts, discover others', and interact. Developed using Next.js and modern authentication methods."
-            },
-            "pokemon": {
-                "title": "Mobile Pokemon App",
-                "desc": "A Flutter project developed using clean architecture principles with PokeAPI. Features include fetching and displaying Pokémon, viewing detailed info, searching by name, and responsive design for mobile and web. Organized with a feature-first architecture for modularity and maintainability."
-            },
-            "habit": {
-                "title": "Habit Tracker App",
-                "desc": "A Flutter app that helps users track and maintain their habits with a clean, modern UI and powerful features."
-            }
-        }
-    },
-    "skills": {
-        "title": "Skills",
-        "subtitle": "Technologies and tools I work with",
-        "categories": {
-            "frontend": "Frontend Development",
-            "backend": "Backend Development",
-            "tools": "Tools & Methodologies",
-            "other": "Other Skills"
-        }
-    },
-    "certificates": {
-        "title": "Certificates",
-        "subtitle": "Trainings and achievements",
-        "viewCertificate": "View Certificate",
-        "viewAllCertificates": "View All Certificates"
-    },
-    "footer": {
-        "aboutTitle": "About Me",
-        "aboutDesc": "I'm a detail-oriented Full Stack Developer developing innovative and sustainable solutions with modern technologies.",
-        "linksTitle": "Quick Links",
-        "contactTitle": "Contact Me",
-        "email": "Email",
-        "rights": "All Rights Reserved"
-    },
-    "blog": {
-        "title": "Blog",
-        "subtitle": "Welcome to my blog! Here I share my thoughts, ideas, and new learnings about software development.",
-        "back": "Go Back",
-        "readTime": "Read time",
-        "notFound": "Blog Not Found"
+    "jobs": {
+      "gelecek2025": {
+        "title": "Gelecek Varlık Yönetimi",
+        "role": "Software Development Specialist",
+        "desc": "Responsible for the development and optimization of critical internal software systems. Managing the design, development, and secure deployment processes of external-facing web platforms. Designing database structures and providing backend solutions that support corporate workflows. Also playing an active role in the architecture and development of the company's first mobile application."
+      },
+      "gelecek2022": {
+        "title": "Gelecek Varlık Yönetimi",
+        "role": "Junior Full Stack Developer",
+        "desc": "Responsible for the development and maintenance of applications used within the company. Developing projects using various technologies. Writing database queries when necessary during development."
+      },
+      "patika": {
+        "title": "Gelecek Varlık Yönetimi - Patika",
+        "role": "Bootcamp Student",
+        "desc": "Completed training provided on the Patika.dev platform, learning the fundamentals of software development. Subsequently passed interviews and started working as a Junior Full Stack Developer at Gelecek Varlık Yönetimi."
+      }
     }
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Some of my featured projects",
+    "viewProject": "View Project",
+    "viewCode": "View Code",
+    "inDevelopment": "In Development",
+    "noImage": "No image added yet",
+    "viewOnGithub": "View on GitHub",
+    "viewAllProjects": "View All Projects",
+    "showMore": "Show More",
+    "showLess": "Show Less",
+    "items": {
+      "YumaIdentity": {
+        "title": "YumaIdentity - IAM Service",
+        "desc": "A full-featured Identity and Access Management (IAM) service. Provides user authentication, authorization, role management, and secure token-based session management. A scalable identity management platform developed with modern full-stack architecture."
+      },
+      "dalle": {
+        "title": "Dall-E Clone",
+        "desc": "An AI image generation app inspired by OpenAI's DALL-E. Users can generate and share AI-created images based on text prompts using the MERN stack."
+      },
+      "airbnb": {
+        "title": "Airbnb Clone",
+        "desc": "A clone of the Airbnb website. Users can search for properties, view details, and book stays."
+      },
+      "twitter": {
+        "title": "Twitter Clone",
+        "desc": "A modern clone of Twitter. Users can tweet, follow others, and interact. A full-featured social media app developed using Next.js and TypeScript."
+      },
+      "aiPrompt": {
+        "title": "AI Prompt App",
+        "desc": "A platform where users can create and share AI prompts. Users can save their own prompts, discover others', and interact. Developed using Next.js and modern authentication methods."
+      },
+      "pokemon": {
+        "title": "Mobile Pokemon App",
+        "desc": "A Flutter project developed using clean architecture principles with PokeAPI. Features include fetching and displaying Pokémon, viewing detailed info, searching by name, and responsive design for mobile and web. Organized with a feature-first architecture for modularity and maintainability."
+      },
+      "habit": {
+        "title": "Habit Tracker App",
+        "desc": "A Flutter app that helps users track and maintain their habits with a clean, modern UI and powerful features."
+      }
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Technologies and tools I work with",
+    "categories": {
+      "frontend": "Frontend Development",
+      "backend": "Backend Development",
+      "tools": "Tools & Methodologies",
+      "other": "Other Skills"
+    }
+  },
+  "certificates": {
+    "title": "Certificates",
+    "subtitle": "Trainings and achievements",
+    "viewCertificate": "View Certificate",
+    "viewAllCertificates": "View All Certificates"
+  },
+  "footer": {
+    "aboutTitle": "About Me",
+    "aboutDesc": "I'm a detail-oriented Full Stack Developer developing innovative and sustainable solutions with modern technologies.",
+    "linksTitle": "Quick Links",
+    "contactTitle": "Contact Me",
+    "email": "Email",
+    "rights": "All Rights Reserved"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Welcome to my blog! Here I share my thoughts, ideas, and new learnings about software development.",
+    "back": "Go Back",
+    "readTime": "Read time",
+    "notFound": "Blog Not Found"
+  }
 }
