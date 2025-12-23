@@ -16,9 +16,10 @@ export const certificates: Certificate[] = [
     url: 'https://www.btakademi.com/Certificates?Id=616984&Name=Adylsha-Yumayev',
   },
   {
-    title: 'Oyun ve Uygulama Akademisi: Teknoloji Girişimciliği',
-    issuer: 'Oyun ve Uygulama Akademisi',
-    date: '2022',
-    url: 'https://verified.sertifier.com/en/verify/10199325453363/?ref',
+    title: 'Design Patterns and Software Architecture',
+    issuer: 'BT Akademi',
+    date: '2025',
+    image: '/certificates/design_patterns_cert.jpg',
+    url: 'https://www.btakademi.com/Certificates?Id=223496&Name=Adylsha-Yumayev',
   },
 ];
