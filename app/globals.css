@@ -3,7 +3,41 @@
 @tailwind utilities;
 
 @layer base {
+  /* Light mode is the default */
   :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 13%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 13%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 13%;
+
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95%;
+    --secondary-foreground: 0 0% 13%;
+
+    --muted: 240 5% 88%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 240 5% 88%;
+    --accent-foreground: 0 0% 13%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 85%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+
+    --radius: 0.5rem;
+  }
+
+  /* Dark mode overrides */
+  .dark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
 
@@ -20,7 +54,7 @@
     --secondary-foreground: 0 0% 98%;
 
     --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted-foreground: 0 0% 85%;
 
     --accent: 240 3.7% 15.9%;
     --accent-foreground: 0 0% 98%;
@@ -31,8 +65,6 @@
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
-
-    --radius: 0.5rem;
   }
 }
 
@@ -43,6 +75,25 @@
     color-adjust: exact;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+  }
+  /* Ensure code blocks use theme colors */
+  code {
+    color: hsl(var(--foreground));
+    background-color: transparent;
+  }
+
+  pre {
+    color: hsl(var(--foreground));
+    background-color: hsl(var(--card));
+  }
+
+  pre code {
+    color: hsl(var(--foreground));
+  }
+
+  /* Ensure all text inherits theme color */
+  *:not([class*='text-']) {
+    color: inherit;
   }
 
   /* Webkit için scrollbar stilleri */

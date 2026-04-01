@@ -7,16 +7,7 @@ export function proxy(request: NextRequest) {
 
     // Check if the file is an asset (image, favicon, etc.)
     if (
-        [
-            '/manifest.json',
-            '/favicon.ico',
-            '/logo.png',
-            '/hero-image.jpg',
-            '/dalle-clone.png',
-            '/airbnb-clone.png',
-            '/twitter-image.png',
-            '/prompt-app.png',
-        ].includes(pathname) ||
+        pathname.match(/\.(jpg|jpeg|png|gif|svg|ico|webp|mp4|mp3|pdf)$/) ||
         pathname.startsWith('/blogs/') ||
         pathname.startsWith('/certificates/') ||
         pathname.startsWith('/_next/')

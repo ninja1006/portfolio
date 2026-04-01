@@ -15,7 +15,7 @@ export const SectionHeader = ({
       viewport={{ once: true }}
       className={`text-center mb-12 ${className}`}
     >
-      <h2 className='text-3xl font-bold tracking-tight sm:text-4xl mb-4'>
+      <h2 className='text-3xl font-bold tracking-tight sm:text-4xl mb-4 text-foreground'>
         {title}
       </h2>
       {subtitle && (

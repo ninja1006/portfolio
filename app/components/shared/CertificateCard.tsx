@@ -3,19 +3,14 @@
 import { m } from 'framer-motion';
 import { Certificate } from '@/app/data/types';
 import { motionItem } from './MotionContainer';
-import { FaAward, FaExternalLinkAlt } from 'react-icons/fa';
-import Link from 'next/link';
+import { FaAward } from 'react-icons/fa';
 import Image from 'next/image';
-import { useDictionary } from '../../context/DictionaryContext';
 
 interface CertificateCardProps {
   certificate: Certificate;
 }
 
 export const CertificateCard = ({ certificate }: CertificateCardProps) => {
-  const dict = useDictionary();
-  const viewCertificateBtnText = dict.certificates.viewCertificate;
-
   return (
     <m.div
       variants={motionItem}
@@ -47,7 +42,7 @@ export const CertificateCard = ({ certificate }: CertificateCardProps) => {
         </div>
 
         <div className='mt-2 mb-4'>
-          <h3 className='text-lg font-semibold mb-1 line-clamp-2 group-hover:text-primary transition-colors'>
+          <h3 className='text-lg font-semibold mb-1 line-clamp-2 group-hover:text-primary transition-colors text-foreground'>
             {certificate.title}
           </h3>
           <p className='text-muted-foreground text-sm font-medium'>
@@ -55,27 +50,13 @@ export const CertificateCard = ({ certificate }: CertificateCardProps) => {
           </p>
         </div>
 
-        <div className='mt-auto pt-4'>
-          {certificate.date && (
-            <div className='mb-3'>
-              <span className='px-2.5 py-0.5 text-xs font-medium rounded-full bg-primary/10 text-primary border border-primary/10'>
-                {certificate.date}
-              </span>
-            </div>
-          )}
-
-          {certificate.url && (
-            <Link
-              href={certificate.url}
-              target='_blank'
-              rel='noopener noreferrer'
-              className='inline-flex items-center text-sm font-medium text-primary hover:underline gap-2'
-            >
-              {viewCertificateBtnText}
-              <FaExternalLinkAlt className='w-3 h-3' />
-            </Link>
-          )}
-        </div>
+        {certificate.date && (
+          <div className='mt-auto pt-4'>
+            <span className='px-2.5 py-0.5 text-xs font-medium rounded-full bg-primary/10 text-primary border border-primary/10'>
+              {certificate.date}
+            </span>
+          </div>
+        )}
       </div>
     </m.div>
   );

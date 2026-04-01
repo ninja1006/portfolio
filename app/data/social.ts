@@ -11,32 +11,32 @@ export interface SocialLink {
 export const socialLinks: SocialLink[] = [
   {
     icon: FaGithub,
-    href: 'https://github.com/adylshay',
+    href: 'https://github.com/ninja1006',
     label: 'GitHub',
   },
   {
     icon: FaLinkedin,
-    href: 'https://linkedin.com/in/adylshay',
+    href: 'https://linkedin.com/in/iori-nowak',
     label: 'LinkedIn',
   },
-  {
-    icon: FaXTwitter,
-    href: 'https://x.com/adylshay',
-    label: 'Twitter',
-  },
+  // {
+  //   icon: FaXTwitter,
+  //   href: 'https://x.com/adylshay',
+  //   label: 'Twitter',
+  // },
   {
     icon: FaEnvelope,
-    href: 'mailto:adylshay@gmail.com',
+    href: 'iorinowak1006@gmail.com',
     label: 'Email',
   },
-  {
-    icon: FaYoutube,
-    href: 'https://www.youtube.com/@AdylshasDevLab',
-    label: 'YouTube',
-  },
-  {
-    icon: FaMedium,
-    href: 'https://medium.com/@adylshay',
-    label: 'Medium',
-  },
+  // {
+  //   icon: FaYoutube,
+  //   href: 'https://www.youtube.com/@AdylshasDevLab',
+  //   label: 'YouTube',
+  // },
+  // {
+  //   icon: FaMedium,
+  //   href: 'https://medium.com/@adylshay',
+  //   label: 'Medium',
+  // },
 ]; 

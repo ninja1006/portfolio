@@ -5,7 +5,6 @@ import { CertificateCard } from './shared/CertificateCard';
 import { CardGrid } from './shared/CardGrid';
 import { certificates } from '../data/certificates';
 import { Certificate } from '../data/types';
-import { FaLinkedin } from 'react-icons/fa';
 import { useDictionary } from '../context/DictionaryContext';
 
 export function Certificates() {
@@ -21,11 +20,6 @@ export function Certificates() {
         items.sort((a, b) => parseInt(b.date) - parseInt(a.date))
       }
       enableMobileScroll={true}
-      actionButton={{
-        text: dict.certificates.viewAllCertificates,
-        href: 'https://www.linkedin.com/in/adylshay/',
-        icon: <FaLinkedin className='w-5 h-5' />,
-      }}
       renderCard={(cert) => <CertificateCard certificate={cert} />}
     />
   );

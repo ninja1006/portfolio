@@ -60,9 +60,9 @@ export const Hero = () => {
               className='text-center lg:text-left space-y-6'
             >
               <div>
-                <h1 className='text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight'>
+                <h1 className='text-[clamp(1.2rem,4vw,3.75rem)] font-bold tracking-tight text-foreground whitespace-nowrap'>
                   {dict.hero.greeting}{' '}
-                  <span className='text-primary'>Adylsha Yumayev</span>
+                  <span className='text-primary'>Iori Ito</span>
                 </h1>
                 <p className='mt-4 text-2xl font-medium text-foreground/80'>
                   {dict.hero.role}
@@ -84,7 +84,7 @@ export const Hero = () => {
                   {dict.hero.viewProjects}
                 </button>
                 <button
-                  className='px-6 py-3 rounded-lg border-primary border-solid border-2'
+                  className='px-6 py-3 rounded-lg border-primary border-solid border-2 text-foreground'
                   onClick={handleContactClick}
                   onKeyDown={handleKeyContactNavigation}
                   aria-label={dict.hero.contactMe}
@@ -103,12 +103,10 @@ export const Hero = () => {
             >
               <div className='relative w-full aspect-square'>
                 <div className='absolute inset-0 bg-gradient-to-r from-primary/30 to-primary/20 rounded-full animate-pulse' />
-                <Image
-                  src='/hero-image.jpg'
+                <img
+                  src='/me.png'
                   alt='Hero Image'
-                  fill
-                  className='object-cover rounded-full p-8'
-                  priority
+                  className='object-cover object-[center_20%] rounded-full p-8 w-full h-full absolute inset-0'
                 />
               </div>
             </m.div>

@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import '../globals.css';
 import { FramerMotionProvider } from '../components/shared/FramerMotionProvider';
+import { ThemeProvider } from '../context/ThemeContext';
 import { Footer } from '../components/Footer';
 import { i18n } from '../../i18n-config';
 import { getDictionary } from '../utils/get-dictionary';
@@ -11,10 +12,12 @@ import { DictionaryProvider } from '../context/DictionaryContext';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Adylsha Yumayev | Full Stack Developer',
+  title: 'Iori Ito | Full Stack Engineer',
   description:
-    'Adylsha Yumayev - Full Stack Developer specializing in React.js, Next.js, TypeScript, Node.js, and modern web technologies.',
-  metadataBase: new URL('https://yumayev.dev/'),
+    'Iori Ito - Senior Full Stack Engineer specializing in React, Vue, Node.js, Python, and TypeScript.',
+  // metadataBase: new URL('https://yumayev.dev/'),
+  metadataBase: new URL('https://ioriito.dev/'),
+
 };
 
 export async function generateStaticParams() {
@@ -38,10 +41,12 @@ export default async function RootLayout({
         <meta name='color-profile' content='sRGB' />
       </head>
       <body className={inter.className}>
-        <DictionaryProvider dict={dict}>
-          <FramerMotionProvider>{children}</FramerMotionProvider>
-          <Footer />
-        </DictionaryProvider>
+        <ThemeProvider>
+          <DictionaryProvider dict={dict}>
+            <FramerMotionProvider>{children}</FramerMotionProvider>
+            <Footer />
+          </DictionaryProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

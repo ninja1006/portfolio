@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { motionItem } from './MotionContainer';
 import { Project } from '../../data/types';
 import { FaGithub } from 'react-icons/fa';
+import { FiExternalLink } from 'react-icons/fi';
+
 import { useState, useRef, useEffect } from 'react';
 import { FiChevronDown } from 'react-icons/fi';
 import { useDictionary } from '../../context/DictionaryContext';
@@ -23,6 +25,8 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
   const inDevelopmentText = dict.projects.inDevelopment;
   const noImageText = dict.projects.noImage;
   const viewOnGithubText = dict.projects.viewOnGithub;
+  const viewOnSiteText = dict.projects.viewOnSite;
+
   const showMoreText = dict.projects.showMore;
   const showLessText = dict.projects.showLess;
 
@@ -32,15 +36,6 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
     }
   }, [project.description]);
 
-  const handleKeyboardNavigation = (
-    e: React.KeyboardEvent<HTMLAnchorElement>
-  ) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      window.open(project.githubUrl, '_blank', 'noopener noreferrer');
-    }
-  };
-
   return (
     <m.div
       variants={motionItem}
@@ -48,11 +43,10 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
     >
       {/* Project Image or Placeholder */}
       <div className='relative h-48 overflow-hidden'>
-        {/* Development Status Badge */}
         {project.complete === false && (
           <div className='absolute top-2 right-2 z-10'>
-            <span className='px-2 py-1 text-xs font-semibold bg-yellow-500/90 text-white rounded-full shadow-sm backdrop-blur-sm flex items-center gap-1'>
-              <span className='w-2 h-2 rounded-full bg-white animate-pulse' />
+            <span className='px-2 py-1 text-xs font-semibold bg-accent/80 text-accent-foreground rounded-full shadow-sm backdrop-blur-sm flex items-center gap-1'>
+              <span className='w-2 h-2 rounded-full bg-accent-foreground animate-pulse' />
               {inDevelopmentText}
             </span>
           </div>
@@ -70,12 +64,10 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           </>
         ) : (
           <div className='absolute inset-0 bg-primary/5 flex items-center justify-center'>
-            {/* Animated background blobs */}
             <div className='absolute inset-0 overflow-hidden'>
               <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-primary/20 rounded-full filter blur-3xl animate-blob' />
               <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-indigo-600/20 rounded-full filter blur-3xl animate-blob2' />
             </div>
-            {/* Placeholder text */}
             <span className='text-muted-foreground/50 text-sm font-medium relative'>
               {noImageText}
             </span>
@@ -87,33 +79,23 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
       {/* Project Content */}
       <div className='p-6 flex flex-col flex-1'>
         <div className='flex-1'>
-          <h3 className='text-xl font-semibold mb-2 text-justify'>
+          <h3 className='text-xl font-semibold mb-2 text-justify text-foreground'>
             {project.title}
           </h3>
           <div className='mb-4'>
             <m.div
               initial={false}
-              animate={{
-                height: isExpanded ? contentHeight : 72,
-              }}
-              transition={{
-                duration: 0.3,
-                ease: [0.4, 0, 0.2, 1],
-              }}
+              animate={{ height: isExpanded ? contentHeight : 72 }}
+              transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
               className='overflow-hidden relative'
             >
-              <p
-                ref={contentRef}
-                className='text-muted-foreground text-justify'
-              >
+              <p ref={contentRef} className='text-muted-foreground text-justify'>
                 {project.description}
               </p>
-              {/* Gradient fade overlay when collapsed */}
               {!isExpanded && project.description.length > 150 && (
                 <div className='absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-secondary/50 to-transparent pointer-events-none' />
               )}
             </m.div>
-            {/* Reserve space for button to keep consistent card height */}
             <div className='h-8 mt-2'>
               {project.description.length > 150 && (
                 <button
@@ -146,7 +128,9 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           </div>
         </div>
 
-        {/* GitHub Button */}
+        {/* View on Github Button */}
+        {project.title === "Smile" ? (
+
         <Link
           href={project.githubUrl}
           target='_blank'
@@ -154,11 +138,24 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           className='inline-flex items-center space-x-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-all hover:scale-105 duration-300'
           aria-label={`${viewOnGithubText}: ${project.title}`}
           tabIndex={0}
-          onKeyDown={handleKeyboardNavigation}
+        >
+          {/* <FaGithub className='w-5 h-5' /> */}
+          <FiExternalLink className='w-5 h-5' />
+          <span>{viewOnSiteText}</span>
+        </Link>
+        ):(
+          <Link
+          href={project.githubUrl}
+          target='_blank'
+          rel='noopener noreferrer'
+          className='inline-flex items-center space-x-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-all hover:scale-105 duration-300'
+          aria-label={`${viewOnGithubText}: ${project.title}`}
+          tabIndex={0}
         >
           <FaGithub className='w-5 h-5' />
           <span>{viewOnGithubText}</span>
         </Link>
+        )}
       </div>
     </m.div>
   );

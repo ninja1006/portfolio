@@ -1,4 +1,4 @@
-# Adylsha Yumayev - Full Stack Developer Portfolio
+# Iori Ito - Full Stack Developer Portfolio
 
 Welcome to my personal portfolio website source code. This project showcases my skills, experience, projects, and blog posts as a Full Stack Developer.
 
@@ -8,12 +8,12 @@ Welcome to my personal portfolio website source code. This project showcases my 
 - **Language:** [TypeScript](https://www.typescriptlang.org/)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 - **Animations:** [Framer Motion](https://www.framer.com/motion/)
-- **Internationalization:** Native Next.js i18n (Turkish & English)
+- **Internationalization:** Native Next.js i18n (Japanese & English)
 - **Deployment:** [Vercel](https://vercel.com)
 
 ## ✨ Features
 
-- **Multi-language Support (i18n):** Seamless transition between Turkish (Default) and English.
+- **Multi-language Support (i18n):** Seamless transition between Japanese (Default) and English.
 - **Modern Design:** Monochrome / Dark-themed aesthetic with glassmorphism effects.
 - **Responsive Layout:** Fully optimized for Mobile, Tablet, and Desktop.
 - **Dynamic Content:** Blog and Projects sections populated from structured data.

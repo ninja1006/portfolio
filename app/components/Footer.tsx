@@ -10,7 +10,7 @@ export const Footer = () => {
   const dict = useDictionary();
   const scrollTo = useScrollTo();
 
-  const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear(); 
 
   const handleKeyDown = (e: React.KeyboardEvent, href: string) => {
     if (e.key === 'Enter' || e.key === ' ') {
@@ -29,7 +29,6 @@ export const Footer = () => {
     { name: dict.nav.home, href: 'home', isRoute: false },
     { name: dict.nav.about, href: 'about', isRoute: false },
     { name: dict.nav.projects, href: 'projects', isRoute: false },
-    { name: dict.nav.blog, href: '/blog', isRoute: true },
     { name: dict.nav.contact, href: 'contact', isRoute: false },
   ];
 
@@ -42,17 +41,17 @@ export const Footer = () => {
         <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
           {/* About section */}
           <div>
-            <h3 className='text-xl font-bold mb-4 text-foreground'>
+            <h3 className='text-xl font-bold mb-4 text-white'>
               {dict.footer.aboutTitle}
             </h3>
-            <p className='text-muted-foreground mb-4'>
+            <p className='text-white/80 mb-4'>
               {dict.footer.aboutDesc}
             </p>
           </div>
 
           {/* Quick links */}
           <div>
-            <h3 className='text-xl font-bold mb-4 text-foreground'>
+            <h3 className='text-xl font-bold mb-4 text-white'>
               {dict.footer.linksTitle}
             </h3>
             <ul className='space-y-2'>
@@ -61,14 +60,14 @@ export const Footer = () => {
                   {link.isRoute ? (
                     <Link
                       href={link.href}
-                      className='text-muted-foreground hover:text-primary transition-colors duration-300'
+                      className='text-white/80 hover:text-white transition-colors duration-300'
                     >
                       {link.name}
                     </Link>
                   ) : (
                     <a
                       href={`#${link.href}`}
-                      className='text-muted-foreground hover:text-primary transition-colors duration-300'
+                      className='text-white/80 hover:text-white transition-colors duration-300'
                       tabIndex={0}
                       aria-label={link.name}
                       onClick={(e) => handleNavClick(e, link.href)}
@@ -84,7 +83,7 @@ export const Footer = () => {
 
           {/* Connect section */}
           <div>
-            <h3 className='text-xl font-bold mb-4 text-foreground'>
+            <h3 className='text-xl font-bold mb-4 text-white'>
               {dict.footer.contactTitle}
             </h3>
             <div className='flex space-x-4 mb-4'>
@@ -96,7 +95,7 @@ export const Footer = () => {
                     href={link.href}
                     target='_blank'
                     rel='noopener noreferrer'
-                    className='text-muted-foreground hover:text-primary transition-colors duration-300'
+                    className='text-white/80 hover:text-white transition-colors duration-300'
                     tabIndex={0}
                     aria-label={link.label}
                     onKeyDown={(e) => handleKeyDown(e, link.href)}
@@ -106,19 +105,19 @@ export const Footer = () => {
                 );
               })}
             </div>
-            <p className='text-muted-foreground'>
-              {dict.footer.email}: adylshay@gmail.com
+            <p className='text-white/80'>
+              {dict.footer.email}: iorinowak1006@gmail.com
             </p>
           </div>
         </div>
 
         {/* Divider */}
-        <div className='border-t border-border my-8'></div>
+        <div className='border-t border-white/20 my-8'></div>
 
         {/* Copyright */}
-        <div className='text-center text-muted-foreground'>
+        <div className='text-center text-white/80'>
           <p>
-            © {currentYear} Adylsha Yumayev. {dict.footer.rights}
+            © {currentYear} Iori Ito. {dict.footer.rights}
           </p>
         </div>
       </div>

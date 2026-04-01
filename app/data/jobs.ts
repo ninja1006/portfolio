@@ -6,25 +6,25 @@ export interface Job {
 
 export const jobs: Job[] = [
   {
-    key: 'gelecek2025',
-    period: '2025 - Present',
-    technologies: ['ASP.NET MVC', 'SQL Server', 'WEB API', 'Flutter', 'Dart'],
+    key: 'Smile',
+    period: '2023 - Present',
+    technologies: ['React', 'Node.js(Nest.js)', 'Typescript', 'WebSockets', 'GraphQL'],
   },
   {
-    key: 'gelecek2022',
-    period: '2022 - 2025',
+    key: 'Open',
+    period: '2020 - 2023',
     technologies: [
-      'React',
-      'ASP.NET Core',
-      'SQL Server',
-      'T-SQL',
-      'WEB API',
-      'MongoDB',
+      'RESTful APIs',
+      'GraphQL',
+      'JWT',
+      'OAuth 2.0',
+      'CI/CD',
+      'PostgreSQL',
     ],
   },
   {
-    key: 'patika',
-    period: '2022 - 2022',
-    technologies: ['ASP.NET Core', 'SQL Server', 'React', 'Node.js', 'MongoDB'],
+    key: '91APP',
+    period: '2017 - 2020',
+    technologies: ['React', 'Vue', 'Jest', 'Material UI'],
   },
 ];

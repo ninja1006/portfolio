@@ -1,25 +1,11 @@
 import { ReactNode } from 'react';
 
-export interface BlogSearchProps {
-  initialPosts: BlogPost[];
-}
-
 export interface Certificate {
   title: string;
   issuer: string;
   date: string;
   url?: string;
   image?: string;
-}
-
-export interface BlogPost {
-  slug: string;
-  title: string;
-  description: string;
-  content: string;
-  directory: string;
-  publishedDate: string;
-  tags: string[];
 }
 
 export interface Project {

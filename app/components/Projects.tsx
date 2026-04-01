@@ -6,6 +6,7 @@ import { ProjectCard } from './shared/ProjectCard';
 import { projects } from '../data/projects';
 import { Project } from '../data/types';
 import { FaGithub } from 'react-icons/fa';
+
 import { useDictionary } from '../context/DictionaryContext';
 
 export function Projects() {

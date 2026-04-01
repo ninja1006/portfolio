@@ -6,30 +6,30 @@ import { useState, useEffect } from 'react';
 export default function LanguageSwitcher() {
     const pathname = usePathname();
     const router = useRouter();
-    const [currentLang, setCurrentLang] = useState('tr');
+    const [currentLang, setCurrentLang] = useState('en');
 
     useEffect(() => {
-        if (pathname.startsWith('/en')) {
-            setCurrentLang('en');
+        if (pathname.startsWith('/ja')) {
+            setCurrentLang('ja');
         } else {
-            setCurrentLang('tr');
+            setCurrentLang('en');
         }
     }, [pathname]);
 
     const toggleLanguage = () => {
-        const newLang = currentLang === 'tr' ? 'en' : 'tr';
+        const newLang = currentLang === 'en' ? 'ja' : 'en';
 
         // Logic to switch path
         let newPath = '';
 
-        if (newLang === 'en') {
-            // Switch TR -> EN
-            // If current path has no lang prefix (default TR), add /en
-            newPath = `/en${pathname}`;
+        if (newLang === 'ja') {
+            // Switch EN -> JA
+            // If current path has no lang prefix (default EN), add /ja
+            newPath = `/ja${pathname}`;
         } else {
-            // Switch EN -> TR
-            // Remove /en prefix
-            newPath = pathname.replace(/^\/en/, '') || '/';
+            // Switch JA -> EN
+            // Remove /ja prefix
+            newPath = pathname.replace(/^\/ja/, '') || '/';
         }
 
         router.push(newPath);
@@ -41,9 +41,9 @@ export default function LanguageSwitcher() {
             className="ml-4 px-3 py-1 rounded-full border border-primary/20 hover:border-primary/50 text-sm font-medium transition-colors flex items-center gap-2"
             aria-label="Switch Language"
         >
-            <span className={currentLang === 'tr' ? 'text-primary font-bold' : 'text-muted-foreground'}>TR</span>
-            <span className="text-muted-foreground">/</span>
             <span className={currentLang === 'en' ? 'text-primary font-bold' : 'text-muted-foreground'}>EN</span>
+            <span className="text-muted-foreground">/</span>
+            <span className={currentLang === 'ja' ? 'text-primary font-bold' : 'text-muted-foreground'}>JA</span>
         </button>
     );
 }

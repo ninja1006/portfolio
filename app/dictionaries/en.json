@@ -4,68 +4,80 @@
     "about": "About",
     "projects": "Projects",
     "education": "Education",
-    "blog": "Blog",
     "contact": "Contact"
   },
   "hero": {
     "greeting": "Hello, I'm",
-    "role": "Full Stack Developer",
-    "description": "A software developer who loves problem-solving, is always open to learning, and enjoys discovering new technologies.",
+    "role": "Full Stack Engineer",
+    "description": "Senior Full Stack Engineer (React, Vue, Node.js, Python, TypeScript)",
     "viewProjects": "View Projects",
     "contactMe": "Contact Me"
   },
   "about": {
     "title": "About Me",
-    "subtitle": "A Passionate Full Stack Developer",
-    "p1": "I enjoy taking an active role in every stage of the software development process. I work across a wide range of areas, from Frontend to Backend, database management to system architecture.",
-    "p2": "I love transforming complex problems into simple and effective solutions. Using my analytical thinking and logical reasoning skills, I strive to find the optimum solution in every project.",
-    "p3": "To keep up with the rapid changes in the technology world, I constantly improve myself and learn new tools and methodologies.",
+    "subtitle": "A Passionate Full Stack Engineer",
+    "p1": "Senior Full Stack Engineer with 8+ years of experience in designing, developing, and scaling high-performance web applications across diverse industires.",
+    "p2": " Proven expertise in building modern frontend architectures using React and Vue combined with robust backend systems powered by Node.js and microservices.",
+    "p3": " Strong track record of delivering scalable, secure, and maintainable solutions in agile, cross-functional environments.",
+    "p4":"Experienced in leading full-cycle development from system design to production deployment with a focus on performance optimization and user experience.",
+    "p5":"Passionate about leveraging cutting-edge technologies to drive business impact, engineering excellence, and product innovation.",
     "keyPointsTitle": "Key Highlights",
     "experienceTitle": "Work Experience",
     "experienceSubtitle": "Experience gained throughout my professional career",
     "keyPoints": {
-      "problemSolver": {
-        "title": "Problem Solver",
-        "description": "I enjoy finding solutions to complex problems. Every challenge presents a new learning opportunity."
+      "systemArchitect": {
+        "title": "Scalable Systems Architect",
+        "description": "Experienced in designing and building scalable, high-performance systems using microservices architecture and modern cloud technologies. Adept at making architectural decisions that ensure long-term maintainability, reliability, and efficiency across complex applications."
       },
-      "learner": {
-        "title": "Continuous Learner",
-        "description": "Technology is constantly evolving, and I love evolving with it. Learning new things is a passion for me."
+      "engineer": {
+        "title": "Full Stack Product Engineer",
+        "description": "Skilled in delivering end-to-end solutions, from intuitive frontend interfaces to robust backend systems. Focused on creating seamless, high-quality user experiences while ensuring strong integration between all layers of the application."
       },
-      "fullstack": {
-        "title": "Full-Stack Developer",
-        "description": "I have experience in both frontend and backend areas. This allows me to bring a holistic approach to my projects."
+      "specialist": {
+        "title": "Performance Optimization Specialist",
+        "description": "Passionate about improving application speed and efficiency through advanced optimization techniques such as code splitting, caching strategies, and efficient data handling, consistently delivering measurable performance gains."
       },
-      "techStack": {
-        "title": "Diverse Tech Stack",
-        "description": "I have experience with various technologies such as React.js, Next.js, C#, ASP.NET Core, .NET Framework, Web API, NodeJS, T-SQL, Docker, ASP.NET MVC, and Flutter."
+      "realTimeAppDeveloper": {
+        "title": "Real-Time Application Developer",
+        "description": "Proficient in building highly interactive, real-time systems using technologies like WebSockets and event-driven architecture, enabling dynamic user experiences and low-latency data synchronization."
       },
-      "perspective": {
-        "title": "Versatile Perspective",
-        "description": "I value approaching problems from different angles and developing creative, out-of-the-box solutions."
+      "advocate": {
+        "title": "Security & Reliability Advocate",
+        "description": "Committed to implementing secure and reliable systems by integrating industry-standard authentication methods, including JWT and OAuth 2.0, while ensuring data integrity and system stability in production environments."
       },
-      "adaptable": {
-        "title": "Adaptable",
-        "description": "I work successfully in dynamic environments and adapt quickly to changing requirements. This flexibility allows me to effectively handle unexpected challenges."
+      "techLeader": {
+        "title": "Collaborative Technical Leader",
+        "description": "Experienced in leading development efforts, mentoring engineers, and collaborating across cross-functional teams to deliver impactful solutions aligned with business goals and engineering best practices."
       }
     },
     "jobs": {
-      "gelecek2025": {
-        "title": "Gelecek Varlık Yönetimi",
-        "role": "Software Development Specialist",
-        "desc": "Responsible for the development and optimization of critical internal software systems. Managing the design, development, and secure deployment processes of external-facing web platforms. Designing database structures and providing backend solutions that support corporate workflows. Also playing an active role in the architecture and development of the company's first mobile application."
+      "Smile": {
+        "title": "Smile",
+        "role": "Full Stack Engineer",
+        "desc": "Led end-to-end development of scalable full stack applications, taking ownership of architectural design and key technical decisions while ensuring alignment with business objectives. Drove the delivery of high-performance, reliable solutions in production environments by applying best practices in system design, code quality, and performance optimization, while collaborating closely with cross-functional teams to maintain scalability, maintainability, and a seamless user experience."
       },
-      "gelecek2022": {
-        "title": "Gelecek Varlık Yönetimi",
-        "role": "Junior Full Stack Developer",
-        "desc": "Responsible for the development and maintenance of applications used within the company. Developing projects using various technologies. Writing database queries when necessary during development."
+      "Open": {
+        "title": "Open",
+        "role": "Backend Engineer",
+        "desc": "Specialized in designing and building scalable backend systems and APIs, with a focus on delivering high-performance, reliable, and secure solutions for enterprise applications. Experienced in developing efficient and maintainable architectures that support system scalability and stability, while implementing best practices in performance optimization, data integrity, and security to ensure consistent and dependable application behavior."
       },
-      "patika": {
-        "title": "Gelecek Varlık Yönetimi - Patika",
-        "role": "Bootcamp Student",
-        "desc": "Completed training provided on the Patika.dev platform, learning the fundamentals of software development. Subsequently passed interviews and started working as a Junior Full Stack Developer at Gelecek Varlık Yönetimi."
+      "91APP": {
+        "title": "91APP",
+        "role": " Frontend Engineer",
+        "desc": "Focused on building modern, responsive, and user-friendly frontend applications, with a strong emphasis on performance, usability, and accessibility. Dedicated to creating intuitive and visually cohesive interfaces that enhance user engagement while maintaining high standards of code quality, scalability, and maintainability. Committed to leveraging best practices, modern frameworks, and performance optimization techniques to deliver seamless, efficient, and reliable user experiences across a wide range of devices and environments."
       }
     }
+  },
+  "education": {
+    "title": "Education",
+    "subtitle": "Academic foundation and specialization",
+    "label": "Bachelor's Degree",
+    "degree": "Bachelor's Degree in Computer Science and Information Engineering",
+    "department": "Department of Computer Science and Information Engineering",
+    "school": "National Taiwan University of Science and Technology",
+    "imageAlt": "National Taiwan University of Science and Technology campus",
+    "p1": "Completed a Bachelor's degree focused on computer science, software engineering, and information systems at National Taiwan University of Science and Technology. The program built a strong foundation in algorithms, system design, software development, and applied problem solving.",
+    "p2": "This academic background strengthened both theoretical understanding and practical engineering skills, supporting work across frontend, backend, and full stack product development."
   },
   "projects": {
     "title": "Projects",
@@ -75,6 +87,7 @@
     "inDevelopment": "In Development",
     "noImage": "No image added yet",
     "viewOnGithub": "View on GitHub",
+    "viewOnSite": "View on Site",
     "viewAllProjects": "View All Projects",
     "showMore": "Show More",
     "showLess": "Show Less",
@@ -115,15 +128,12 @@
     "categories": {
       "frontend": "Frontend Development",
       "backend": "Backend Development",
-      "tools": "Tools & Methodologies",
       "other": "Other Skills"
     }
   },
   "certificates": {
     "title": "Certificates",
-    "subtitle": "Trainings and achievements",
-    "viewCertificate": "View Certificate",
-    "viewAllCertificates": "View All Certificates"
+    "subtitle": "Trainings and achievements"
   },
   "footer": {
     "aboutTitle": "About Me",
@@ -132,12 +142,5 @@
     "contactTitle": "Contact Me",
     "email": "Email",
     "rights": "All Rights Reserved"
-  },
-  "blog": {
-    "title": "Blog",
-    "subtitle": "Welcome to my blog! Here I share my thoughts, ideas, and new learnings about software development.",
-    "back": "Go Back",
-    "readTime": "Read time",
-    "notFound": "Blog Not Found"
   }
 }

@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { m } from 'framer-motion';
 import { useScrollTo } from '../hooks/useScrollTo';
 import LanguageSwitcher from './LanguageSwitcher';
+import { ThemeSwitcher } from './ThemeSwitcher';
 import { useDictionary } from '../context/DictionaryContext';
 
 export const Navbar = () => {
@@ -19,7 +20,6 @@ export const Navbar = () => {
     { name: dict.nav.about, href: 'about', isRoute: false },
     { name: dict.nav.projects, href: 'projects', isRoute: false },
     { name: dict.skills.title, href: 'skills', isRoute: false },
-    { name: dict.nav.blog, href: '/blog', isRoute: true },
     { name: dict.nav.contact, href: 'contact', isRoute: false },
   ];
 
@@ -80,7 +80,7 @@ export const Navbar = () => {
                 animate={{ scale: 1, opacity: 1 }}
                 className='text-2xl font-bold bg-primary text-primary-foreground px-3 py-1 rounded-lg shadow-lg shadow-primary/25'
               >
-                AY
+                Iori Ito
               </m.div>
             </Link>
 
@@ -100,11 +100,13 @@ export const Navbar = () => {
                   <span className='absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full' />
                 </Link>
               ))}
+              <ThemeSwitcher />
               <LanguageSwitcher />
             </div>
 
             {/* Mobile Menu Button - Left LanguageSwitcher outside mobile menu or inside? Inside looks cleaner for mobile */}
             <div className='flex md:hidden items-center gap-4'>
+              <ThemeSwitcher />
               <LanguageSwitcher />
               <button
                 className='p-2 text-foreground hover:text-primary transition-colors'

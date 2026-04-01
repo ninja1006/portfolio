@@ -21,7 +21,7 @@ export const WorkExperienceTimeline = ({
     <m.div variants={motionItem} className={`mt-16 ${className}`}>
       <div className='text-center mb-12'>
         <h3
-          className='text-3xl font-bold tracking-tight sm:text-4xl mb-4'
+          className='text-3xl font-bold tracking-tight sm:text-4xl mb-4 text-foreground'
           id='work-experience-heading'
         >
           {title}
@@ -40,7 +40,7 @@ export const WorkExperienceTimeline = ({
         <div className='absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-primary/20' />
 
         {experiences.map((experience, index) => (
-          <m.div
+            <m.div
             key={index}
             variants={motionItem}
             className={`relative mb-12 ${index % 2 === 0
@@ -67,7 +67,7 @@ export const WorkExperienceTimeline = ({
                     {experience.period}
                   </span>
                 </div>
-                <h5 className='text-lg font-medium mb-4'>
+                <h5 className='text-lg font-medium mb-4 text-foreground'>
                   {experience.company}
                 </h5>
                 <p className='text-muted-foreground mb-4'>

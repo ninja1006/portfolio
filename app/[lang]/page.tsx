@@ -5,6 +5,9 @@ import dynamic from 'next/dynamic';
 const About = dynamic(() =>
   import('../components/About').then((mod) => mod.About)
 );
+const Education = dynamic(() =>
+  import('../components/Education').then((mod) => mod.Education)
+);
 const Projects = dynamic(() =>
   import('../components/Projects').then((mod) => mod.Projects)
 );
@@ -18,6 +21,7 @@ export default async function Home() {
       <Navbar />
       <Hero />
       <About />
+      <Education />
       <Projects />
       <Skills />
     </main>
