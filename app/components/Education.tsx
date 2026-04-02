@@ -33,6 +33,10 @@ export const Education = () => {
                 fill
                 sizes='(max-width: 1024px) 100vw, 896px'
                 className='h-full w-full object-cover'
+                priority
+                quality={80}
+                placeholder='blur'
+                blurDataURL='data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAIABADASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABgUE/8QAIhAAAQQCAgMBAAAAAAAAAAAAAQIDBBEABRIhMUH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8Amk2ta4XO3W2plaYiHlN承担责任pJQhtCUpSlIAAA9AK5s1aRbNOuNt承担责任pJQhtCUpSlIAAHoAooor/9k='
               />
               <div className='absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent' />
               {/* Logo at bottom-right of image */}
