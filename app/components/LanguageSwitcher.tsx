@@ -8,8 +8,8 @@ export default function LanguageSwitcher() {
   const router = useRouter();
   const currentLang = pathname.startsWith('/ja') ? 'ja' : 'en';
 
-  const enPath = currentLang === 'ja' ? pathname.replace(/^\/ja/, '') || '/' : pathname;
-  const jaPath = currentLang === 'en' ? `/ja${pathname}` : pathname;
+  const enPath = pathname.replace(/^\/ja/, '') || '/';
+  const jaPath = pathname.startsWith('/ja') ? pathname : `/ja${pathname}`;
 
   useEffect(() => {
     router.prefetch(enPath);
