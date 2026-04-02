@@ -2,17 +2,11 @@
 
 import { useTheme } from '../context/ThemeContext';
 import { MdWbSunny, MdDarkMode } from 'react-icons/md';
-import { useState, useEffect } from 'react';
 
 export const ThemeSwitcher = () => {
-  const { theme, toggleTheme } = useTheme();
-  const [isMounted, setIsMounted] = useState(false);
+  const { theme, toggleTheme, isReady } = useTheme();
 
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  if (!isMounted) {
+  if (!isReady) {
     return (
       <div className='p-2 rounded-lg bg-primary/10 flex items-center justify-center w-9 h-9' />
     );

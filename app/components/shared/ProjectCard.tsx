@@ -19,8 +19,8 @@ interface ProjectCardProps {
 export const ProjectCard = ({ project }: ProjectCardProps) => {
   const dict = useDictionary();
   const [isExpanded, setIsExpanded] = useState(false);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const [contentHeight, setContentHeight] = useState<number>(0);
+  const contentRef = useRef<HTMLParagraphElement>(null);
+  const [needsToggle, setNeedsToggle] = useState(false);
 
   const inDevelopmentText = dict.projects.inDevelopment;
   const noImageText = dict.projects.noImage;
@@ -29,12 +29,13 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
 
   const showMoreText = dict.projects.showMore;
   const showLessText = dict.projects.showLess;
+  const isSiteLink = project.linkType === 'site';
 
   useEffect(() => {
-    if (contentRef.current) {
-      setContentHeight(contentRef.current.scrollHeight);
+    if (contentRef.current && !isExpanded) {
+      setNeedsToggle(contentRef.current.scrollHeight > contentRef.current.clientHeight);
     }
-  }, [project.description]);
+  }, [project.description, isExpanded]);
 
   return (
     <m.div
@@ -85,19 +86,19 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           <div className='mb-4'>
             <m.div
               initial={false}
-              animate={{ height: isExpanded ? contentHeight : 72 }}
+              animate={{ height: 'auto' }}
               transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
               className='overflow-hidden relative'
             >
-              <p ref={contentRef} className='text-muted-foreground text-justify'>
+              <p ref={contentRef} className={`text-muted-foreground text-justify ${isExpanded ? '' : 'line-clamp-3'}`}>
                 {project.description}
               </p>
-              {!isExpanded && project.description.length > 150 && (
-                <div className='absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-secondary/50 to-transparent pointer-events-none' />
+              {!isExpanded && needsToggle && (
+                <div className='absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-secondary/50 to-transparent pointer-events-none' />
               )}
             </m.div>
-            <div className='h-8 mt-2'>
-              {project.description.length > 150 && (
+            {needsToggle && (
+              <div className='h-8 mt-2'>
                 <button
                   onClick={() => setIsExpanded(!isExpanded)}
                   className='inline-flex items-center gap-1 text-sm text-primary hover:text-primary/80 transition-colors'
@@ -111,8 +112,8 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
                     <FiChevronDown className='w-4 h-4' />
                   </m.span>
                 </button>
-              )}
-            </div>
+              </div>
+            )}
           </div>
 
           {/* Technologies */}
@@ -129,32 +130,30 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
         </div>
 
         {/* View on Github Button */}
-        {project.title === "Smile" ? (
-
-        <Link
-          href={project.githubUrl}
-          target='_blank'
-          rel='noopener noreferrer'
-          className='inline-flex items-center space-x-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-all hover:scale-105 duration-300'
-          aria-label={`${viewOnGithubText}: ${project.title}`}
-          tabIndex={0}
-        >
-          {/* <FaGithub className='w-5 h-5' /> */}
-          <FiExternalLink className='w-5 h-5' />
-          <span>{viewOnSiteText}</span>
-        </Link>
-        ):(
+        {isSiteLink ? (
           <Link
-          href={project.githubUrl}
-          target='_blank'
-          rel='noopener noreferrer'
-          className='inline-flex items-center space-x-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-all hover:scale-105 duration-300'
-          aria-label={`${viewOnGithubText}: ${project.title}`}
-          tabIndex={0}
-        >
-          <FaGithub className='w-5 h-5' />
-          <span>{viewOnGithubText}</span>
-        </Link>
+            href={project.githubUrl}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='inline-flex items-center space-x-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-all hover:scale-105 duration-300'
+            aria-label={`${viewOnSiteText}: ${project.title}`}
+            tabIndex={0}
+          >
+            <FiExternalLink className='w-5 h-5' />
+            <span>{viewOnSiteText}</span>
+          </Link>
+        ) : (
+          <Link
+            href={project.githubUrl}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='inline-flex items-center space-x-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-all hover:scale-105 duration-300'
+            aria-label={`${viewOnGithubText}: ${project.title}`}
+            tabIndex={0}
+          >
+            <FaGithub className='w-5 h-5' />
+            <span>{viewOnGithubText}</span>
+          </Link>
         )}
       </div>
     </m.div>

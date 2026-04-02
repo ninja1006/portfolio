@@ -92,33 +92,29 @@
     "showMore": "Show More",
     "showLess": "Show Less",
     "items": {
-      "YumaIdentity": {
-        "title": "YumaIdentity - IAM Service",
-        "desc": "A full-featured Identity and Access Management (IAM) service. Provides user authentication, authorization, role management, and secure token-based session management. A scalable identity management platform developed with modern full-stack architecture."
+      "smile1": {
+        "title": "Smile",
+        "desc": "Designed and implemented enterprise-grade full stack platforms using React, Node.js, and TypeScript, significantly improving system scalability and maintainability across multiple business domains."
       },
-      "dalle": {
-        "title": "Dall-E Clone",
-        "desc": "An AI image generation app inspired by OpenAI's DALL-E. Users can generate and share AI-created images based on text prompts using the MERN stack."
+      "open1": {
+        "title": "Open",
+        "desc": "Developed and maintained high-performance backend services using Node.js and Django, supporting large-scale production systems."
       },
-      "airbnb": {
-        "title": "Airbnb Clone",
-        "desc": "A clone of the Airbnb website. Users can search for properties, view details, and book stays."
+      "91app1": {
+        "title": "91APP",
+        "desc": "Developed dynamic single-page applications (SPAs) using React and Vue, delivering seamless user experiences."
       },
-      "twitter": {
-        "title": "Twitter Clone",
-        "desc": "A modern clone of Twitter. Users can tweet, follow others, and interact. A full-featured social media app developed using Next.js and TypeScript."
+      "smile2": {
+        "title": "Smile",
+        "desc": "Architected and deployed microservices-based backend systems with NestJS, enabling modular development and reducing deployment risk in distributed environments."
       },
-      "aiPrompt": {
-        "title": "AI Prompt App",
-        "desc": "A platform where users can create and share AI prompts. Users can save their own prompts, discover others', and interact. Developed using Next.js and modern authentication methods."
+      "open2": {
+        "title": "Open",
+        "desc": "Designed RESTful APIs and GraphQL endpoints to enable seamless communication between frontend and backend systems."
       },
-      "pokemon": {
-        "title": "Mobile Pokemon App",
-        "desc": "A Flutter project developed using clean architecture principles with PokeAPI. Features include fetching and displaying Pokémon, viewing detailed info, searching by name, and responsive design for mobile and web. Organized with a feature-first architecture for modularity and maintainability."
-      },
-      "habit": {
-        "title": "Habit Tracker App",
-        "desc": "A Flutter app that helps users track and maintain their habits with a clean, modern UI and powerful features."
+      "91app2": {
+        "title": "91APP",
+        "desc": "Implemented responsive UI designs ensuring cross-browser compatibility and mobile-first performance."
       }
     }
   },

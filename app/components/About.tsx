@@ -1,5 +1,4 @@
 'use client';
-/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { m } from 'framer-motion';
 import { SectionContainer } from './shared/SectionContainer';
@@ -11,7 +10,6 @@ import { Certificates } from './Certificates';
 import { KeyPoint } from '../data/types';
 import { useDictionary } from '../context/DictionaryContext';
 import { jobs as jobsData } from '../data/jobs';
-import { log } from 'node:console';
 
 export const About = () => {
   const dict = useDictionary();
@@ -24,7 +22,6 @@ export const About = () => {
     description: dict.about.jobs[job.key]?.desc || '',
     technologies: job.technologies,
   }));
-
 
   return (
     <SectionContainer id='about'>
@@ -44,7 +41,6 @@ export const About = () => {
           <p>{dict.about.p3}</p>
           <p>{dict.about.p4}</p>
           <p>{dict.about.p5}</p>
-
         </m.div>
 
         {/* Key Points using BentoGrid component */}

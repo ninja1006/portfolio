@@ -9,10 +9,12 @@ export interface Certificate {
 }
 
 export interface Project {
+  key: string;
   title: string;
   description: string;
   image?: string;
   githubUrl: string;
+  linkType?: 'github' | 'site';
   technologies: string[];
   complete: boolean;
 }

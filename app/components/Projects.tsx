@@ -1,5 +1,4 @@
 'use client';
-/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { CardGrid } from './shared/CardGrid';
 import { ProjectCard } from './shared/ProjectCard';

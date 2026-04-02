@@ -1,5 +1,4 @@
 'use client';
-/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { SectionContainer } from './SectionContainer';
 import { SectionHeader } from './SectionHeader';
@@ -50,13 +49,14 @@ export function CardGrid<T>({
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [showScrollHint, setShowScrollHint] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const sortedItems = sortItems ? sortItems(items) : items;
+  const itemCount = sortedItems.length;
 
   const scrollToNextCard = () => {
     const container = scrollContainerRef.current;
-    if (container) {
-      const sortedItems = sortItems ? sortItems(items) : items;
-      const cardWidth = container.scrollWidth / sortedItems.length;
-      const nextIndex = Math.min(currentIndex + 1, sortedItems.length - 1);
+    if (container && itemCount > 0) {
+      const cardWidth = container.scrollWidth / itemCount;
+      const nextIndex = Math.min(currentIndex + 1, itemCount - 1);
       container.scrollTo({
         left: cardWidth * nextIndex,
         behavior: 'smooth',
@@ -75,18 +75,16 @@ export function CardGrid<T>({
       }
 
       // Calculate current card index based on scroll position
-      const cardWidth = container.scrollWidth / sortedItems.length;
+      const cardWidth = container.scrollWidth / itemCount;
       const index = Math.round(container.scrollLeft / cardWidth);
       setCurrentIndex(index);
     };
 
     container.addEventListener('scroll', handleScroll);
     return () => container.removeEventListener('scroll', handleScroll);
-  }, [enableMobileScroll, items?.length]);
+  }, [enableMobileScroll, itemCount]);
 
   if (!items || items.length === 0) return null;
-
-  const sortedItems = sortItems ? sortItems(items) : items;
 
   const gridClasses = `grid-cols-1 ${gridCols.sm || ''} ${gridCols.md || ''} ${
     gridCols.lg || ''
@@ -139,9 +137,8 @@ export function CardGrid<T>({
                   key={index}
                   onClick={() => {
                     const container = scrollContainerRef.current;
-                    if (container) {
-                      const cardWidth =
-                        container.scrollWidth / sortedItems.length;
+                    if (container && itemCount > 0) {
+                      const cardWidth = container.scrollWidth / itemCount;
                       container.scrollTo({
                         left: cardWidth * index,
                         behavior: 'smooth',

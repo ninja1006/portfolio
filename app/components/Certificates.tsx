@@ -1,5 +1,4 @@
 'use client';
-/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { CertificateCard } from './shared/CertificateCard';
 import { CardGrid } from './shared/CardGrid';

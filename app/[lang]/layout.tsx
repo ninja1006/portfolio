@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Inter } from 'next/font/google';
+import { Plus_Jakarta_Sans, Syne } from 'next/font/google';
 import '../globals.css';
 import { FramerMotionProvider } from '../components/shared/FramerMotionProvider';
 import { ThemeProvider } from '../context/ThemeContext';
@@ -9,15 +9,22 @@ import { i18n } from '../../i18n-config';
 import { getDictionary } from '../utils/get-dictionary';
 import { DictionaryProvider } from '../context/DictionaryContext';
 
-const inter = Inter({ subsets: ['latin'] });
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  variable: '--font-jakarta',
+  display: 'swap',
+});
+
+const syne = Syne({
+  subsets: ['latin'],
+  variable: '--font-syne',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: 'Iori Ito | Full Stack Engineer',
-  description:
-    'Iori Ito - Senior Full Stack Engineer specializing in React, Vue, Node.js, Python, and TypeScript.',
-  // metadataBase: new URL('https://yumayev.dev/'),
+  description: 'Iori Ito - Senior Full Stack Engineer specializing in React, Vue, Node.js, Python, and TypeScript.',
   metadataBase: new URL('https://ioriito.dev/'),
-
 };
 
 export async function generateStaticParams() {
@@ -40,7 +47,7 @@ export default async function RootLayout({
         <meta name='color-scheme' content='dark' />
         <meta name='color-profile' content='sRGB' />
       </head>
-      <body className={inter.className}>
+      <body className={`${jakarta.variable} ${syne.variable}`}>
         <ThemeProvider>
           <DictionaryProvider dict={dict}>
             <FramerMotionProvider>{children}</FramerMotionProvider>

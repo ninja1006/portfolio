@@ -1,5 +1,4 @@
 'use client';
-/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { useScrollTo } from '../hooks/useScrollTo';
 import { socialLinks } from '../data/social';
@@ -10,7 +9,7 @@ export const Footer = () => {
   const dict = useDictionary();
   const scrollTo = useScrollTo();
 
-  const currentYear = new Date().getFullYear(); 
+  const currentYear = new Date().getFullYear();
 
   const handleKeyDown = (e: React.KeyboardEvent, href: string) => {
     if (e.key === 'Enter' || e.key === ' ') {

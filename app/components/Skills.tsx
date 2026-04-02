@@ -1,5 +1,4 @@
 'use client';
-/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { m } from 'framer-motion';
 import { SectionContainer } from './shared/SectionContainer';

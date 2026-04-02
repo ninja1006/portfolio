@@ -1,49 +1,39 @@
 'use client';
 
 import { usePathname, useRouter } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
 export default function LanguageSwitcher() {
-    const pathname = usePathname();
-    const router = useRouter();
-    const [currentLang, setCurrentLang] = useState('en');
+  const pathname = usePathname();
+  const router = useRouter();
+  const currentLang = pathname.startsWith('/ja') ? 'ja' : 'en';
 
-    useEffect(() => {
-        if (pathname.startsWith('/ja')) {
-            setCurrentLang('ja');
-        } else {
-            setCurrentLang('en');
-        }
-    }, [pathname]);
+  const enPath = currentLang === 'ja' ? pathname.replace(/^\/ja/, '') || '/' : pathname;
+  const jaPath = currentLang === 'en' ? `/ja${pathname}` : pathname;
 
-    const toggleLanguage = () => {
-        const newLang = currentLang === 'en' ? 'ja' : 'en';
+  useEffect(() => {
+    router.prefetch(enPath);
+    router.prefetch(jaPath);
+  }, [enPath, jaPath, router]);
 
-        // Logic to switch path
-        let newPath = '';
-
-        if (newLang === 'ja') {
-            // Switch EN -> JA
-            // If current path has no lang prefix (default EN), add /ja
-            newPath = `/ja${pathname}`;
-        } else {
-            // Switch JA -> EN
-            // Remove /ja prefix
-            newPath = pathname.replace(/^\/ja/, '') || '/';
-        }
-
-        router.push(newPath);
-    };
-
-    return (
-        <button
-            onClick={toggleLanguage}
-            className="ml-4 px-3 py-1 rounded-full border border-primary/20 hover:border-primary/50 text-sm font-medium transition-colors flex items-center gap-2"
-            aria-label="Switch Language"
-        >
-            <span className={currentLang === 'en' ? 'text-primary font-bold' : 'text-muted-foreground'}>EN</span>
-            <span className="text-muted-foreground">/</span>
-            <span className={currentLang === 'ja' ? 'text-primary font-bold' : 'text-muted-foreground'}>JA</span>
-        </button>
-    );
+  return (
+    <button
+      className='ml-4 flex items-center gap-2 rounded-full border border-primary/20 px-3 py-1 text-sm font-medium transition-colors hover:border-primary/50'
+      aria-label='Switch Language'
+    >
+      <span
+        onClick={() => currentLang !== 'en' && router.push(enPath)}
+        className={currentLang === 'en' ? 'font-bold text-primary cursor-default' : 'text-muted-foreground cursor-pointer hover:text-primary'}
+      >
+        EN
+      </span>
+      <span className='text-muted-foreground'>/</span>
+      <span
+        onClick={() => currentLang !== 'ja' && router.push(jaPath)}
+        className={currentLang === 'ja' ? 'font-bold text-primary cursor-default' : 'text-muted-foreground cursor-pointer hover:text-primary'}
+      >
+        JA
+      </span>
+    </button>
+  );
 }

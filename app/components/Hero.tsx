@@ -103,9 +103,11 @@ export const Hero = () => {
             >
               <div className='relative w-full aspect-square'>
                 <div className='absolute inset-0 bg-gradient-to-r from-primary/30 to-primary/20 rounded-full animate-pulse' />
-                <img
+                <Image
                   src='/me.png'
                   alt='Hero Image'
+                  fill
+                  sizes='(min-width: 1024px) 50vw, 100vw'
                   className='object-cover object-[center_20%] rounded-full p-8 w-full h-full absolute inset-0'
                 />
               </div>

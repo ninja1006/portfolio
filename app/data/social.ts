@@ -1,6 +1,5 @@
 import { IconType } from 'react-icons';
-import { FaGithub, FaLinkedin, FaEnvelope, FaYoutube } from 'react-icons/fa';
-import { FaMedium, FaXTwitter } from 'react-icons/fa6';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 export interface SocialLink {
   icon: IconType;
@@ -26,7 +25,7 @@ export const socialLinks: SocialLink[] = [
   // },
   {
     icon: FaEnvelope,
-    href: 'iorinowak1006@gmail.com',
+    href: 'mailto:iorinowak1006@gmail.com',
     label: 'Email',
   },
   // {

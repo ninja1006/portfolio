@@ -1,6 +1,7 @@
 'use client';
 
 import { m } from 'framer-motion';
+import Image from 'next/image';
 import { FaGraduationCap } from 'react-icons/fa';
 import { SectionContainer } from './shared/SectionContainer';
 import { SectionHeader } from './shared/SectionHeader';
@@ -10,8 +11,7 @@ import { useTheme } from '../context/ThemeContext';
 
 export const Education = () => {
   const dict = useDictionary();
-  const { theme } = useTheme();
-  const descColor = theme === 'dark' ? '#ffffff' : '#000000';
+  const { theme, isReady } = useTheme();
 
   return (
     <SectionContainer id='education'>
@@ -27,9 +27,11 @@ export const Education = () => {
         >
           <div className='overflow-hidden rounded-[2rem] border border-primary/10 bg-secondary/30 shadow-xl backdrop-blur-sm'>
             <div className='relative h-64 overflow-hidden bg-secondary/40 sm:h-72 lg:h-80'>
-              <img
+              <Image
                 src='/ntust.jpg'
                 alt={dict.education.imageAlt}
+                fill
+                sizes='(max-width: 1024px) 100vw, 896px'
                 className='h-full w-full object-cover'
               />
               <div className='absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent' />
@@ -62,10 +64,10 @@ export const Education = () => {
 
               <div className='mt-7 rounded-[1.75rem] bg-secondary/50 p-5 dark:bg-slate-800/95 sm:p-6'>
                 <div className='space-y-4 text-justify leading-7'>
-                  <p style={{ color: descColor }}>
+                  <p className='education-desc'>
                     {dict.education.p1}
                   </p>
-                  <p style={{ color: descColor }}>
+                  <p className='education-desc'>
                     {dict.education.p2}
                   </p>
                 </div>

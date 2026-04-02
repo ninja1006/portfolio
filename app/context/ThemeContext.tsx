@@ -13,46 +13,37 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('light');
-  const [isReady, setIsReady] = useState(false);
-
-  // Apply theme immediately on mount to prevent flash
-  useEffect(() => {
-    // Check if we're in the browser
-    if (typeof window === 'undefined') return;
-
-    // Get saved theme or system preference
-    const savedTheme = localStorage.getItem('theme') as Theme | null;
-    let detectedTheme: Theme = 'light';
-
-    if (savedTheme) {
-      detectedTheme = savedTheme;
-    } else {
-      // Check system preference
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      detectedTheme = prefersDark ? 'dark' : 'light';
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === 'undefined') {
+      return 'light';
     }
 
-    setTheme(detectedTheme);
-    applyTheme(detectedTheme);
-    setIsReady(true);
-  }, []);
+    const savedTheme = localStorage.getItem('theme') as Theme | null;
+    if (savedTheme) {
+      return savedTheme;
+    }
 
-  const applyTheme = (newTheme: Theme) => {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light';
+  });
+
+  function applyTheme(newTheme: Theme) {
     const root = document.documentElement;
-    // Remove both classes first to ensure clean state
     root.classList.remove('dark', 'light');
-    
-    // Apply the appropriate class
+
     if (newTheme === 'dark') {
       root.classList.add('dark');
     } else {
       root.classList.add('light');
     }
-    
-    // Save preference
+
     localStorage.setItem('theme', newTheme);
-  };
+  }
+
+  useEffect(() => {
+    applyTheme(theme);
+  }, [theme]);
 
   const toggleTheme = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
@@ -61,7 +52,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   };
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme, isReady }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme, isReady: true }}>
       {children}
     </ThemeContext.Provider>
   );
