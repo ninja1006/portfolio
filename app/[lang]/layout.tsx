@@ -39,7 +39,12 @@ export default async function RootLayout({
   params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
-  const dict = await getDictionary(lang as any);
+
+  // Load both dictionaries upfront so switching is instant
+  const [enDict, jaDict] = await Promise.all([
+    getDictionary('en' as any),
+    getDictionary('ja' as any),
+  ]);
 
   return (
     <html lang={lang}>
@@ -49,7 +54,7 @@ export default async function RootLayout({
       </head>
       <body className={`${jakarta.variable} ${syne.variable}`}>
         <ThemeProvider>
-          <DictionaryProvider dict={dict}>
+          <DictionaryProvider enDict={enDict} jaDict={jaDict}>
             <FramerMotionProvider>{children}</FramerMotionProvider>
             <Footer />
           </DictionaryProvider>
