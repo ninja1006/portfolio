@@ -112,15 +112,16 @@ export const Hero = () => {
                   priority
                   quality={85}
                 />
-
-
-                fdsdfsdfs
-
               </div>
             </m.div>
           </div>
         </div>
       </SectionContainer>
+
+
+      <div>this is my portfolio</div>
+
+
 
       <button
         className='absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce'
