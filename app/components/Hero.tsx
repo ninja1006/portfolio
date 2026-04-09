@@ -112,6 +112,10 @@ export const Hero = () => {
                   priority
                   quality={85}
                 />
+
+
+                fdsdfsdfs
+
               </div>
             </m.div>
           </div>
