@@ -118,11 +118,6 @@ export const Hero = () => {
         </div>
       </SectionContainer>
 
-
-      <div>this is my portfolio</div>
-
-
-
       <button
         className='absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce'
         onClick={handleScrollToProjects}
